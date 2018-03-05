@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Test | Hexo</title>
+  <title>Test | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这是一篇用来测试提交Blog功能的文章。为了防止浏览器缓存打开网页后刷新一下。">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Test">
 <meta property="og:url" content="https://akagb.github.io/2018/03/05/Test/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="AKAGB —— Blog">
 <meta property="og:description" content="这是一篇用来测试提交Blog功能的文章。为了防止浏览器缓存打开网页后刷新一下。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-05T14:16:17.520Z">
@@ -21,10 +21,10 @@
 <meta name="twitter:title" content="Test">
 <meta name="twitter:description" content="这是一篇用来测试提交Blog功能的文章。为了防止浏览器缓存打开网页后刷新一下。">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -54,6 +54,8 @@
 		  <h1 class="header-author"><a href="/">AKAGB</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">二十七杯酒</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -70,6 +72,8 @@
             
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -103,6 +107,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">AKAGB</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>二十七杯酒<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -175,7 +181,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -365,6 +371,8 @@ MathJax.Hub.Queue(function() {
       
     
       
+      
+      
     
     
 
@@ -372,11 +380,13 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -445,6 +455,12 @@ MathJax.Hub.Queue(function() {
 
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">希望能向诸位学习&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
     
   </div>
   

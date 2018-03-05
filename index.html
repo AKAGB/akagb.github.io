@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Hexo</title>
+  <title>AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="AKAGB —— Blog">
 <meta property="og:url" content="https://akagb.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="AKAGB —— Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="AKAGB —— Blog">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -49,6 +49,8 @@
 		  <h1 class="header-author"><a href="/">AKAGB</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">二十七杯酒</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -65,6 +67,8 @@
             
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -98,6 +102,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">AKAGB</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>二十七杯酒<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -286,6 +292,8 @@ MathJax.Hub.Queue(function() {
       
     
       
+      
+      
     
     
 
@@ -293,11 +301,13 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
         
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -366,6 +376,12 @@ MathJax.Hub.Queue(function() {
 
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">希望能向诸位学习&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
     
   </div>
   
