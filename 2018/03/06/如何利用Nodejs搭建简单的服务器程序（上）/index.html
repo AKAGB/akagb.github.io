@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Archives: 2018 | AKAGB —— Blog</title>
+  <title>如何利用Nodejs搭建简单的服务器程序（上） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/archives/2018/index.html">
+  <meta name="description" content="蛮害怕自己会忘记的，不妨做个简单的记录。  主要是参考Node 入门，适合有一定Javascript基础的人。 需求做一个简单的服务器程序，实现以下功能：  get方法：当打开/start时，给用户返回一个表单。 post方法：用户点击提交表单时，能够获取提交的数据并且加载到/upload界面。提交的内容包括文字和文件，文件以图片为例。">
+<meta name="keywords" content="后端,Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何利用Nodejs搭建简单的服务器程序（上）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="蛮害怕自己会忘记的，不妨做个简单的记录。  主要是参考Node 入门，适合有一定Javascript基础的人。 需求做一个简单的服务器程序，实现以下功能：  get方法：当打开/start时，给用户返回一个表单。 post方法：用户点击提交表单时，能够获取提交的数据并且加载到/upload界面。提交的内容包括文字和文件，文件以图片为例。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/Server/hello.png">
+<meta property="og:updated_time" content="2018-03-06T17:15:49.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="如何利用Nodejs搭建简单的服务器程序（上）">
+<meta name="twitter:description" content="蛮害怕自己会忘记的，不妨做个简单的记录。  主要是参考Node 入门，适合有一定Javascript基础的人。 需求做一个简单的服务器程序，实现以下功能：  get方法：当打开/start时，给用户返回一个表单。 post方法：用户点击提交表单时，能够获取提交的数据并且加载到/upload界面。提交的内容包括文字和文件，文件以图片为例。">
+<meta name="twitter:image" content="https://akagb.github.io/images/Server/hello.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -142,36 +149,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-如何利用Nodejs搭建简单的服务器程序（上）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
+    <h1 class="article-title" itemprop="name">
+      如何利用Nodejs搭建简单的服务器程序（上）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
+  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>蛮害怕自己会忘记的，不妨做个简单的记录。</p>
+</blockquote>
+<p>主要是参考<a href="https://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="noopener">Node 入门</a>，适合有一定Javascript基础的人。</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的服务器程序，实现以下功能：</p>
+<ol>
+<li><code>get</code>方法：当打开<code>/start</code>时，给用户返回一个表单。</li>
+<li><code>post</code>方法：用户点击提交表单时，能够获取提交的数据并且加载到<code>/upload</code>界面。提交的内容包括文字和文件，文件以图片为例。</li>
+</ol>
+<a id="more"></a>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>为了以后便于维护（虽然现在比较简单，但为了以后着想），我们应该把服务器程序分成几个模块：</p>
+<ol>
+<li>server.js：生成一个服务器，解析url并把请求的路径给路由。</li>
+<li>router.js：路由程序，路由的功能是通过已给的路径执行相应的请求处理程序。</li>
+<li>requestHandler.js：定义所有的请求处理程序。</li>
+<li>index.js：主模块，负责把上述的所有模块连接起来。</li>
+</ol>
+<p>顺便补充，该文件会用到一个解析表单的第三方模块<code>formidable</code>，利用npm安装即可，注意要使用全局安装，而且第三方模块不能直接用<code>require(&quot;formidable&quot;)</code>找到，需要用完整的路径或者把完整的第三方模块复制到当前项目下，以及将环境变量的NODE_PATH设置为C:\Program Files\nodejs（这只是举个例子，具体的用自己的nodejs路径）。</p>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello, world"></a>Hello, world</h3><p>从server.js开始，先建立起一个没有任何功能的服务器吧，也就是对于任何请求都响应回一个<code>Hello World</code>。创建一个服务器并不难，<code>http</code>模块可以满足你的需求。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">        response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">        response.write(<span class="string">'Hello, world'</span>);</span><br><span class="line">        response.end();</span><br><span class="line">    &#125;).listen(<span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Server is running at http://localhost:8080/ ...'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先测试跑一下，等会会删掉这句</span></span><br><span class="line">start();</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.start = start;</span><br></pre></td></tr></table></figure>
+<p>关于这段代码的解释：<code>http.createServer()</code>方法用来创建一个http服务器，传入一个回调函数，回调函数的参数是<code>request</code>和<code>response</code>对象，前者存放了关于请求的一系列信息，后者是内部实现了可写流，可以往里填入响应的信息，整个方法返回一个<code>http.Server</code>对象。</p>
+<p><code>response.writeHead()</code>用来写响应首部字段，只能且必须调用一次，而且必须在<code>request.end()</code>之前。它的第一个参数是状态码（200表示请求成功，404表示找不到请求资源），第二个参数是对象，是http的headers。</p>
+<p><code>response.write()</code>用来写入响应主体，这里只是简单调用，可以参考Node.js官方文档查看更多信息。</p>
+<p><code>reponse.end()</code>通知服务器响应头和响应主体发送完毕。</p>
+<p><code>server.listen()</code>方法，用来监听端口。例子中监听本地的8080端口。</p>
+<p>运行<code>start()</code>后，浏览器中访问结果如下：</p>
+<p><img src="/images/Server/hello.png" alt="Hello world"></p>
+<p>OK，服务器程序就这么诞生了！显然我们不希望在server.js中就调用它，只是把它作为一个接口暴露出去，让index.js调用才对，所以删掉这句<code>start()</code>，我们在index.js中调用。index.js内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = <span class="built_in">require</span>(<span class="string">'./server'</span>);</span><br><span class="line"></span><br><span class="line">server.start();</span><br></pre></td></tr></table></figure>
+<p>看上去很简单，毕竟这只是开始嘛，运行index.js结果和刚刚是一样的。</p>
+<p>再来回忆下我们的需求，我们想要输入 <a href="http://localhost:8080/start" target="_blank" rel="noopener">http://localhost:8080/start</a> 的时候出来一个表单，而在 <a href="http://localhost:8080/upload" target="_blank" rel="noopener">http://localhost:8080/upload</a> 显示结果，也就是不同的url有不同的结果！第一步是什么，第一步当然是解析url，来获取请求资源的路径，这需要用到<code>url</code>模块了。我们来试试，还是server.js，添加这两行代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Request for '</span> + url.parse(request.url).pathname);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;).listen(<span class="number">8080</span>);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在浏览器中访问 <a href="http://localhost:8080/start" target="_blank" rel="noopener">http://localhost:8080/start</a> ，再看看控制台的输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Server is running at http://localhost:8080/ ...</span><br><span class="line">Request for /start</span><br><span class="line">Request for /favicon.ico</span><br></pre></td></tr></table></figure>
+<p>第一次<code>/start</code>显然是我们在浏览器输入的中想访问的路径，<code>/favicon.ico</code>是大多数浏览器都会在访问的时候尝试读取的内容，不必在意。</p>
+<p>既然获取了想要请求的路径，我们就可以通过路由程序和请求处理程序来决定响应的内容了。</p>
+<p><em>未完待续…</em></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,122 +250,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/06/二十七杯酒/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二十七杯酒</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Test/">Test</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -325,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
