@@ -17,7 +17,7 @@
 <meta property="og:description" content="蛮害怕自己会忘记的，不妨做个简单的记录。  主要是参考Node 入门，适合有一定Javascript基础的人。 需求做一个简单的服务器程序，实现以下功能：  get方法：当打开/start时，给用户返回一个表单。 post方法：用户点击提交表单时，能够获取提交的数据并且加载到/upload界面。提交的内容包括文字和文件，文件以图片为例。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://akagb.github.io/images/Server/hello.png">
-<meta property="og:updated_time" content="2018-03-06T17:15:49.909Z">
+<meta property="og:updated_time" content="2018-03-07T02:14:04.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何利用Nodejs搭建简单的服务器程序（上）">
 <meta name="twitter:description" content="蛮害怕自己会忘记的，不妨做个简单的记录。  主要是参考Node 入门，适合有一定Javascript基础的人。 需求做一个简单的服务器程序，实现以下功能：  get方法：当打开/start时，给用户返回一个表单。 post方法：用户点击提交表单时，能够获取提交的数据并且加载到/upload界面。提交的内容包括文字和文件，文件以图片为例。">
@@ -203,6 +203,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Request for '</span> + url.parse(request.url).pathname);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;).listen(<span class="number">8080</span>);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在浏览器中访问 <a href="http://localhost:8080/start" target="_blank" rel="noopener">http://localhost:8080/start</a> ，再看看控制台的输出为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Server is running at http://localhost:8080/ ...</span><br><span class="line">Request for /start</span><br><span class="line">Request for /favicon.ico</span><br></pre></td></tr></table></figure>
+<p><code>request.url</code>返回当前所访问的url字符串，<code>url.parse()</code>将字符串解析并返回一个对象，访问其中的<code>pathname</code>属性获取路径。</p>
 <p>第一次<code>/start</code>显然是我们在浏览器输入的中想访问的路径，<code>/favicon.ico</code>是大多数浏览器都会在访问的时候尝试读取的内容，不必在意。</p>
 <p>既然获取了想要请求的路径，我们就可以通过路由程序和请求处理程序来决定响应的内容了。</p>
 <p><em>未完待续…</em></p>
@@ -313,6 +314,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          如何利用Nodejs搭建简单的服务器程序（中）
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/06/二十七杯酒/" id="article-nav-older" class="article-nav-link-wrap">
@@ -459,15 +469,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
