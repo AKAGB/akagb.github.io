@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://akagb.github.io/images/Server/file.png">
 <meta property="og:image" content="https://akagb.github.io/images/Server/fileresult.png">
 <meta property="og:image" content="https://akagb.github.io/images/Server/end.png">
-<meta property="og:updated_time" content="2018-03-08T16:17:10.558Z">
+<meta property="og:updated_time" content="2018-03-08T16:23:10.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何利用Nodejs搭建简单的服务器程序（下）">
 <meta name="twitter:description" content="给服务器一点礼物。  Post有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用formidable第三方模块，可以用npm安装。然后我们来修改upload()函数：">
@@ -203,7 +203,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'./tmp/test.jpg'</span>, <span class="string">'binary'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, file</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            response.writeHead(<span class="number">500</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">            response.write(err + <span class="string">'\n'</span>);</span><br><span class="line">            response.end();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'image/jpg'</span>&#125;);</span><br><span class="line">            response.write(file, <span class="string">'binary'</span>);</span><br><span class="line">            response.end();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>实现思路也很简单，让我们看看显示效果如何：</p>
 <p><img src="/images/Server/end.png" alt="end"></p>
-<p>OK！最后也献上美图一张~这样我们就完成了所有的功能啦！通过这个简单的例子我们熟悉了几个常用的函数，当然只是简单的实现，还有更多的知识就要在不断实践中学习了，这些代码我放在</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>OK！最后也献上美图一张~这样我们就完成了所有的功能啦！通过这个简单的例子我们熟悉了几个常用的函数，当然只是简单的实现，还有更多的知识就要在不断实践中学习了，这些代码我放在<a href="https://github.com/AKAGB/Easy-Server" target="_blank" rel="noopener">github</a>上，可以进行参考。</p>
 
       
 
