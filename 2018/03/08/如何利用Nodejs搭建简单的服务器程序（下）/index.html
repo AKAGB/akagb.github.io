@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Archives: 2018 | AKAGB —— Blog</title>
+  <title>如何利用Nodejs搭建简单的服务器程序（下） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/archives/2018/index.html">
+  <meta name="description" content="给服务器一点礼物。  Post有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用formidable第三方模块，可以用npm安装。然后我们来修改upload()函数：">
+<meta name="keywords" content="后端,Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何利用Nodejs搭建简单的服务器程序（下）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="给服务器一点礼物。  Post有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用formidable第三方模块，可以用npm安装。然后我们来修改upload()函数：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/Server/postdata.png">
+<meta property="og:image" content="https://akagb.github.io/images/Server/uploaddata.png">
+<meta property="og:image" content="https://akagb.github.io/images/Server/uploaddata2.png">
+<meta property="og:image" content="https://akagb.github.io/images/Server/file.png">
+<meta property="og:image" content="https://akagb.github.io/images/Server/fileresult.png">
+<meta property="og:image" content="https://akagb.github.io/images/Server/end.png">
+<meta property="og:updated_time" content="2018-03-08T16:17:10.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="如何利用Nodejs搭建简单的服务器程序（下）">
+<meta name="twitter:description" content="给服务器一点礼物。  Post有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用formidable第三方模块，可以用npm安装。然后我们来修改upload()函数：">
+<meta name="twitter:image" content="https://akagb.github.io/images/Server/postdata.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -142,36 +154,85 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-如何利用Nodejs搭建简单的服务器程序（下）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      如何利用Nodejs搭建简单的服务器程序（下）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" class="archive-article-date">
+
+        
+        <a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" class="archive-article-date">
   	<time datetime="2018-03-08T13:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/">如何利用Nodejs搭建简单的服务器程序（下）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>给服务器一点礼物。</p>
+</blockquote>
+<h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><p>有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用<code>formidable</code>第三方模块，可以用<code>npm</code>安装。然后我们来修改<code>upload()</code>函数：</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Upload was called...'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> form = formidable.IncomingForm();</span><br><span class="line">    form.encoding = <span class="string">'utf-8'</span>;</span><br><span class="line">    <span class="comment">// 解析request</span></span><br><span class="line">    form.parse(request, <span class="function"><span class="keyword">function</span>(<span class="params">err, fileds, files</span>) </span>&#123;</span><br><span class="line">        response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/html'</span>&#125;);</span><br><span class="line">        response.write(<span class="string">'&lt;p&gt;The text you input: '</span> + fileds.text + <span class="string">'&lt;/p&gt;'</span>);</span><br><span class="line">        response.end();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码解释：</p>
+<p><code>formidable.IncomingForm()</code>用来生成一个表单对象，<code>form.encoding</code>是接受表单时采取的编码，这里设置为UTF-8。<code>form.parse()</code>用来解析<code>request</code>对象中的表单，然后回调函数的参数分别为错误<code>err</code>，非文件数据<code>fileds</code>，和文件数据<code>files</code>，后面两个是两个对象，<code>fileds</code>对象保存了非文件数据，比如文字，它的属性是在html中那些非文件数据的标签的<code>name</code>属性，比如在html中定义了<code>&lt;textarea name=&quot;text&quot;&gt;</code>，所以在上面的代码中我们用<code>fileds.text</code>来访问这个数据，OK，让我们看看具体运行是怎么样的，输入文字（暂时还没有处理文件的能力）：</p>
+<p><img src="/images/Server/postdata.png" alt="postdata"></p>
+<p>提交：</p>
+<p><img src="/images/Server/uploaddata.png" alt="uploaddata"></p>
+<p>啊咧？为什么中文出现乱码了？不是把编码设置为UTF-8了吗？</p>
+<p>是这样的，代码里设置的是接收表单时的编码，当把数据响应回去的时候，并没有告诉浏览器用什么编码，所以出现乱码也并不意外，既然知道了，我们只要在响应头里说明编码就好了，修改<code>response.writeHead()</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/html; charset="utf-8"'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>再提交一次试试：</p>
+<p><img src="/images/Server/uploaddata2.png" alt="uploaddata2"></p>
+<p>OK！那么现在就只剩最后一件事，处理文件，其实有了<code>formidable</code>模块处理文件也是相当的简单呢。再来说明一下我们想做的事情：用户上传文件后，我们把文件保存到本地，并且在浏览器上显示出来。</p>
+<p>如何把图片保存到本地呢，我们可以借助<code>fs.rename()</code>，功能就想名字一样重命名，我们在<code>upload()</code>中添加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Upload was called...'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> form = formidable.IncomingForm();</span><br><span class="line">    form.encoding = <span class="string">'utf-8'</span>;</span><br><span class="line">    <span class="comment">// 解析request</span></span><br><span class="line">    form.parse(request, <span class="function"><span class="keyword">function</span>(<span class="params">err, fileds, files</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 添加的代码</span></span><br><span class="line">        fs.renameSync(files.upload.path, __dirname + <span class="string">'/tmp/test.jpg'</span>);</span><br><span class="line">        response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/html; charset="utf-8'</span>&#125;);</span><br><span class="line">        response.write(<span class="string">'&lt;p&gt;The text you input: '</span> + fileds.text + <span class="string">'&lt;/p&gt;'</span>);</span><br><span class="line">        response.end();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>__dirname</code>表示当前工作目录，当然事先要在当前目录下创建<code>tmp/</code>文件夹，否则就会报错。然后我们尝试提交图片试试（当然这里限制是jpg了）：</p>
+<p><img src="/images/Server/file.png" alt="file"></p>
+<p>选择一张图片提交后，我们查看tmp目录下：</p>
+<p><img src="/images/Server/fileresult.png" alt="fileresult"></p>
+<p>果然是多了一张图片，那么接下来考虑的就是如何把这张在本地的图片放上浏览器中显示呢？我们的想法是响应主体中添加一个<code>img</code>标签，但标签的<code>src</code>属性要写什么呢？是不是写图片相对于当前文件的路径呢？（不是，可以自己做个测试）</p>
+<p>要知道在浏览器中的路径和本地是不一样的，我们想在浏览器中访问某个资源，相当于再从浏览器发送一个请求嘛，那么我们的办法就是再添加一个请求处理程序，来显示这张图片。</p>
+<p>接下来我们在requestHandler.js中添加一个<code>show()</code>函数来显示图片：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'./tmp/test.jpg'</span>, <span class="string">'binary'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, file</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            response.writeHead(<span class="number">500</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">            response.write(err + <span class="string">'\n'</span>);</span><br><span class="line">            response.end();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'image/jpg'</span>&#125;);</span><br><span class="line">            response.write(file, <span class="string">'binary'</span>);</span><br><span class="line">            response.end();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现思路也很简单，让我们看看显示效果如何：</p>
+<p><img src="/images/Server/end.png" alt="end"></p>
+<p>OK！最后也献上美图一张~这样我们就完成了所有的功能啦！通过这个简单的例子我们熟悉了几个常用的函数，当然只是简单的实现，还有更多的知识就要在不断实践中学习了，这些代码我放在</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,252 +248,116 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/Python-HW-CH2/" class="archive-article-date">
-  	<time datetime="2018-03-07T16:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/08/Python-HW-CH2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python HW CH2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/Python-HW-CH2/">Python HW CH2</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">如何利用Nodejs搭建简单的服务器程序（中）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
-    </h1>
+  <div id="SOHUCS" sid="如何利用Nodejs搭建简单的服务器程序（下）" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Test/">Test</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -455,8 +380,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
