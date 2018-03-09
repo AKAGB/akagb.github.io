@@ -6,15 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Archives: 2018/3 | AKAGB —— Blog</title>
+  <title>用爬虫制作简单的翻译程序（下）（多图预警） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/archives/2018/03/index.html">
+  <meta name="description" content="我们要做得更好。  重构上面的代码中我们简单实现了如何爬取有道翻译的数据，我们不想只翻译这么一个结果，怎么样翻译其他的单词呢？当然是修改一下data的内容，我们第一眼看去显然是要修改i参数嘛，因为这个参数显示是你好，修改了它以后是不是就能返回其他结果呢？有了这个想法我们对代码进行修改，把功能放到函数里：">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用爬虫制作简单的翻译程序（下）（多图预警）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序（下）/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="我们要做得更好。  重构上面的代码中我们简单实现了如何爬取有道翻译的数据，我们不想只翻译这么一个结果，怎么样翻译其他的单词呢？当然是修改一下data的内容，我们第一眼看去显然是要修改i参数嘛，因为这个参数显示是你好，修改了它以后是不是就能返回其他结果呢？有了这个想法我们对代码进行修改，把功能放到函数里：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/hello1.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/hello2.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/helloworld.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/event.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/click.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/oneline.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/lines.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/find.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/bp.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/stop.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/define.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/define2.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/watches.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/watch2.png">
+<meta property="og:updated_time" content="2018-03-09T14:12:52.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="用爬虫制作简单的翻译程序（下）（多图预警）">
+<meta name="twitter:description" content="我们要做得更好。  重构上面的代码中我们简单实现了如何爬取有道翻译的数据，我们不想只翻译这么一个结果，怎么样翻译其他的单词呢？当然是修改一下data的内容，我们第一眼看去显然是要修改i参数嘛，因为这个参数显示是你好，修改了它以后是不是就能返回其他结果呢？有了这个想法我们对代码进行修改，把功能放到函数里：">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/youdao/hello1.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -144,36 +164,108 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-用爬虫制作简单的翻译程序（下）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      用爬虫制作简单的翻译程序（下）（多图预警）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" class="archive-article-date">
+
+        
+        <a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" class="archive-article-date">
   	<time datetime="2018-03-09T13:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/">用爬虫制作简单的翻译程序（下）（多图预警）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>我们要做得更好。</p>
+</blockquote>
+<h3 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h3><p>上面的代码中我们简单实现了如何爬取有道翻译的数据，我们不想只翻译这么一个结果，怎么样翻译其他的单词呢？当然是修改一下<code>data</code>的内容，我们第一眼看去显然是要修改<code>i</code>参数嘛，因为这个参数显示是<code>你好</code>，修改了它以后是不是就能返回其他结果呢？有了这个想法我们对代码进行修改，把功能放到函数里：</p>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求url</span></span><br><span class="line">url = <span class="string">'http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求首部</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'Cookie'</span> : <span class="string">'OUTFOX_SEARCH_USER_ID=-2112651059@10.169.0.84;</span></span><br><span class="line"><span class="string">    # 以下省略...</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># post数据</span></span><br><span class="line"><span class="string">payload = &#123;</span></span><br><span class="line"><span class="string">    '</span>i<span class="string">' : '</span>你好<span class="string">',</span></span><br><span class="line"><span class="string">    # 以下省略...</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def translator(input_str):</span></span><br><span class="line"><span class="string">    # 填写翻译内容</span></span><br><span class="line"><span class="string">    payload['</span>i<span class="string">'] = input_str</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    response = requests.post(url, headers=headers, data=payload)</span></span><br><span class="line"><span class="string">    result = response.json()</span></span><br><span class="line"><span class="string">    return result['</span>translateResult<span class="string">'][0][0]['</span>tgt<span class="string">']</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">if __name__ == '</span>__main__<span class="string">':</span></span><br><span class="line"><span class="string">    print('</span>Translator <span class="keyword">is</span> running...<span class="string">')</span></span><br><span class="line"><span class="string">    while True:</span></span><br><span class="line"><span class="string">        context = input('</span>Please input the context (q! to exit): <span class="string">')</span></span><br><span class="line"><span class="string">        if context == '</span>q!<span class="string">':</span></span><br><span class="line"><span class="string">            break</span></span><br><span class="line"><span class="string">        result = translator(context)</span></span><br><span class="line"><span class="string">        print('</span>Result:<span class="string">', result)</span></span><br><span class="line"><span class="string">    print('</span>Exit...<span class="string">')</span></span><br></pre></td></tr></table></figure>
+<p>运行下看看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3 youdao.py</span><br><span class="line">Translator <span class="keyword">is</span> running...</span><br><span class="line">Please input the context (q! to exit): 你好</span><br><span class="line">Result: hello</span><br><span class="line">Please input the context (q! to exit): 哈</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"youdao.py"</span>, line <span class="number">44</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    result = translator(context)</span><br><span class="line">  File <span class="string">"youdao.py"</span>, line <span class="number">36</span>, <span class="keyword">in</span> translator</span><br><span class="line">    <span class="keyword">return</span> result[<span class="string">'translateResult'</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">'tgt'</span>]</span><br><span class="line">KeyError: <span class="string">'translateResult'</span></span><br></pre></td></tr></table></figure>
+<p>输入<code>你好</code>没问题，但别的怎么会报错了呢？我们打印一下<code>translator()</code>中的result看看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3 youdao.py</span><br><span class="line">Translator <span class="keyword">is</span> running...</span><br><span class="line">Please input the context (q! to exit): 哈哈</span><br><span class="line">&#123;<span class="string">'errorCode'</span>: <span class="number">50</span>&#125;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"youdao.py"</span>, line <span class="number">45</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    result = translator(context)</span><br><span class="line">  File <span class="string">"youdao.py"</span>, line <span class="number">37</span>, <span class="keyword">in</span> translator</span><br><span class="line">    <span class="keyword">return</span> result[<span class="string">'translateResult'</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">'tgt'</span>]</span><br><span class="line">KeyError: <span class="string">'translateResult'</span></span><br></pre></td></tr></table></figure>
+<p>不用说，又出错了，为什么啊（事实上以前是不会错的，后来有道的程序员可能为了应对爬虫做了一些修补，但没关系，这依旧难不倒我们）？只能翻译<code>你好</code>我要这个程序有何用？显然是因为<code>Form Data</code>提交的内容有问题，这时候不要急，我们继续回到开始的抓包过程，我们多试几次输入来看看每次提交的<code>Form Data</code>到底有什么不一样的地方：</p>
+<p>第一次输入<code>你好</code>:</p>
+<p><img src="/images/web_crawler/youdao/hello1.png" alt="hello1"></p>
+<p>第二次输入<code>你好</code>:</p>
+<p><img src="/images/web_crawler/youdao/hello2.png" alt="hello2"></p>
+<p>第三次输入<code>你好世界</code>:</p>
+<p><img src="/images/web_crawler/youdao/helloworld.png" alt="helloworld"></p>
+<p>经过对比后我们发现他们的<code>salt</code>和<code>sign</code>是不一样的，即使是同样的词条也是如此，接下来我们就要思考这两个值是如何产生的了，提交表单数据之前能处理这两个值的代码显然是 javascript 代码，接下来的内容会涉及一点前端，看不懂得话就跟着操作一下也没事，实在不想看可以拉到下一部分把关键性代码复制一下。</p>
+<h3 id="salt和sign的产生"><a href="#salt和sign的产生" class="headerlink" title="salt和sign的产生"></a>salt和sign的产生</h3><p>我们知道<code>Form Data</code>的产生是在点击翻译按钮之后，右键翻译按钮，并点击检查，我们可以看到它在html中的位置，更重要的是可以看到它的一些属性，我们想知道它上面添加了什么事件，点击<code>Event Listeners</code>：</p>
+<p><img src="/images/web_crawler/youdao/event.png" alt="event"></p>
+<p>然后点开<code>click</code>事件：</p>
+<p><img src="/images/web_crawler/youdao/click.png" alt="click"></p>
+<p>主要看第四个，第四条是添加在这个按钮上的，前三个是按钮的父元素。它的内容定义在<code>fanyi.min.js:1</code>中，于是我们当然是点击它咯：</p>
+<p><img src="/images/web_crawler/youdao/oneline.png" alt="oneline"></p>
+<p>我们可以看到一行很长的代码，点击一下左下角的<code>{}</code>，就会按照一定格式显示出这个js代码文件：</p>
+<p><img src="/images/web_crawler/youdao/lines.png" alt="lines"></p>
+<p>一看吓一跳，居然有9000+行，这去哪里找<code>salt</code>和<code>sign</code>啊，简直是大海捞针啊，我建议可以学习如何用浏览器调试js代码，这里我就直接说了，可以使用<code>ctrl+f</code>，下面会出来一个窗口，我们可以输入想要查找的内容：</p>
+<p><img src="/images/web_crawler/youdao/find.png" alt="find"></p>
+<p>一共找到了3个<code>salt</code>，怎么确认哪一个是我们想要的查找的那个呢？很简单，在左侧数字那里打断点，然后点击翻译按钮，在哪一个<code>salt</code>所在的断点停下来了，我们要找的就是哪一个：</p>
+<p>打断点：</p>
+<p><img src="/images/web_crawler/youdao/bp.png" alt="bp"></p>
+<p>点击运行，没有停顿就换一个<code>salt</code>打断点，知道出现一个断点能暂停当前页面的时候（停在断点的时候背景会变暗）：</p>
+<p><img src="/images/web_crawler/youdao/stop.png" alt="stop"></p>
+<p>OK！我们找到了想要找的<code>salt</code>和<code>sign</code>定义的地方：</p>
+<p><img src="/images/web_crawler/youdao/define.png" alt="define"></p>
+<p>我们可以看到<code>salt</code>是用<code>r</code>赋值，值为<code>1520598722853</code>，<code>sign</code>用<code>o</code>赋值，值为<code>2102782743154b2f74de47c03f41839a</code>，我们从这个位置往上找，一般来说不会太远（毕竟只是个局部变量，定义在这个<code>click</code>的回调函数里面的）。</p>
+<p><img src="/images/web_crawler/youdao/define2.png" alt="define2"></p>
+<p>果然不出我们所料，就在上面不远的地方，查看到它俩的定义方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="string">""</span> + ((<span class="keyword">new</span> <span class="built_in">Date</span>).getTime() + <span class="built_in">parseInt</span>(<span class="number">10</span> * <span class="built_in">Math</span>.random(), <span class="number">10</span>))</span><br><span class="line">o = u.md5(S + n + r + D)</span><br></pre></td></tr></table></figure>
+<p><code>r</code>变量好理解，它是利用时间戳和一个随机数得到的。<code>o</code>是利用了md5加密<code>r</code>和另外三个变量，无奈之下我们只能看一下另外三个变量的内容是什么，做法很简单，鼠标选中这些变量查看或者添加到watches即可：</p>
+<p><img src="/images/web_crawler/youdao/watches.png" alt="watches"></p>
+<p><code>n</code>是翻译的内容，<code>S</code>和<code>D</code>又是什么鬼？没关系，我们继续向上找，总不会找的很远的毕竟应该还在这个回调函数里面，如果是全局的变量的话就更不用怕了，全局就意味着很可能是个常量，当然这都是一些猜想，真正怎么实现的还得看有道的程序员（话说我想吐槽一下为啥变量名都用这些一个个的字母）：</p>
+<p><img src="/images/web_crawler/youdao/watch2.png" alt="watch2"></p>
+<p>OK！果不其然，我们要找到了，更幸运的是这次是两个常量了，非常的舒服（当然在你那里是否跟我一样我就不确定，甚至有可能会被定期修改，暂时不用想那么多）。我们已经知道了js的代码是如何生成<code>salt</code>和<code>sign</code>这两个变量的，用python代码如何实现呢？你可以在python终端页面中一步步测试，这里就不这么麻烦了，我直接给最终结果吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########## 记得把这些模块包含进去，放在开头</span></span><br><span class="line"><span class="comment"># import hashlib</span></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment"># import random</span></span><br><span class="line"></span><br><span class="line">payload[<span class="string">'salt'</span>] = str(int(time.time() * <span class="number">1000</span>) + int(<span class="number">10</span> * random.random()))</span><br><span class="line">payload[<span class="string">'sign'</span>] = hashlib.md5((S + input_str + payload[<span class="string">'salt'</span>] + D)</span><br><span class="line">                    .encode(<span class="string">'utf-8'</span>)).hexdigest()</span><br></pre></td></tr></table></figure>
+<p>把这两行代码插在刚刚修改<code>payload[&#39;i&#39;]</code>的下方，最终函数内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">translator</span><span class="params">(input_str)</span>:</span></span><br><span class="line">    <span class="comment"># 填写翻译内容</span></span><br><span class="line">    payload[<span class="string">'i'</span>] = input_str</span><br><span class="line">    payload[<span class="string">'salt'</span>] = str(int(time.time() * <span class="number">1000</span>) + int(<span class="number">10</span> * random.random()))</span><br><span class="line">    payload[<span class="string">'sign'</span>] = hashlib.md5((S + input_str + payload[<span class="string">'salt'</span>] + D).encode(<span class="string">'utf-8'</span>)).hexdigest()</span><br><span class="line"></span><br><span class="line">    response = requests.post(url, headers=headers, data=payload)</span><br><span class="line">    result = response.json()</span><br><span class="line">    <span class="keyword">return</span> result[<span class="string">'translateResult'</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">'tgt'</span>]</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3 youdao.py</span><br><span class="line">Translator <span class="keyword">is</span> running...</span><br><span class="line">Please input the context (q! to exit): 你好</span><br><span class="line">Result: hello</span><br><span class="line">Please input the context (q! to exit): 哈哈哈</span><br><span class="line">Result: Ha, ha, ha</span><br><span class="line">Please input the context (q! to exit): 中山大学</span><br><span class="line">Result: Sun yat-sen university</span><br><span class="line">Please input the context (q! to exit): This <span class="keyword">is</span> a text.</span><br><span class="line">Result: 这是一个文本。</span><br><span class="line">Please input the context (q! to exit): q!</span><br><span class="line">Exit...</span><br></pre></td></tr></table></figure>
+<p>OK！很完美的运行起来了~</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实感觉用到的知识并没有很多，比如如果返回的数据不是一个JSON字符串而是一个html网页怎么办？如何处理html文件，<code>bs4</code>模块了解一下，它里面的<code>BeautifulSoup</code>对象能解析html的文档结构，进而操作每一个元素。当然还有很多很多的知识，以后我也会写写关于别的爬虫，也希望能向大家学习。</p>
+<p>关于这篇博客的完整代码我放在<a href="https://github.com/AKAGB/Python-study/tree/master/Others" target="_blank" rel="noopener">github</a>中，可以点开链接查看。</p>
+<p>最后感谢有道翻译为我们做出的贡献和给我们出的难题（一年前的时候明明还没有<code>salt</code>和<code>sign</code>的说）。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,336 +281,116 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序（下）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-09T06:39:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用爬虫制作简单的翻译程序（上）（多图预警）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">用爬虫制作简单的翻译程序（上）（多图预警）</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-08T13:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/">如何利用Nodejs搭建简单的服务器程序（下）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/Python-HW-CH2/" class="archive-article-date">
-  	<time datetime="2018-03-07T16:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/Python-HW-CH2/">Python HW CH2</a>
-    </h1>
+  <div id="SOHUCS" sid="用爬虫制作简单的翻译程序（下）" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">如何利用Nodejs搭建简单的服务器程序（中）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Test/">First Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -541,8 +413,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

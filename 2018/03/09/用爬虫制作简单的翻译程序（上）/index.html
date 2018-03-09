@@ -6,15 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Archives: 2018/3 | AKAGB —— Blog</title>
+  <title>用爬虫制作简单的翻译程序（上）（多图预警） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/archives/2018/03/index.html">
+  <meta name="description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用爬虫制作简单的翻译程序（上）（多图预警）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序（上）/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/start.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/network.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/fanyi.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/hello.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/head.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/response.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/url.png">
+<meta property="og:updated_time" content="2018-03-09T14:00:55.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="用爬虫制作简单的翻译程序（上）（多图预警）">
+<meta name="twitter:description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/youdao/start.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -144,78 +157,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-用爬虫制作简单的翻译程序（上）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-09T13:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/">用爬虫制作简单的翻译程序（下）（多图预警）</a>
+    <h1 class="article-title" itemprop="name">
+      用爬虫制作简单的翻译程序（上）（多图预警）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" class="archive-article-date">
+        
+        <a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" class="archive-article-date">
   	<time datetime="2018-03-09T06:39:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">用爬虫制作简单的翻译程序（上）（多图预警）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>做一次大自然的搬运工。</p>
+</blockquote>
+<h2 id="写在前头"><a href="#写在前头" class="headerlink" title="写在前头"></a>写在前头</h2><p>爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。</p>
+<p>按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。</p>
+<a id="more"></a>
+<p>这时候如果刚好能很机智的发现一些如同“哇，这些图片的网址前面基本一样，只有最后的几个字符改了改”的规律，就可以写写程序或者脚本来帮你做这些事啊，毕竟机器就这么傻，喜欢干重复的事，而它干起来又很快（起码比你手动快，当然如果以后嫌慢了还是可以改进的）。</p>
+<p>我觉得爬虫就是模拟了我们平常自己用浏览器来获得各种网上的数据的过程，当然爬虫还有很多更牛[-嘀-]的应用，就得以后慢慢学习了，这里只是用Python做个简单的实现。</p>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>初学Python的时候，大概是因为有“本地的程序写得都快吐了，能不能让村里通一次网？”这种想法，所以爬虫真的是一个非常具有吸引力的东西。前几天师兄问群里小朋友们想学啥技术，他们说要学爬虫，所以我就只能赶紧重新回顾一下这部分内容。过去写爬虫的时候真的不知道自己写得是啥玩意，知其然不知其所以然的那种，一年的学习下来，大概觉得如果想大概明白爬虫怎么写，就得准备好这些：</p>
+<ol>
+<li>Python基本语法了解一下</li>
+<li>HTTP协议了解一下</li>
+<li>前端知识了解一下（这个我不确定重要不重要，懂一点也行吧，起码看html和js不要有什么障碍）</li>
+<li>记得联网</li>
+</ol>
+<p>爬虫我也写得不多，所以有错的地方是难免的，如果有错误希望能在评论里说出来或私聊我，大家相互学习。如果你恰好没有学过爬虫，可以大概了解一下做一个简单的爬虫的一些过程。</p>
+<p>顺便推荐一个我朋友的公众号，他会常常更新一些他用python写的一些好玩的程序和脚本，也更新一些关于常用模块的教程，微信搜索公众号“肥宅Sean”（虽然他本人并不肥宅而且还比较帅的说）。</p>
+<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><p>其实可以用Python3自带的<code>urllib</code>来实现爬虫，但我觉得既然用轮子就用更好的轮子嘛，所以我还是推荐第三方模块<code>requests</code>，安装也很简单，如果已经装了pip直接命令行输入<code>pip install requests</code>，如果没有就去装一个pip。这里只是很粗浅的用了一下<code>requests</code>模块，我不想花费太多时间讲解这个模块，想学习就可以查官方文档或者百度一下即可。</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>我们这次的目标是用爬虫来实现一个翻译程序，想法很简答，就是爬取有道翻译（啥翻译都差不多，过程了解一下），我不能确保看完这篇文章后写出来的程序就一定没问题，毕竟有道那边有的时候也会改一改他们的代码嘛（不要问我为什么知道），但过程应该差不多。</p>
+<ul>
+<li>输入想翻译的内容</li>
+<li>爬取有道翻译结果</li>
+<li>显示出结果</li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>说了那么多废话，主要是我的一些心路历程，现在就开始吧。</p>
+<h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><p>第一步不是直接打开编辑器，而是先去看看有道翻译是怎么翻译的，之前说了嘛，写爬虫是为了模拟这个获取数据的过程，怎么去看这个过程呢？打开你的Chrome浏览器（如果没有就下载一个，强烈推荐这个浏览器），然后进入有道翻译的主页面：</p>
+<p><img src="/images/web_crawler/youdao/start.png" alt="start"></p>
+<p>然后按下F12或者右键点开检察，然后在出来的方框的最上面一栏选择Network:</p>
+<p><img src="/images/web_crawler/youdao/network.png" alt="network"></p>
+<p>这个小窗口的东西会告诉你浏览器和服务器间的通信，当然现在还没有出现什么，在输入框那里输入你想翻译的内容，然后点击（第一次也可以不用点）“翻译”按钮，就会看到一大堆消息：</p>
+<p><img src="/images/web_crawler/youdao/fanyi.png" alt="fanyi"></p>
+<p>我们关注的是Method那里是POST的那一栏，你的没有Method就随便右键一个栏比如Status，会出现Method选项，点开就有了，然后点击Method那里会给这些项目排序，把POST排到最上方即可，然后点击那个POST的栏目：</p>
+<p><img src="/images/web_crawler/youdao/hello.png" alt="hello"></p>
+<p>换一个方向看可能会比较完整一些。</p>
+<p><img src="/images/web_crawler/youdao/head.png" alt="head"></p>
+<p>我们可以从上面看到很多信息，比如各种首部，以及<code>Form Data</code>，这是post提交的表单，我们可以在里面看到<code>i</code>属性正是我们想要翻译的内容，接着我们打开Headers旁边的Preview，可以看到服务器响应发回来的数据:</p>
+<p><img src="/images/web_crawler/youdao/response.png" alt="response"></p>
+<p>OK！你看到<code>tgt</code>后面的内容了吧，那正是我们想要的，可关键是我们如何用代码来实现呢？</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p><code>requests</code>中有一个方法就是<code>post()</code>，它正好对应了浏览器发送请求的方式POST，这个方法有三个参数，第一个是<code>url</code>，即你请求资源对应的url，注意这个可不是 <a href="http://fanyi.youdao.com/" target="_blank" rel="noopener">http://fanyi.youdao.com/</a> ，而应该是刚刚的<code>Headers</code>首部信息里通用首部的<code>Request URL</code>，如下图：</p>
+<p><img src="/images/web_crawler/youdao/url.png" alt="url"></p>
+<p>所以你目前可以写两行代码了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求url</span></span><br><span class="line">url = <span class="string">'http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule'</span></span><br><span class="line">response = requests.post(url)</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
+<p><code>requests.post()</code>会返回服务器所响应的内容，不过被<code>requests</code>模块封装成了<code>Response</code>对象，可以通过<code>response.text</code>查看其内容，如果正确的话我们想要的是像之前在Preview里看到的那样，但我们看到了什么呢：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3</span><br><span class="line">&#123;&quot;errorCode&quot;:50&#125;</span><br></pre></td></tr></table></figure>
+<p>相信只要有正常的英语水平都会知道这是个错误。刚也说了，<code>requests.post()</code>函数有三个参数，第一个是<code>url</code>，剩下的第二个是<code>headers</code>，也就是报文首部，以及<code>data</code>，通过POST方法要提交给服务器的数据。</p>
+<p>后面两个参数都可以在刚刚的<code>Headers</code>中看到，<code>headers</code>参数对应<code>Reqests Header</code>的内容，<code>data</code>参数则是对应<code>Form Data</code>，你可以注意到这两部分都是一个个的键值对，在Python中如何存放这些键值对呢？显然就是<code>dict</code>了，所以下来的工作比较简单无脑，也比较繁琐(添加引号)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求url</span></span><br><span class="line">url = <span class="string">'http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求首部</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'Cookie'</span> : <span class="string">'OUTFOX_SEARCH_USER_ID=-2112651059@10.169.0.84; OUTFOX_SEARCH_USER_ID_NCOO=973641274.8165848; fanyi-ad-id=40789; fanyi-ad-closed=1; JSESSIONID=aaajbZjFP-I2HbsSfpeiw; ___rl__test__cookies=1520489497574'</span>,</span><br><span class="line">    <span class="string">'Referer'</span> : <span class="string">'http://fanyi.youdao.com/'</span>,</span><br><span class="line">    <span class="string">'User-Agent'</span> : <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>,</span><br><span class="line">    <span class="string">'X-Requested-With'</span> : <span class="string">'XMLHttpRequest'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># post数据</span></span><br><span class="line">payload = &#123;</span><br><span class="line">    <span class="string">'i'</span> : <span class="string">'你好'</span>,</span><br><span class="line">    <span class="string">'from'</span> : <span class="string">'AUTO'</span>,</span><br><span class="line">    <span class="string">'to'</span> : <span class="string">'AUTO'</span>,</span><br><span class="line">    <span class="string">'smartresult'</span> : <span class="string">'dict'</span>,</span><br><span class="line">    <span class="string">'client'</span> : <span class="string">'fanyideskweb'</span>,</span><br><span class="line">    <span class="string">'salt'</span> : <span class="string">'1520489497589'</span>,</span><br><span class="line">    <span class="string">'sign'</span> : <span class="string">'51a0563036e0ff166ca27cd247d19df0'</span>,</span><br><span class="line">    <span class="string">'doctype'</span> : <span class="string">'json'</span>,</span><br><span class="line">    <span class="string">'version'</span> : <span class="string">'2.1'</span>,</span><br><span class="line">    <span class="string">'keyfrom'</span> : <span class="string">'fanyi.web'</span>,</span><br><span class="line">    <span class="string">'action'</span> : <span class="string">'FY_BY_REALTIME'</span>,</span><br><span class="line">    <span class="string">'typoResult'</span> : <span class="string">'false'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加后两个参数</span></span><br><span class="line">response = requests.post(url, headers=headers, data=payload)</span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
+<p><code>headers</code>其实不是必须的，但有一些还是要添加上，你可以只添加上面那部分内容，<code>data</code>数据则必须一样，目前我们先测试一下<code>你好</code>这个词，运行一下看看效果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3 youdao.py</span><br><span class="line">&#123;<span class="string">"translateResult"</span>:[[&#123;<span class="string">"tgt"</span>:<span class="string">"hello"</span>,<span class="string">"src"</span>:<span class="string">"你好"</span>&#125;]],<span class="string">"errorCode"</span>:0,<span class="string">"type"</span>:<span class="string">"zh-CHS2en"</span>,<span class="string">"smartResult"</span>:&#123;<span class="string">"entries"</span>:[<span class="string">""</span>,<span class="string">"hello\r\n"</span>,<span class="string">"hi\r\n"</span>],<span class="string">"type"</span>:1&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>OK！和Preview中的内容是一样的了！问题又来了，<code>response.text</code>是一个字符串，我们应该怎么去提取，如果使用字符串相关的函数或者正则表达式实在是有点low了，我们可以注意到这其实是一个JSON字符串（因为有道在这里用的ajax），你可以使用Python内置的<code>json</code>模块，但<code>requests</code>模块早就考虑到这点了，可以使用<code>response.json()</code>方法，返回Python中的<code>dict</code>，所以你可以这么干：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ...</span></span><br><span class="line">response = requests.post(url, headers=headers, data=payload)</span><br><span class="line">result = response.json()</span><br><span class="line">print(result[<span class="string">'translateResult'</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">'tgt'</span>])</span><br></pre></td></tr></table></figure>
+<p>运行后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dreamhh@dreamhh-PC:~/Documents/Code/Python3/spidy$ python3 youdao.py</span><br><span class="line">hello</span><br></pre></td></tr></table></figure>
+<p>这样就完美地提取出了翻译结果了！</p>
+<p><em>未完待续…</em></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -231,294 +276,125 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序（上）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-08T13:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          用爬虫制作简单的翻译程序（下）（多图预警）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何利用Nodejs搭建简单的服务器程序（下）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/">如何利用Nodejs搭建简单的服务器程序（下）</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/Python-HW-CH2/" class="archive-article-date">
-  	<time datetime="2018-03-07T16:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/Python-HW-CH2/">Python HW CH2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">如何利用Nodejs搭建简单的服务器程序（中）</a>
-    </h1>
+  <div id="SOHUCS" sid="用爬虫制作简单的翻译程序（上）" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Test/">First Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -541,8 +417,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
