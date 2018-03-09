@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>二十七杯酒 | AKAGB —— Blog</title>
+  <title>用爬虫制作简单的翻译程序（多图预警） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="《间客》里的一首歌的词，纪念一下施公子。  第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。 第二杯酒，春风轻漾，叶梢轻拂着我的眉。 第三杯酒，鸟儿鸣叫，轻啄着我的心。 第四杯酒，影上窗楣，让我忘了我是谁。 第五杯酒，少年将飞，穿越层林叠翠……">
-<meta name="keywords" content="生活">
+  <meta name="description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
+<meta name="keywords" content="python,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二十七杯酒">
-<meta property="og:url" content="https://akagb.github.io/2018/03/06/二十七杯酒/index.html">
+<meta property="og:title" content="用爬虫制作简单的翻译程序（多图预警）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="《间客》里的一首歌的词，纪念一下施公子。  第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。 第二杯酒，春风轻漾，叶梢轻拂着我的眉。 第三杯酒，鸟儿鸣叫，轻啄着我的心。 第四杯酒，影上窗楣，让我忘了我是谁。 第五杯酒，少年将飞，穿越层林叠翠……">
+<meta property="og:description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T15:46:41.930Z">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/start.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/network.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/fanyi.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/hello.png">
+<meta property="og:updated_time" content="2018-03-09T07:45:19.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二十七杯酒">
-<meta name="twitter:description" content="《间客》里的一首歌的词，纪念一下施公子。  第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。 第二杯酒，春风轻漾，叶梢轻拂着我的眉。 第三杯酒，鸟儿鸣叫，轻啄着我的心。 第四杯酒，影上窗楣，让我忘了我是谁。 第五杯酒，少年将飞，穿越层林叠翠……">
+<meta name="twitter:title" content="用爬虫制作简单的翻译程序（多图预警）">
+<meta name="twitter:description" content="做一次大自然的搬运工。  写在前头爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。 按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/youdao/start.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -149,20 +154,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二十七杯酒" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-用爬虫制作简单的翻译程序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      二十七杯酒
+      用爬虫制作简单的翻译程序（多图预警）
     </h1>
   
 
         
-        <a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+        <a href="/2018/03/09/用爬虫制作简单的翻译程序/" class="archive-article-date">
+  	<time datetime="2018-03-09T06:39:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
 </a>
         
       </header>
@@ -170,36 +175,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>《间客》里的一首歌的词，纪念一下施公子。</p>
+<p>做一次大自然的搬运工。</p>
 </blockquote>
-<p>第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。</p>
-<p>第二杯酒，春风轻漾，叶梢轻拂着我的眉。</p>
-<p>第三杯酒，鸟儿鸣叫，轻啄着我的心。</p>
-<p>第四杯酒，影上窗楣，让我忘了我是谁。</p>
-<p>第五杯酒，少年将飞，穿越层林叠翠……</p>
+<h2 id="写在前头"><a href="#写在前头" class="headerlink" title="写在前头"></a>写在前头</h2><p>爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。</p>
+<p>按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。</p>
 <a id="more"></a>
-<p>第六杯酒，拾柴刀行，又恐惊着动人的山鬼。</p>
-<p>第七杯酒，穿林无声，雾重云冷湿硬了衣襟。</p>
-<p>第八杯酒，雨打蕉叶，鞋上落了只去年的蝉蜕。</p>
-<p>第九杯酒，惘然回首，来时路如路畔细石般断碎。</p>
-<p>第十杯酒，结藤而上，云端上的嘲笑声来自猴儿的嘴。</p>
-<p>十一杯酒，群山苍翠，有个老翁枕石而醉。</p>
-<p>十二杯酒，临渊而窥，山崖还给年岁。</p>
-<p>十三杯酒，蜗牛有角，彼世界如此世界一般疲惫。</p>
-<p>十四杯酒，迷眼渐累，火堆旁的人们渐要沉睡……</p>
-<p>十五杯酒，经闲多年，腐叶下的陶范积着旧旧的灰。</p>
-<p>十六杯酒，鸿落冬原，白雪把爪印视作累赘。</p>
-<p>十七杯酒，望天一眼，云烟消散如云烟。</p>
-<p>十八杯酒，踩地一步，旧灰新雪相融无踪。</p>
-<p>十九杯酒，重见青山，料青山看我亦妩媚。</p>
-<p>二十杯酒，砍柴为篱，种三株桃树。</p>
-<p>二十一杯酒，撷禾为米，再酿两瓮清酒淡如水。</p>
-<p>二十二杯酒，摘花捻汁，把新妇的眉心染醉。</p>
-<p>二十三杯酒，爆竹声声，旧屋新啼不曾觉累。</p>
-<p>二十四杯酒，小鹿呦呦，唤小丫剪几枝梅热两壶酒。</p>
-<p>二十五杯酒，想起父亲，窗外的雨点坠了下来。</p>
-<p>二十六杯酒，乌蝇不飞，若心悸的你我躲在叶下看秋雨渐衰。</p>
-<p>二十七杯酒，弹几点泪，轻轻放下酒杯。</p>
+<p>这时候如果刚好能很机智的发现一些如同“哇，这些图片的网址前面基本一样，只有最后的几个字符改了改”的规律，就可以写写程序或者脚本来帮你做这些事啊，毕竟机器就这么傻，喜欢干重复的事，而它干起来又很快（起码比你手动快，当然如果以后嫌慢了还是可以改进的）。</p>
+<p>我觉得爬虫就是模拟了我们平常自己用浏览器来获得各种网上的数据的过程，当然爬虫还有很多更牛[-嘀-]的应用，就得以后慢慢学习了，这里只是用Python做个简单的实现。</p>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>初学Python的时候，大概是因为有“本地的程序写得都快吐了，能不能让村里通一次网？”这种想法，所以爬虫真的是一个非常具有吸引力的东西。前几天师兄问群里小朋友们想学啥技术，他们说要学爬虫，所以我就只能赶紧重新回顾一下这部分内容。过去写爬虫的时候真的不知道自己写得是啥玩意，知其然不知其所以然的那种，一年的学习下来，大概觉得如果想大概明白爬虫怎么写，就得准备好这些：</p>
+<ol>
+<li>Python基本语法了解一下</li>
+<li>HTTP协议了解一下</li>
+<li>前端知识了解一下（这个我不确定重要不重要，懂一点也行吧，起码看html和js不要有什么障碍）</li>
+<li>记得联网</li>
+</ol>
+<p>爬虫我也写得不多，所以有错的地方是难免的，如果有错误希望能在评论里说出来或私聊我，大家相互学习。如果你恰好没有学过爬虫，可以大概了解一下做一个简单的爬虫的一些过程。</p>
+<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><p>其实可以用Python3自带的<code>urllib</code>来实现爬虫，但我觉得既然用轮子就用更好的轮子嘛，所以我还是推荐第三方模块<code>requests</code>，安装也很简单，如果已经装了pip直接命令行输入<code>pip install requests</code>，如果没有就去装一个pip。</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>我们这次的目标是用爬虫来实现一个翻译程序，想法很简答，就是爬取有道翻译（啥翻译都差不多，过程了解一下），我不能确保看完这篇文章后写出来的程序就一定没问题，毕竟有道那边有的时候也会改一改他们的代码嘛（不要问我为什么知道），但过程应该差不多。</p>
+<ul>
+<li>输入想翻译的内容</li>
+<li>爬取有道翻译结果</li>
+<li>显示出结果</li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>说了那么多废话，主要是我的一些心路历程，现在就开始吧。</p>
+<h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><p>第一步不是直接打开编辑器，而是先去看看有道翻译是怎么翻译的，之前说了嘛，写爬虫是为了模拟这个获取数据的过程，怎么去看这个过程呢？打开你的Chrome浏览器（如果没有就下载一个，强烈推荐这个浏览器），然后进入有道翻译的主页面：</p>
+<p><img src="/images/web_crawler/youdao/start.png" alt="start"></p>
+<p>然后按下F12或者右键点开检察，然后在出来的方框的最上面一栏选择Network:</p>
+<p><img src="/images/web_crawler/youdao/network.png" alt="network"></p>
+<p>这个小窗口的东西会告诉你浏览器和服务器间的通信，当然现在还没有出现什么，在输入框那里输入你想翻译的内容，然后点击（第一次也可以不用点）“翻译”按钮，就会看到一大堆消息：</p>
+<p><img src="/images/web_crawler/youdao/fanyi.png" alt="fanyi"></p>
+<p>我们关注的是Method那里是POST的那一栏，你的没有Method就随便右键一个栏比如Status，会出现Method选项，点开就有了，然后点击Method那里会给这些项目排序，把POST排到最上方即可，然后点击那个POST的栏目：</p>
+<p><img src="/images/web_crawler/youdao/hello.png" alt="hello"></p>
 
       
 
@@ -234,7 +240,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
@@ -290,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/06/二十七杯酒/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/09/用爬虫制作简单的翻译程序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +314,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          如何利用Nodejs搭建简单的服务器程序（上）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/05/Python/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python</div>
+    <a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何利用Nodejs搭建简单的服务器程序（下）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -345,7 +346,7 @@
   
 
   
-  <div id="SOHUCS" sid="二十七杯酒" ></div> 
+  <div id="SOHUCS" sid="用爬虫制作简单的翻译程序" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
