@@ -6,15 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Archives: 2018/3 | AKAGB —— Blog</title>
+  <title>单进程爬取网络小说（上） | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/archives/2018/03/page/2/index.html">
+  <meta name="description" content="学会使用bs4。  废话都在前面的博客说完了，这次不说了。嗯，就说一句，仅做学习使用，看小说请支持正版。 需求说明将网页上的小说爬取下来，并保存到本地的文件夹。">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单进程爬取网络小说（上）">
+<meta property="og:url" content="https://akagb.github.io/2018/03/19/单进程爬取网络小说（上）/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="学会使用bs4。  废话都在前面的博客说完了，这次不说了。嗯，就说一句，仅做学习使用，看小说请支持正版。 需求说明将网页上的小说爬取下来，并保存到本地的文件夹。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/index.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/text.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/vsc.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/find1.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/find2.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/ref.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/ref2.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/ref3.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/head.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/utf.png">
+<meta property="og:updated_time" content="2018-03-19T12:52:39.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="单进程爬取网络小说（上）">
+<meta name="twitter:description" content="学会使用bs4。  废话都在前面的博客说完了，这次不说了。嗯，就说一句，仅做学习使用，看小说请支持正版。 需求说明将网页上的小说爬取下来，并保存到本地的文件夹。">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/story/index.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -156,116 +172,116 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-单进程爬取网络小说（上）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      单进程爬取网络小说（上）
+    </h1>
+  
+
+        
+        <a href="/2018/03/19/单进程爬取网络小说（上）/" class="archive-article-date">
+  	<time datetime="2018-03-19T10:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>学会使用bs4。</p>
+</blockquote>
+<p>废话都在前面的博客说完了，这次不说了。嗯，就说一句，<strong>仅做学习使用，看小说请支持正版</strong>。</p>
+<h2 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h2><p>将网页上的小说爬取下来，并保存到本地的文件夹。</p>
+<a id="more"></a>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>这次依旧使用<code>requests</code>来爬取，核心思路是获取小说主页的html，然后解析html获取每一章节的url，进入url后爬取文字并写入本地文件。解析html需要用到<code>bs4</code>模块的<code>BeautifulSoup</code>类，为了避免网页编码问题需要用到<code>chardet</code>模块解析编码，若在本地没有这些模块用<code>pip</code>安装即可。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><p>好的，那么就正式开始吧！第一步依旧是抓包，我们在网上找到一个小说网站，选一本你喜欢的小说，来到首页。</p>
+<p><img src="/images/web_crawler/story/index.png" alt="index"></p>
+<p>需要分析什么呢？其实什么都不用分析，因为什么都不用提交嘛。我们想要的只是首页的html罢了，怎么获取html呢？输入网址即可。</p>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><p>因为我们什么都不用提交，所以只是<code>Get</code>（如果点进Network也可一看到是清一色的<code>Get</code>），换句话说，我们只需要调用<code>requests</code>的<code>get</code>方法即可，传入的参数是首页的<code>url</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬取首页html</span></span><br><span class="line">url = <span class="string">'http://www.qingyunian.net/'</span></span><br><span class="line">rsp = requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印看看结果</span></span><br><span class="line">print(rsp.text)</span><br></pre></td></tr></table></figure>
+<p>我们来看看返回的数据是什么：</p>
+<p><img src="/images/web_crawler/story/text.png" alt="text"></p>
+<p>这一看是html没错了，但内容怎么不是中文啊？一看是乱码就不用想了，肯定又是编码问题，怎么回事呢？（如果你的没问题，说明你选的网站还算善良地告诉你了这个网页的<code>charset</code>）</p>
+<h3 id="编码问题产生的原因"><a href="#编码问题产生的原因" class="headerlink" title="编码问题产生的原因"></a>编码问题产生的原因</h3><p>这部分其实可以不用看，只是想满足一下某些人的好奇心。想直接看解决方案就可以跳过这一部分。</p>
+<p>上面的步骤中我们的<code>rsp.text</code>并不是我们想要的中文内容，想知道原因那么不妨打开<code>requests</code>的源代码看一看，首先要知道你的<code>requests</code>安装在哪里，这很简单，交互界面输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> requests</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>help(requests)</span><br><span class="line">Help on package requests:</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">    requests</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">    Requests HTTP library</span><br><span class="line">    ~~~~~~~~~~~~~~~~~~~~~</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">FILE</span><br><span class="line">    /usr/lib/python3/dist-packages/requests/__init__.py</span><br></pre></td></tr></table></figure>
+<p>拉到最下面的<code>FILE</code>部分可以看到这个路径，接下来建议用VSCode打开<code>requests</code>的目录，如果没有不妨下载一个，因为VSCode确实好用，经过简单配置就能成为一个很好用的IDE。打开后我的是如下界面：</p>
+<p><img src="/images/web_crawler/story/vsc.png" alt="vsc"></p>
+<p>左侧的就是<code>requests</code>模块的代码，还记得我们的目的吗？找到<code>rsp.text</code>，查看它的实现方式，如果你会VSCode不妨自己先试着操作一下，如果你是第一次用那就跟我一起做一次就会了：</p>
+<ol>
+<li>随意点开左侧一个文件，按下<code>Ctrl+f</code>（f是find的缩写，意为查找，还记得在浏览器中也是这么查找的吧，而且大多数编辑器都应该有这个快捷键），在右上角出现的输入框中输入我们想查找的<code>text</code>属性，然后回车啪一下：</li>
+</ol>
+<p><img src="/images/web_crawler/story/find1.png" alt="find1"></p>
+<ol>
+<li>很不幸第一个文件的<code>text</code>不是我们想要的内容，不要气馁，继续点击左侧的文件，查找会继续进行，如果这个文件没有则会显示无结果，如果有多条内容则点击输入框旁边的左右方向键来逐一查看，最终我们在<code>models</code>文件中找到了想要看的内容：</li>
+</ol>
+<p><img src="/images/web_crawler/story/find2.png" alt="find2"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">text</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""Content of the response, in unicode.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If Response.encoding is None, encoding will be guessed using</span></span><br><span class="line"><span class="string">    ``chardet``.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The encoding of the response content is determined based solely on HTTP</span></span><br><span class="line"><span class="string">    headers, following RFC 2616 to the letter. If you can take advantage of</span></span><br><span class="line"><span class="string">    non-HTTP knowledge to make a better guess at the encoding, you should</span></span><br><span class="line"><span class="string">    set ``r.encoding`` appropriately before accessing this property.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Try charset from content-type</span></span><br><span class="line">    content = <span class="keyword">None</span></span><br><span class="line">    encoding = self.encoding</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> self.content:</span><br><span class="line">        <span class="keyword">return</span> str(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Fallback to auto-detected encoding.</span></span><br><span class="line">    <span class="keyword">if</span> self.encoding <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        encoding = self.apparent_encoding</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Decode unicode from given encoding.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        content = str(self.content, encoding, errors=<span class="string">'replace'</span>)</span><br><span class="line">    <span class="keyword">except</span> (LookupError, TypeError):</span><br><span class="line">        <span class="comment"># A LookupError is raised if the encoding was not found which could</span></span><br><span class="line">        <span class="comment"># indicate a misspelling or similar mistake.</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># A TypeError can be raised if encoding is None</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># So we try blindly encoding.</span></span><br><span class="line">        content = str(self.content, errors=<span class="string">'replace'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> content</span><br></pre></td></tr></table></figure>
+<p>可以看到它最后的返回值是<code>str(self.content, encoding, errors=&#39;replace&#39;)</code>，也就是对<code>self.content</code>按照<code>encoding</code>解码得到的字符串，<code>self.content</code>显然就是字节码了<strong>（希望你知道python3的<code>bytes</code>和<code>str</code>之间的关系以及如何转换）</strong>。这里稍微解释下<code>self.content</code>是从服务器所获得数据（也就是首页的html）的字节码，所以关键就在于我们应该采用何种字符集去解码，而我们之前所得到的乱码显然是因为采用了错误的字符集！</p>
+<p>从上面的代码中我们可以看到，<code>self.text</code>所采用的字符集<code>encoding</code>是<code>self.encoding</code>或<code>self.apparent_encoding</code>（当前者为<code>None</code>时采用后者），我们不妨看看刚刚得到的<code>rsp</code>的这两个属性值是什么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; rsp.encoding</span><br><span class="line">&apos;ISO-8859-1&apos;</span><br><span class="line">&gt;&gt;&gt; rsp.apparent_encoding</span><br><span class="line">&apos;utf-8&apos;</span><br></pre></td></tr></table></figure>
+<p>一看这两个居然不一样，而且你仔细感觉输入到输出的时间，应该发觉第二个会相对慢一点产生输出。我们不妨先看看<code>apparent_encoding</code>是如何产生的，方法很简单，按住<code>Ctrl</code>并点击<code>apparent_encoding</code>，VSCode就会帮你转到定义，你应该看到了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@property</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">apparent_encoding</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">"""The apparent encoding, provided by the chardet library"""</span></span><br><span class="line">    <span class="keyword">return</span> chardet.detect(self.content)[<span class="string">'encoding'</span>]</span><br></pre></td></tr></table></figure>
+<p>没错，它使用了<code>chardet.detect()</code>这个方法，这个方法参数是字节码，返回这个字节码所采用的最可能的字符集以及可能性所构成的字典，这里返回了它的分析结果，但这个方法比较慢，所以你看到刚刚是先判断<code>self.encoding</code>如果<code>None</code>才会调用这个方法。</p>
+<p>其实到这里就已经知道如何解决了，只要在我们自己的代码中用<code>apparent_encoding</code>得到的字符集解码<code>self.content</code>就行了。但如果你想知道<code>self.text</code>是如何得到那个奇怪的<code>ISO-8859-1</code>，可以跟我继续看看源代码。</p>
+<p>我们知道<code>self.encoding</code>是<code>ISO-8859-1</code>了，关键是它在哪里被赋值成这个的呢？右键这个变量，点击查找所有引用：</p>
+<p><img src="/images/web_crawler/story/ref.png" alt="ref"></p>
+<p>看到VSCode帮你列出来的，甚至很贴心的帮你找到了在别的文件中对这个值的引用，真的是很智能有木有，我们重点找一下赋值语句：</p>
+<p><img src="/images/web_crawler/story/ref2.png" alt="ref2"></p>
+<p>显然不会是赋为<code>None</code>的那几个，我们点开第一个，双击直接跳到那里，看到这个语句：<br><code>response.encoding = get_encoding_from_headers(response.headers)</code>。</p>
+<p>相信你也猜到下一步了，那就是查看这个函数的定义，如果你直接点转到定义应该会直接跳到开头的<code>from</code>，所以我们不妨点刚刚用到的查看所有引用，直接看在别的文件中的位置，找到<code>def</code>开头的那个，毕竟这才是定义：</p>
+<p><img src="/images/web_crawler/story/ref3.png" alt="ref3"></p>
+<p>依旧双击那条选项跳到函数定义的地方：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_encoding_from_headers</span><span class="params">(headers)</span>:</span></span><br><span class="line">    <span class="string">"""Returns encodings from given HTTP Header Dict.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param headers: dictionary to extract encoding from.</span></span><br><span class="line"><span class="string">    :rtype: str</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    content_type = headers.get(<span class="string">'content-type'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> content_type:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    content_type, params = cgi.parse_header(content_type)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'charset'</span> <span class="keyword">in</span> params:</span><br><span class="line">        <span class="keyword">return</span> params[<span class="string">'charset'</span>].strip(<span class="string">"'\""</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'text'</span> <span class="keyword">in</span> content_type:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'ISO-8859-1'</span></span><br></pre></td></tr></table></figure>
+<p>所得死内！这下谜底揭晓了，通过注释以及源代码可以看到，它获取html编码的主要途径是<code>headers</code>，也就是响应首部信息。如果没有<code>content-type</code>则返回<code>None</code>（然后后期才会调用<code>apparent_encoding</code>），如果有<code>content-type</code>就检查有没有<code>charset</code>，有的话就用提供的编码，没有的话就用<code>ISO-8859-1</code>（估计这编码是作者老家用的）。</p>
+<p>然后你只需要看看返回的响应首部是不是符合你的猜想，在Network中点开对首页的请求报文：</p>
+<p><img src="/images/web_crawler/story/head.png" alt="head"></p>
+<p><code>Response Headers</code>果然有<code>Content-Type</code>但没说明<code>charset</code>。</p>
+<h3 id="解决编码问题"><a href="#解决编码问题" class="headerlink" title="解决编码问题"></a>解决编码问题</h3><p>我们知道<code>rsp.content</code>是返回数据的字节码，只需要用合理的字符集进行解码即可，如何分析它的编码呢？这就要用到<code>chardet</code>模块的<code>detect</code>方法了，不妨在交互界面测试一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>chardet.detect(rsp.content)</span><br><span class="line">&#123;<span class="string">'language'</span>: <span class="string">''</span>, <span class="string">'encoding'</span>: <span class="string">'utf-8'</span>, <span class="string">'confidence'</span>: <span class="number">0.99</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>原来是<code>utf-8</code>，丫老熟人了。所以我们可以这么干：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬取首页html</span></span><br><span class="line">url = <span class="string">'http://www.qingyunian.net/'</span></span><br><span class="line">rsp = requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取编码</span></span><br><span class="line">encoding = chardet.detect(rsp.content)[<span class="string">'encoding'</span>]</span><br><span class="line">html = str(rsp.content, encoding)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出测试效果</span></span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+<p>部分输出效果：</p>
+<p><img src="/images/web_crawler/story/utf.png" alt="utf"></p>
+<p>OK！总算得到我们想要的html了！</p>
+<p>PS：如果你看了上面那部分，你应该知道这是采取了和<code>apparent_encoding</code>一模一样的做法，所以你还可以这么写，两种写法是等效的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬取首页html</span></span><br><span class="line">url = <span class="string">'http://www.qingyunian.net/'</span></span><br><span class="line">rsp = requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取正确编码的网页</span></span><br><span class="line">html = str(rsp.content, rsp.apparent_encoding)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出测试效果</span></span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
+<p>下一步就是关于如何解析我们得到的html了，也就是如何使用<code>BeautifulSoup</code>。你会发现有了<code>BeautifulSoup</code>大大简化了我们的工作。</p>
+<p><em>未完待续…</em></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -275,55 +291,121 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/19/单进程爬取网络小说（上）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/17/计算机网络-Chapter1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络--Chapter1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Test/">First Blog</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/03/">&laquo; Prev</a><a class="page-number" href="/archives/2018/03/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+  <div id="SOHUCS" sid="单进程爬取网络小说（上）" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
+  
+
+  
+
   
 
 
@@ -347,8 +429,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
