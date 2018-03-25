@@ -6,15 +6,41 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>Tag: python | AKAGB —— Blog</title>
+  <title>计算机网络--Chapter5——链路层 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/tags/python/index.html">
+  <meta name="description" content="其实世上本没有路，走的人多了，也就成了路。  主要了解链路层相关协议，理解链路层是如何工作的，目录如下：">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络--Chapter5——链路层">
+<meta property="og:url" content="https://akagb.github.io/2018/03/24/计算机网络-Chapter5/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="其实世上本没有路，走的人多了，也就成了路。  主要了解链路层相关协议，理解链路层是如何工作的，目录如下：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/Network/nic.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/nic2.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/bridge.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/even.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/matrix.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/crc.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/slot.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/csma.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/csma-cd.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/eff.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/poll.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/token.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/docsis.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/mac.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/arp.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/table.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/otherchild.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/coaxial.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/star.png">
+<meta property="og:image" content="https://akagb.github.io/images/Network/ethernet_frame.png">
+<meta property="og:updated_time" content="2018-03-25T14:11:35.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="计算机网络--Chapter5——链路层">
+<meta name="twitter:description" content="其实世上本没有路，走的人多了，也就成了路。  主要了解链路层相关协议，理解链路层是如何工作的，目录如下：">
+<meta name="twitter:image" content="https://akagb.github.io/images/Network/nic.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -156,442 +182,448 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-计算机网络-Chapter5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络--Chapter5——链路层
+    </h1>
+  
+
+        
+        <a href="/2018/03/24/计算机网络-Chapter5/" class="archive-article-date">
+  	<time datetime="2018-03-24T08:48:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>其实世上本没有路，走的人多了，也就成了路。</p>
+</blockquote>
+<p>主要了解链路层相关协议，理解链路层是如何工作的，目录如下：</p>
+<a id="more"></a>
+<ul>
+<li><a href="#5-1-链路层概述">5.1 链路层概述</a><ul>
+<li><a href="#5-1-1-链路层提供的服务">5.1.1 链路层提供的服务</a></li>
+<li><a href="#5-1-2-链路层在何处实现">5.1.2 链路层在何处实现</a><ul>
+<li><a href="#端系统上的链路层协议">端系统上的链路层协议</a></li>
+<li><a href="#二层交换机">二层交换机</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5-2-差错检测和纠正技术">5.2 差错检测和纠正技术</a><ul>
+<li><a href="#5-2-1-奇偶校验">5.2.1 奇偶校验</a></li>
+<li><a href="#5-2-2-检验和方法">5.2.2 检验和方法</a></li>
+<li><a href="#5-2-3-循环冗余检测">5.2.3 循环冗余检测</a></li>
+</ul>
+</li>
+<li><a href="#5-3-多路访问链路和协议">5.3 多路访问链路和协议</a><ul>
+<li><a href="#5-3-1-信道划分协议">5.3.1 信道划分协议</a><ul>
+<li><a href="#时分多路复用（TDM）">时分多路复用（TDM）</a></li>
+<li><a href="#频分多路复用（FDM）">频分多路复用（FDM）</a></li>
+<li><a href="#码分多址（CDMA）">码分多址（CDMA）</a></li>
+</ul>
+</li>
+<li><a href="#5-3-2-随机接入协议">5.3.2 随机接入协议</a><ul>
+<li><a href="#时隙ALOHA">时隙ALOHA</a></li>
+<li><a href="#ALOHA">ALOHA</a></li>
+<li><a href="#载波侦听多路访问（CSMA）">载波侦听多路访问（CSMA）</a></li>
+<li><a href="#具有碰撞检测的载波侦听多路访问（CSMA-CD）">具有碰撞检测的载波侦听多路访问（CSMA/CD）</a></li>
+<li><a href="#CSMA-CD效率">CSMA/CD效率</a></li>
+</ul>
+</li>
+<li><a href="#5-3-3-轮流协议">5.3.3 轮流协议</a><ul>
+<li><a href="#轮询协议（polling-protocol）">轮询协议（polling protocol）</a></li>
+<li><a href="#令牌传递协议（token-passing-protocol）">令牌传递协议（token-passing protocol）</a></li>
+</ul>
+</li>
+<li><a href="#5-3-4-DOCSIS：用于电缆因特网接入的链路层协议">5.3.4 DOCSIS：用于电缆因特网接入的链路层协议</a></li>
+</ul>
+</li>
+<li><a href="#5-4-交换局域网">5.4 交换局域网</a><ul>
+<li><a href="#5-4-1-链路层寻址和ARP">5.4.1 链路层寻址和ARP</a><ul>
+<li><a href="#MAC地址">MAC地址</a></li>
+<li><a href="#地址解析协议（ARP）">地址解析协议（ARP）</a></li>
+<li><a href="#发送数据报到子网以外">发送数据报到子网以外</a></li>
+</ul>
+</li>
+<li><a href="#5-4-2-以太网">5.4.2 以太网</a><ul>
+<li><a href="#以太网帧结构">以太网帧结构</a></li>
+<li><a href="#以太网技术">以太网技术</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-1-链路层概述"><a href="#5-1-链路层概述" class="headerlink" title="5.1 链路层概述"></a>5.1 链路层概述</h2><p>了解几个术语：</p>
+<ul>
+<li><strong>结点</strong>（node）：将运行链路层协议（即第二层协议）的任何设备均称为结点，包括主机、路由器、交换机和WiFI接入点。</li>
+<li><strong>链路</strong>（link）：沿着通信路径链接相邻结点的通信信道成为链路。比如WiFi链路、以太网链路等。</li>
+<li><strong>链路层帧</strong>（Framing）：通过特定链路传送的数据报，也就是链路层的分组，一般不同的链路形成的帧也不太一样。</li>
+</ul>
+<p>一般一个主机向另一个主机发送数据报需要经过多段链路。</p>
+<h3 id="5-1-1-链路层提供的服务"><a href="#5-1-1-链路层提供的服务" class="headerlink" title="5.1.1 链路层提供的服务"></a>5.1.1 链路层提供的服务</h3><p>链路层能够提供的可能服务包括：</p>
+<ul>
+<li><strong>成帧</strong>（framing）：将网络层数据报进行封装成帧（添加头部和尾部，结构由链路层协议规定）。有多种不同的帧格式。</li>
+<li><strong>链路接入</strong>：<strong>媒体访问控制</strong>（Mediem Access Control, MAC）协议规定了帧在链路上传输的规则。对于单发送单接收的链路，MAC协议比较简单，比较复杂的是多结点共享的广播链路，即多路访问问题。MAC协议用于协调多个结点的帧传输。</li>
+<li><strong>可靠交付</strong>：当链路层提供可靠交付服务时（因为在低比特差错的链路中可能不用），它保证无差错地经链路层移动每个网络数据报，用于易产生高差错率的链路上。在本地（出错链路上）进行纠错，而不是端到端的数据重传。</li>
+<li><strong>差错检验和纠正</strong>：通过让发送结点在帧中包括差错检验比特，让接收结点进行差错检验。链路层的差错检验通常比运输层和网络层的差错检查更为复杂，并且通过硬件来实现。</li>
+</ul>
+<h3 id="5-1-2-链路层在何处实现"><a href="#5-1-2-链路层在何处实现" class="headerlink" title="5.1.2 链路层在何处实现"></a>5.1.2 链路层在何处实现</h3><p>链路层在何处实现？在书上这一章节只对端系统中的链路层实现进行了解释，二在路由器和交换机的实现却未解释，但老师有在课上专门讲解，经过一些资料对二层交换机有所了解，也整理在下面。</p>
+<h4 id="端系统上的链路层协议"><a href="#端系统上的链路层协议" class="headerlink" title="端系统上的链路层协议"></a>端系统上的链路层协议</h4><p>在端系统上，链路层的主体部分是在<strong>网络适配器</strong>（network adapter）中实现的，网络适配器有时也被成为<strong>网络接口卡</strong>（Network Interface Card，NIC），位于网络适配器核心的是<strong>链路层控制器</strong>（还有一部分负责物理传输），该控制器通常是一个实现了许多链路层服务的专用芯片。见下图：</p>
+<p><img src="/images/Network/nic.png" alt="NIC"></p>
+<p>在主机中的结构：</p>
+<p><img src="/images/Network/nic2.png" alt="NIC2"></p>
+<p>从图中可以看到链路层分为了两部分，一部分是在硬件NIC部分实现的，另一部分在CPU中的软件实现，负责比较高级的链路层功能。</p>
+<p>关于控制器的功能：在发送端，控制器取得了由协议栈较高层生成并存储在主机内存中的数据报，在链路层帧中封装该数据报，然后遵循链路接入协议将该帧传进通信链路中。在接收端，控制器接受了整个帧，抽取出网络层数据包。如果链路层执行差错检测，则需要发送控制器在该帧的首部设置差错检测比特，由接收控制器执行差错检测。</p>
+<p>关于高层链路层功能：链路层的软件组件实现了高层链路层功能，如组装链路层寻址信息和激活控制器硬件。在接收端，链路层软件影响控制器中断，处理差错条件和将数据报向上传递给网络层。</p>
+<p>总之，链路层是硬件和软件的结合体，即是协议栈中软硬件交接的地方。</p>
+<h4 id="二层交换机"><a href="#二层交换机" class="headerlink" title="二层交换机"></a>二层交换机</h4><p>以下内容参考<a href="https://wenku.baidu.com/view/3b8bc2fa5901020206409c24.html" target="_blank" rel="noopener">链路层设备</a>和<a href="https://baike.baidu.com/item/%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA/2105019" target="_blank" rel="noopener">二层交换机</a>，复习时若觉得未讲述清楚可以参考这两个网址。</p>
+<ul>
+<li><strong>MAC地址</strong>：每一个NIC上都有一个唯一的编码来标识，称为MAC地址，MAC地址是固化在NIC上的，一般不可改变，长度一般为48位，用12位16进制数来表示。</li>
+<li><strong>集线器</strong>（Hub）：物理层设备，拥有多个端口，与其他物理层设备（比如电缆、光纤）的功能是一样的，直接连接主机，但Hub是同时将多个主机连接在一起，实行广播发送。即一个连接的主机发送了数据报，Hub会进行放大并发送给所有连接的端口。</li>
+<li><strong>网段</strong>：被同一物理层设备所连接的主机一般说是位于同一个网段。</li>
+<li><p><strong>网桥</strong>（Bridge）：早期的两端口二层网络设备，用来连接不同网段的设备，可以同时隔离冲突域，因为它的两个端口不是共享一条总显得，比当时的Hub性能更好。后来被拥有更多端口同时也能隔离冲突域的交换机所取代。网桥的功能原理图如下：</p>
+<p>  <img src="/images/Network/bridge.png" alt="bridge"></p>
+<p>  同一个网段中是通过物理层设备（这里是Hub）连接的，Hub的一个端口与网桥的一个端口连接，物理层设备会将数据报进行广播，当网桥接收到数据报的时候会进行如下工作：</p>
+<ol>
+<li>把数据包的源MAC地址和目的MAC地址与站表（缓存）中保存的MAC地址进行比较。</li>
+<li>如果发现这两个MAC地址同属于一个网段，则网桥不会把该帧转发到下一个接口，即网段上的主机会直接丢弃数据帧。起到了<strong>隔离冲突域</strong>（即防止与另一个网段中的数据发生碰撞）的作用。</li>
+<li>如果发现这两个MAC地址属于不同网段，则网桥就会把该帧转发到下一个端口，再通过集线器以复制的方式广播到网段2的所有主机以让目的MAC的主机收到数据帧。</li>
+<li>如果缓存表中没有这两个对应的MAC地址，它会进行<strong>学习</strong>。</li>
+</ol>
+</li>
+<li><p><strong>二层交换机</strong>：交换机可以说是集线器和网桥的升级换代产品，它既具有集线器一样的集中连接功能，又具有网桥的数据交换功能，所以交换机被成为多端口的网桥，其实也可以称作是带有交换功能的集线器。它的工作过程如下：</p>
+<ol>
+<li>当交换机从某个端口接收到数据包，它先读取源MAC地址，从而知道它所连接的端口。</li>
+<li>再去读取目的MAC地址，并在地址表中查找到相应的端口。</li>
+<li>如果表中有与目的地址对应的端口，直接把数据包复制到该端口上。</li>
+<li><p>如果表中找不到对应的端口，则把数据包广播到所有端口，当目的机器对源机器回应时，交换机又可以学习目的MAC地址与哪个端口对应，在下次传送数据时不再需要对所有端口进行广播。</p>
+<p>我们可以看到它相比于网桥和集线器多了这几个优点：</p>
+</li>
+<li><p>具有多个交换接口，不仅每个接口可以连接一个不同的网段，还可以有大量的端口来集中连接主机，这样就同时担任了集线器和网桥的双重功能。</p>
+</li>
+<li>数据转发率提高了，集线器是使用广播方式发送数据，交换机是直接发送到目的MAC地址的端口。</li>
+<li>更强的MAC地址自动学习能力，交换机的缓存也比网桥的大，适用于较大的网络。</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-2-差错检测和纠正技术"><a href="#5-2-差错检测和纠正技术" class="headerlink" title="5.2 差错检测和纠正技术"></a>5.2 差错检测和纠正技术</h2><ul>
+<li><strong>比特级差错检测和纠正</strong>：对从一个结点发送到另一个物理连接上的临近结点的链路层帧中的比特损伤进行检测和纠正。</li>
+<li><strong>差错检测和纠正比特</strong>（Error-Detection and Correction, EDC）：用来增强数据D。通常要保护的数据不仅包括从网络层传递下来的数据报，也包括链路层帧首部的链路级寻址信息、序号和其他字段。</li>
+<li><strong>未检出比特差错</strong>（undetected bit error）：差错检测和纠正技术并不总能找出比特差错。我们的差错检测方案只能尽可能地使这种事件的概率降低。一般而言，差错检测和纠正技术越复杂，则未检测出比特差错概率越小，导致的开销也就越大（需要更多的计算量和更多的差错检测和纠正比特）。</li>
+</ul>
+<h3 id="5-2-1-奇偶校验"><a href="#5-2-1-奇偶校验" class="headerlink" title="5.2.1 奇偶校验"></a>5.2.1 奇偶校验</h3><p>奇偶校验准确来说是两种方式，奇校验方案和偶校验方案。在偶校验方案中，发送方只需要包含一个附加的比特，选择它的值，使得整个数据包含有偶数个1。奇校验方案则是包含奇数个1。</p>
+<p><img src="/images/Network/even.png" alt="even"></p>
+<p>以偶校验方案为例，如果接收方检测到了奇数个1，则说明至少出现了一个比特差错，或者说出现了奇数个比特差错。若出现了偶数个比特差错，则该方案就检测不出错误。</p>
+<p>如果一个分组中的比特差错是独立发生，互不相关的，则多个比特同时出错的概率是非常低的，但在实际情况中，比特出错往往是突发的，奇偶校验保护的一帧未检测出差错的概率高达50%。因此在实践中，我们会使用更高级的方法。</p>
+<p>在研究其他差错检测方案之前，先继续考虑单比特奇偶校验方案的一个简单的二维一般化方案。<strong>二维奇偶校验</strong>把数据D的d个比特位划分为i行j列。对每行每列计算奇偶值，产生的 i+j+1 奇偶比特构成了链路层帧的差错检测比特，当出现一位差错的时候，会有2个校验位出错，从而能定位到具体是哪一位出错，进行纠错。如下图：</p>
+<p><img src="/images/Network/matrix.png" alt="matrix"></p>
+<p><strong>前向纠错</strong>（Forward Error Correction，FEC）：接收方检测和纠正差错的能力被称为前向纠错。通常用于如音频CD这样的音频存储和回放设备。FEC技术价值在于它们可以减少所需的发送方重发的次数。</p>
+<h3 id="5-2-2-检验和方法"><a href="#5-2-2-检验和方法" class="headerlink" title="5.2.2 检验和方法"></a>5.2.2 检验和方法</h3><p><strong>检验和技术</strong>：将d位比特数据作为一个k比特整数的序列处理，然后将这些k比特整数加起来。RFC 1070 中提供的<strong>因特网检验和</strong>（Internet checksum）的C程序：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="title">csum</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> *buffer, <span class="keyword">int</span> count)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">long</span> sum = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">while</span>( count &gt; <span class="number">1</span> ) &#123;  </span><br><span class="line">        <span class="comment">// This is the inner loop   </span></span><br><span class="line">        sum +=  *(<span class="keyword">unsigned</span> <span class="keyword">short</span> *) buffer++;  </span><br><span class="line">        count -= <span class="number">2</span>;  </span><br><span class="line">    &#125;         </span><br><span class="line">    <span class="comment">//Add left-over byte, if any   </span></span><br><span class="line">    <span class="keyword">if</span>( count &gt; <span class="number">0</span> )  </span><br><span class="line">        sum += * (<span class="keyword">unsigned</span> <span class="keyword">char</span> *) buffer;  </span><br><span class="line">    <span class="comment">//Fold 32-bit sum to 16 bits   </span></span><br><span class="line">    <span class="keyword">while</span> (sum&gt;&gt;<span class="number">16</span>)  </span><br><span class="line">    sum = (sum &amp; <span class="number">0xffff</span>) + (sum &gt;&gt; <span class="number">16</span>);  </span><br><span class="line">    <span class="keyword">return</span> ~sum;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>核心思路是把数据的每组相邻字节对作为一个16位比特整数，进行相加得到16位结果（若有溢出则把进位在加到低位，迭代到没有溢出为止，即进位为0），将16位结果取反，并赋给检验和位。接收方收到帧后将数据和检验和位拿出来再进行上述求和过程，结果如果不是全 1（一个数和反码相加肯定得到的是全 1）则说明有差错。</p>
+<p>在实际中，检验和方法常用于运输层（因为运输层差错检测就是用软件实现的，检验和用软件实现比较简单和方便），而链路层常用的是下述的CRC。</p>
+<h3 id="5-2-3-循环冗余检测"><a href="#5-2-3-循环冗余检测" class="headerlink" title="5.2.3 循环冗余检测"></a>5.2.3 循环冗余检测</h3><p><strong>循环冗余检测编码</strong>（Cyclic Redundancy Check, CRC）也成为多项式编码，它的核心步骤如下：</p>
+<ol>
+<li>发送方和接收方首先必须协商一个 r+1 比特模式，称为<strong>生成多项式</strong>（generator），将其表示为G（除数），要求G的最高有效位为1。</li>
+<li>对一个给定的数据段D，发送方要选择r个附加比特R，将它附加到D上，得到了 d+r 比特模式。使得这 d+r 位的比特数字能被 G 整除。（使用模2算术）</li>
+</ol>
+<p>解释一下<strong>模2算术</strong>：计算时不考虑进位和借位，如此下来加法和减法便是一样的，且与异或相同。</p>
+<p>R的计算方式如下：</p>
+<p><img src="/images/Network/crc.png" alt="CRC"></p>
+<p><strong>必须注意一点：上面的运算是模2运算</strong>，你可以仔细看上面每一步相减的过程都是异或，也就是不借位的减法。</p>
+<h2 id="5-3-多路访问链路和协议"><a href="#5-3-多路访问链路和协议" class="headerlink" title="5.3 多路访问链路和协议"></a>5.3 多路访问链路和协议</h2><p>有两种类型的网络链路：</p>
+<ul>
+<li><strong>点对点链路</strong>（point-to-point link）：由链路一端的单发送方和另一端的单接收方组成。为该链路设计的协议如点对点协议（PPP）和高级数据链路控制（HDLC）。</li>
+<li><strong>广播链路</strong>（broadcast link）：让多个发送方和接收方都连接到相同的、单一的、共享的广播信道上。当任何一个结点传输一个帧时，信道广播该帧，其他每个结点都会收到一个副本。以太网和无线局域网就是这样的例子。</li>
+</ul>
+<p>从而引出以下几个概念：</p>
+<ul>
+<li><strong>多路访问问题</strong>（multiple access problem）：如何协调多个发送和接收结点对一个共享广播信道的访问。</li>
+<li><strong>多路访问协议</strong>（multiple access protocol）：结点通过这些协议来规范它们在共享的广播信道上的传输行为。</li>
+<li><strong>碰撞</strong>（collide）：多个结点可能会同时传输帧，则接收方同时收到多个帧，称之为碰撞。通常碰撞发生时，没有一个接收结点能有效地获取任何传输的帧，因为碰撞帧的信号纠缠在一起，如果碰撞频繁发生的话，广播信道的大量宽带将被浪费掉。</li>
+<li>任何多路访问协议都能划分为一下<strong>3种类型</strong>之一：<ol>
+<li><strong>信道划分协议</strong>（channel partitioning protocol）。</li>
+<li><strong>随机接入协议</strong>（random access protocol）。</li>
+<li><strong>轮流协议</strong>（taking-turns protocol）。</li>
+</ol>
+</li>
+<li><strong>多路访问协议应具有的特性</strong>：<ol>
+<li>当仅有一个结点发送数据时，该结点具有 R bps的吞吐量。</li>
+<li>当有M个结点要发送数据是，每个结点吞吐量稳 R/M bps（平均而不强求是瞬时速率）。</li>
+<li>协议是分散的，不会因为某主结点的故障而使整个系统崩溃。</li>
+<li>协议是简单的，使实现不昂贵。</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-3-1-信道划分协议"><a href="#5-3-1-信道划分协议" class="headerlink" title="5.3.1 信道划分协议"></a>5.3.1 信道划分协议</h3><p>协议对每个接入的结点分配某种资源，来实现将信道划分。书上主要涉及三种技术：TDM、FDM以及CDMA。</p>
+<h4 id="时分多路复用（TDM）"><a href="#时分多路复用（TDM）" class="headerlink" title="时分多路复用（TDM）"></a>时分多路复用（TDM）</h4><p>TDM将时间划分为时间帧（time frame），并将时间帧进一步划分为N个时隙（slot）。对于信道所连接的N个结点，每一结点都对应着一个时隙，即结点只有在轮到自己的时隙的时候才能发送数据。</p>
+<p>优点是每个节点在每个帧时间内得到了专用的传输速率 R/N bps。缺陷是结点被限制于 R/N bps的平均速率，即使它是当前帧内唯一有分组发送的结点，该情况下信道的大部分时间都处于空闲状态，浪费了带宽。</p>
+<h4 id="频分多路复用（FDM）"><a href="#频分多路复用（FDM）" class="headerlink" title="频分多路复用（FDM）"></a>频分多路复用（FDM）</h4><p>FDM将 R bps信道划分为不同频段（每个频段具有 R/N bps带宽），并把每个频率分配给N个结点中的一个，所有结点可以同时传输分组。</p>
+<p>优点是它避免了碰撞，在N个结点之间公平地划分了带宽，但缺点也和TDM相同，结点被限制于 R/N bps的平均速率。</p>
+<h4 id="码分多址（CDMA）"><a href="#码分多址（CDMA）" class="headerlink" title="码分多址（CDMA）"></a>码分多址（CDMA）</h4><p>CDMA对每个结点分配一种不同的编码，然后每个结点用它唯一的编码来对数据进行编码。不同的结点能够进行同时发送数据，并且它们各自对应的接收方仍能正确地接收发送方编码的数据比特。而不在乎其他节点的干扰传输。</p>
+<h3 id="5-3-2-随机接入协议"><a href="#5-3-2-随机接入协议" class="headerlink" title="5.3.2 随机接入协议"></a>5.3.2 随机接入协议</h3><p>在随机接入协议中，一个传输结点总是以信道的全部速率进行发送，当有碰撞时，涉及到碰撞的每个节点反复地重发它的帧，到该帧无碰撞的通过为止。但是当一个结点经历碰撞时，它不必立刻重发该帧，而是在重发该帧之前等待一个随机时延。随机接入协议有几十种，这里挑选简单的三个协议。</p>
+<h4 id="时隙ALOHA"><a href="#时隙ALOHA" class="headerlink" title="时隙ALOHA"></a>时隙ALOHA</h4><p>在时隙ALOHA协议中，我们先做以下假设：</p>
+<ul>
+<li>所有帧由 L 比特组成。</li>
+<li>时间被划分成长度为 L/R 秒的时隙（即一个时隙等于传输一帧的时间）。</li>
+<li>结点只在时隙起点开始传输帧。</li>
+<li>结点是同步的，每个结点都知道时隙何时开始（要求每个结点有相同时钟）。</li>
+<li>如果在一个时隙中有两个或多个帧发生碰撞，则所有结点在该时隙结束之前检测到该碰撞事件。</li>
+</ul>
+<p>设p是一个概率。在每个结点中的时隙ALOHA操作是这样的：</p>
+<ul>
+<li>当结点有一个新帧要发送，它等到下一个时隙开始并在该时隙传输整个帧。</li>
+<li>如果没有碰撞，该结点成功传输它的帧，不需要考虑重传该帧。</li>
+<li>如果有碰撞，该结点在时隙结束之前检测到这次碰撞。该结点以概率p在后续的每个时隙中重传它的帧，直到该帧被无碰撞地传输出去。</li>
+</ul>
+<p>显然当某个结点是唯一活跃的结点时，时隙ALOHA允许该结点以全速率传输该帧。当有多个活跃结点时，它的效率是多少呢？首先定义<strong>效率</strong>：当有大量的活跃结点且每个节点总有大量的帧要发送时，长期运行中成功时隙的份额。如下图：</p>
+<p><img src="/images/Network/slot.png" alt="slot"></p>
+<p>在第4、8、9时隙中成功发送了帧，所以效率为1/3。现在继续讨论时隙ALOHA最大效率，假设每个结点是如在每个时隙以概率p传输一帧（所有p相同），假设有N个结点，则任意一个结点成功传输的概率是<code>Np(1-p)^(N-1)</code>，经过求导可知当<code>p=1/N</code>时该概率有最大值，当N趋于无穷大的时候，这个概率的极限是<code>1/e=0.37</code>，也就是如果有大量结点要传输数据时，有效的时隙仅有37%。故该信道的有效传输速率不是 R bps，而是 0.37R bps。</p>
+<h4 id="ALOHA"><a href="#ALOHA" class="headerlink" title="ALOHA"></a>ALOHA</h4><p>在纯ALOHA中，没有时隙的概念，即成帧后结点会立马传输该帧进入广播信道，如果发生了碰撞就立马（在完全传输完它的碰撞帧后）以概率p重传该帧，或者以概率1-p等待一个帧传输时间，然后重复该操作至无碰撞发送该帧为止。</p>
+<p>关于纯ALOHA的最大效率推导过程这里不再叙述，可以参考书上的这部分内容，但结果需要知道，纯ALOHA的最大效率仅为<code>1/(2e)</code>，刚好是时隙ALOHA的一半。</p>
+<h4 id="载波侦听多路访问（CSMA）"><a href="#载波侦听多路访问（CSMA）" class="headerlink" title="载波侦听多路访问（CSMA）"></a>载波侦听多路访问（CSMA）</h4><p>在时隙和纯ALOHA中，一个结点传输帧时是不会关心是否别的结点也在恰好传输帧，而且即使是碰撞了也不会停止传输帧。因此有了这两种规则：</p>
+<ul>
+<li><strong>载波侦听</strong>：一个结点在传输钱先听信道，如果有来自另一个节点的帧正在向信道上发送，则结点等待知道检测到一小段时间没有传输，然后开始传输。</li>
+<li><strong>碰撞检测</strong>：一个传输结点在传输时也在监听信道，如果检测到其他结点正在传输干扰帧，它就停止传输，再次回到载波监听的循环中。</li>
+</ul>
+<p>只包含前者的就是<strong>载波侦听多路访问</strong>（Carrier Sense Multiple Access, CSMA），包含这两者的就是<strong>具有碰撞检测的CSMA</strong>（CSMA with Collision Detection, CSMA/CD）。</p>
+<p>理论上有了第一条载波侦听规则时，应该不会有碰撞了（因为是等到空闲再发送帧），为什么还会有碰撞检测呢？这是因为有<strong>信道传播时延</strong>（channel propagation delay），即信号从一个结点传播到另一个结点所花费的时间。见如下时空图：</p>
+<p><img src="/images/Network/csma.png" alt="CSMA"></p>
+<p>B侦听到此时信道处于空闲，于是先发送了一个帧，但由于有信道传播时延，所以D在t1时刻并不知道B已经发送了帧，所以它也开始发送帧，其结果就是两帧碰撞。</p>
+<h4 id="具有碰撞检测的载波侦听多路访问（CSMA-CD）"><a href="#具有碰撞检测的载波侦听多路访问（CSMA-CD）" class="headerlink" title="具有碰撞检测的载波侦听多路访问（CSMA/CD）"></a>具有碰撞检测的载波侦听多路访问（CSMA/CD）</h4><p>上面那张图中我们看到即使B、D已经知道发生碰撞了（在重合的时刻），但他们依旧不会停止发送帧。如果加上了碰撞检测，也就是CSMA/CD，则时空图应该是下面这个样子：</p>
+<p><img src="/images/Network/csma-cd.png" alt="CSMA/CD"></p>
+<p>总结与广波信道相连的NIC的运行：</p>
+<ol>
+<li>NIC从网络层获得一条数据报，准备链路层帧，并将其放入帧适配器缓存中。</li>
+<li>若果NIC侦听到新到空闲（即无信号能量从信道进入NIC），它开始传输帧。若侦听到信道在忙，它则等待，直到侦听到无信号能量时开始传输帧。</li>
+<li>传输过程中，NIC监听来自其他使用该广播信道的NIC的信号能量。</li>
+<li>如果NIC传输整个帧而未检测到来自其他NIC的信号能量，该适配器就完成了该帧。另一方面，若果传输时侦测到其他NIC的信号能量，则终止传输。</li>
+<li>终止传输后，NIC等待一个随机时间量，然后返回步骤2。</li>
+</ol>
+<p>等待随机时间量是必须的，因为如果等待时间量固定，那么碰撞双方等待相同时间后继续传输帧依然会碰撞。我们希望的等待时间间隔应该是这样的：当碰撞结点数量较少时，时间间隔较短，当碰撞结点数量较大时，时间间隔较长。下面介绍一种用于以太网及DOCSIS电缆网络多路访问协议中的简单的算法：</p>
+<p><strong>二进制指数后退算法</strong>（binary exponential backoff）：当传输一个给定帧时，在该帧经历了一连串n次碰撞后，结点随机从 {0, 1, 2, …, 2^n-1} 中选择一个K值，因此，一个帧经历的碰撞次数越多，K选择的间隔越大。对于以太网，一个结点的等待的实际时间量是K*512比特时间（发送512比特所需时间的K倍），n取得最大值在10以内。</p>
+<h4 id="CSMA-CD效率"><a href="#CSMA-CD效率" class="headerlink" title="CSMA/CD效率"></a>CSMA/CD效率</h4><p><strong>CSMA/CD效率</strong>：当有大量活跃结点，且每个结点有大量的帧要发送时，帧在信道中无碰撞传输的那部分时间在长期运行时间中所占的份额。</p>
+<p>这里省略推导过程，只给出CSMA/CD效率的近似式，其中d(prop)表示信号能量在任意两个NIC间传输的最大时间（即侦听到信号能量所需的时间），d(trans)表示传输一个最大长度的以太网帧的时间：</p>
+<p><img src="/images/Network/eff.png" alt="eff"></p>
+<p>从公式中可看到，当d(prop)接近0时（即侦听到信号能量的时间非常短），则效率趋近于1，符合我们的直觉。当d(trans)很大时，效率也接近与1（一个结点长时间占有信道，信道的效率当然非常高），同样符合直觉。</p>
+<h3 id="5-3-3-轮流协议"><a href="#5-3-3-轮流协议" class="headerlink" title="5.3.3 轮流协议"></a>5.3.3 轮流协议</h3><p><strong>轮流协议</strong>（taking-turns protocol）是一种想满足当有M个活跃结点时，每个活跃结点的吞吐量接近 R/M bps。有几十种轮流协议，这里主要讨论重要的两种。</p>
+<h4 id="轮询协议（polling-protocol）"><a href="#轮询协议（polling-protocol）" class="headerlink" title="轮询协议（polling protocol）"></a>轮询协议（polling protocol）</h4><p>该协议要求这些结点之一要被指定为主节点。主结点以循环的方式<strong>轮询</strong>（poll）每个节点。主节点首先向结点1发送一个报文，告诉他能够传输的帧的最大数量。在结点1传输了某些帧后，主结点告诉结点2它能够传输的帧的最大数量（主结点能够通过观察在信道上是否缺乏信号，来决定一个结点何时完成帧的发送）。</p>
+<p><img src="/images/Network/poll.png" alt="poll"></p>
+<ul>
+<li>优点：消除了困扰随机接入协议的碰撞和空时隙。</li>
+<li>缺点：主结点通知其他节点所需要的轮询时延，以及如果主结点出现故障，则整个信道不可操作。</li>
+</ul>
+<h4 id="令牌传递协议（token-passing-protocol）"><a href="#令牌传递协议（token-passing-protocol）" class="headerlink" title="令牌传递协议（token-passing protocol）"></a>令牌传递协议（token-passing protocol）</h4><p>该协议中没有主结点，一个称为<strong>令牌</strong>（token）的小的特殊帧在结点之间以某种固定的次序进行交换，例如环形。当一个结点收到令牌的时候，如果它有帧要传输，它就发送最大数目的帧数，然后再向下一个结点传递令牌；否则它立即传递令牌。</p>
+<p><img src="/images/Network/token.png" alt="token"></p>
+<ul>
+<li>优点：分散、高效。</li>
+<li>缺点：一个结点故障可能会引起整个信道崩溃。如果一个结点偶然忘记释放令牌，则必须调用某些恢复步骤使令牌返回到循环中来。</li>
+</ul>
+<h3 id="5-3-4-DOCSIS：用于电缆因特网接入的链路层协议"><a href="#5-3-4-DOCSIS：用于电缆因特网接入的链路层协议" class="headerlink" title="5.3.4 DOCSIS：用于电缆因特网接入的链路层协议"></a>5.3.4 DOCSIS：用于电缆因特网接入的链路层协议</h3><p>在1.2.1 节讲过一个电缆接入网通常在电缆网头端将几千个住宅电缆调制解调器与一个<strong>电缆调制解调器端接系统</strong>（CMTS）连接。<strong>数据经电缆服务接口</strong>（Data-Over-Cable Service Interface, CMTS）规范（DOCSIS）定义了电缆数据网络体系结构及其协议。</p>
+<p><img src="/images/Network/docsis.png" alt="DOCSIS"></p>
+<p>DOCSIS使用FDM将下行（CMTS到调制解调器，图中向右的箭头）和上行（调制解调器到CMTS，图中向左的箭头）网络段划分为多个频率信道。每个上行和下行信道均为广播信道（因为连着很多住宅）。CMTS在下行信道中传输的帧被所有在信道上做接受的电缆调制解调器接收到，然而因为发送方只有CMTS，故在下行信道中不存在多路访问问题。</p>
+<p>而在上行信道中，每一个频段都有多个电缆调制解调器共享，所以不可避免的会产生碰撞。DOCSIS采取的方案是将上行信道划分为多个时间间隔（类似于TDM，但不固定），每个时间间隔包含一序列微时隙，电缆调制解调器可在微时隙中向CMTS传输帧。CMTS显式地准许各个电缆调制解调器在特定的微时隙中进行传输。</p>
+<p>CMTS在下行信道上通过发送称为MAP报文的控制报文，指定哪个电缆调制解调器（带有要发送的数据）能够在哪个微时隙中传输，通过这种明确分配从而避免了碰撞。</p>
+<p>但CMTS如何知道哪个电缆调制解调器有数据要发送？通过让电缆调制解调器在专用于此目的的一组特殊微时隙间隔内（在图中的第一个时间区间），向CMTS发送微时隙请求帧来完成该任务。微时隙请求帧以<strong>随机接入方式</strong>传输，且无法检测碰撞，但如果在下一个下行控制报文中没有收到对请求的响应，电缆调制解调器就会推断出上一个请求帧发生了碰撞，然后使用二进制指数回退将其微时隙请求帧延缓发送。</p>
+<p>因此电缆接入网应用了多种多路访问协议（即FDM、TDM、随即介入和集中分配时隙）。</p>
+<h2 id="5-4-交换局域网"><a href="#5-4-交换局域网" class="headerlink" title="5.4 交换局域网"></a>5.4 交换局域网</h2><p>这一部分主要学习关于链路层寻址、交换机局域网、著名的以太网协议，然后了解链路层交换机的工作方式，以及考察如何用交换机构建大规模的局域网。</p>
+<h3 id="5-4-1-链路层寻址和ARP"><a href="#5-4-1-链路层寻址和ARP" class="headerlink" title="5.4.1 链路层寻址和ARP"></a>5.4.1 链路层寻址和ARP</h3><p>网络层中的主机和路由器具有网络层地址（IP地址），同样在链路层中也具有链路层地址。</p>
+<h4 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h4><p>链路层地址有各种不同的称呼：<strong>LAN地址</strong>（LAN address）、<strong>物理地址</strong>（physical address）或<strong>MAC地址</strong>（MAC address），因为MAC地址比较流行，所以通常都会将链路层地址称为MAC地址。</p>
+<p>值得注意的是，并不是主机或路由器具有MAC地址，而是他们的<strong>NIC具有MAC地址</strong>，一个主机可以有多个MAC地址（比如同时拥有有线网卡和无线网卡的手机）。另外值得强调的一点是，通常来讲，<strong>交换机不具备MAC地址</strong>，只是它们的接口可能与具备MAC地址的主机相关联，这是因为交换机的任务就是负责主机与路由器之间承载数据报，交换机会透明地执行该任务，即主机和路由器不必明确地将帧寻址到其间的交换机。</p>
+<p><img src="/images/Network/mac.png" alt="MAC"></p>
+<p>MAC地址长度为6字节，共有2^48个可能的MAC地址。通常采用16进制表示法，如图所示。每一个MAC地址都是独一无二的，因为是IEEE在管理着MAC地址空间，分配方式是固定一个MAC地址的前24比特，让生产NIC的公司自己分配后24位来构成独一无二的组合。</p>
+<p>MAC地址具有扁平结构（与层次结构相对），即无论具备这个适配器的主机物理位置是否改变，MAC地址都不会变（IP地址会发生变化）。</p>
+<p>MAC地址在链路层中的应用：当一个适配器想发送数据给另一个适配器的时候，它会在从网络层下来的数据报的首部添加目的MAC地址来形成帧，并把该帧发送到局域网上。交换机接收到该帧会查看它的目的MAC地址是否与它的某个端口对应，如果对应发送给那个端口，否则就广播（即复制给所有端口）。所以当一个适配器接收到一个帧时，它会先检查这个帧的目的MAC地址是否与自己的MAC地址相同，若相同则取出数据包向上提交给网络层，否则就丢弃该帧。</p>
+<p>但有的时候某适配器确实想广播它的帧，这时候它的目的地址应该为全1，即<code>FF-FF-FF-FF-FF-FF</code>。</p>
+<h4 id="地址解析协议（ARP）"><a href="#地址解析协议（ARP）" class="headerlink" title="地址解析协议（ARP）"></a>地址解析协议（ARP）</h4><p><strong>地址解析协议</strong>（Address Resolution Protocol, ARP）：根据IP地址获取MAC地址的协议。</p>
+<p>以下图为例：<br><img src="/images/Network/arp.png" alt="ARP"></p>
+<p>加入IP地址为<code>222.222.222.200</code>的主机C想向IP地址为<code>222.222.222.222</code>的主机A（注意它们在同一个子网中）发送数据报，为了发送数据报，源主机不仅要给NIC提供IP数据报，而且要提供目的主机的MAC地址。源主机会向它的APR模块输入目的主机的IP地址，希望能得到目的主机的MAC地址。</p>
+<p>如果ARP模块返回了目的主机的MAC地址，事情就很简单了，源主机会把目的主机的MAC地址加到帧中，然后发送到局域网上。这里需要说明一点，APR只为在同一个子网上的主机和路由器接口解析IP地址。</p>
+<p>ARP模块是如何工作的：每台主机或路由器在其内存中具有一个<strong>ARP表</strong>，这张表包含IP地址到MAC地址的映射关系，也包含一个寿命值（TTL），指示从表中删除这个映射的时间。一般来说一个表项通常的过期时间是20分钟（和CPU中的缓存有点类似）。<br><img src="/images/Network/table.png" alt="table"></p>
+<p>上面说了，如果ARP表上有想查找的IP地址的表项，那么任务就很简单了。但如果表中没有这个表项呢？此时发送方会构造一个<strong>ARP分组</strong>，一个ARP分组有几个字段，包括发送和接收方的IP地址，以及发送方的MAC地址，该分组的目的MAC地址是<code>FF-FF-FF-FF-FF-FF</code>，即该帧会广播给所有子网中的主机。</p>
+<p>每个收到该帧的主机都会检查其目的IP地址是否与它自己的相匹配，如果匹配它会单播回给查询主机自己的MAC地址来更新对方的ARP表。当查询主机收到响应ARP分组后，会更新它的ARP表，并发送它的数据报。</p>
+<p>需要注意两点：</p>
+<ul>
+<li>查询ARP报文是广播，响应ARP报文是单播。（可能处于安全考虑，也可能是广播会带来什么不好的东西？）</li>
+<li>ARP是即插即用的，ARP表可以自动建立而不需要系统管理员来配置。并且如果某主机与子网断开连接，它的表项最终会从留在子网中的结点的表中删除。</li>
+</ul>
+<p>ARP协议可以认为是链路层协议（因为一个ARP分组封装在链路层帧中），也可以认为是跨越链路层和网络层的协议。</p>
+<h4 id="发送数据报到子网以外"><a href="#发送数据报到子网以外" class="headerlink" title="发送数据报到子网以外"></a>发送数据报到子网以外</h4><p>上面解释了子网内部的发送和接收数据报的过程，现在再来讨论跨越子网发送和接收数据报的情况。见下图：<br><img src="/images/Network/otherchild.png" alt="otherchild"></p>
+<p>我们可以看到每一个主机都有一个IP地址和MAC地址，而路由器的每一个端口都有一个NIC，图中路由器有两个端口，所以它有两个IP地址、两个ARP模块和两个NIC。</p>
+<p>假设现在IP地址为<code>111.111.111.111/24</code>的主机（左上角）想向IP地址为<code>222.222.222.222/24</code>的主机（右下角）发送数据报。那么对于发送方的主机，在填写目的MAC地址的时候需要填的当然是路由器的MAC地址（首先它不会知道目的主机的MAC地址，其次就算它知道了目的MAC地址，如果放到帧里面，也走不到路由器的网络层，自然也进不了另一个子网）。</p>
+<p>为什么知道要填写路由器的MAC地址？因为发送端的NIC只要对比一下自己的和目的的IP地址的网络号就知道是不是同一个子网。怎么得到到路由器的MAC地址？仔细看路由器和这个子网的交换机所连接的端口的IP地址，这个端口就属于这个子网！那么很自然的就是ARP模块来处理了。</p>
+<p>现在数据报来到了路由器的家门口，路由器一看这帧的目的MAC地址是自己，直接取出里面的数据报上交给网络层处理。网络层的东西就不是这章的主要内容了，到了网络层后通过查询路由器中的转发表来找到目的主机所在的子网对应的端口，然后路由器把数据报丢给这个端口的NIC，NIC再次通过它的ARP模块找到目的主机的MAC地址把数据报发过去，整个过程就结束了！</p>
+<h3 id="5-4-2-以太网"><a href="#5-4-2-以太网" class="headerlink" title="5.4.2 以太网"></a>5.4.2 以太网</h3><p>以太网一直占领者现有的有线局域网市场。20世纪70年代中期，初始的以太网使用同轴电缆总线来互联结点，使用<strong>总线拓扑</strong>的以太网是一种广播局域网，即所有传输的帧传送到与该总线连接的所有适配器并被处理，采取之前的具有二进制指数回退的CSMA/CD多路访问协议。下图是总线拓扑：<br><img src="/images/Network/coaxial.png" alt="coaxial"></p>
+<p>到了20世纪90年代后期，大多数公司和大学使用一种基于集线器的<strong>星型拓扑</strong>以太网安装替代了它们的局域网。在这种安装中，主机（和路由器）直接用双绞对铜线与一台集线器相连。<strong>集线器</strong>（hub）是一种物理层设备，当一个比特0或1到达它的一个接口是，它会重新生成这个比特并将其放大，向所有其他端口传输出去。如果集线器同时从两个端口接收到了信号，将出现一次碰撞，生成该碰撞帧的结点必须重新传输该帧。由此可见，这种以太网也是广播局域网。以下是星型拓扑：<br><img src="/images/Network/star.png" alt="star"></p>
+<p>在21世纪早期，以太网又经历了一次重要的革命性变化，以太网仍旧使用星型拓扑，但集线器被<strong>交换机</strong>（switch）所替代。交换机不仅是“无碰撞的”，而且也是名副其实的存储转发分组交换机。</p>
+<h4 id="以太网帧结构"><a href="#以太网帧结构" class="headerlink" title="以太网帧结构"></a>以太网帧结构</h4><p>考虑以太局域网中的一台主机向另一台主机发送IP数据报，发送适配器接收到网络层传递下来的IP数据报（事实上也可以是其他网络层分组），会添加以下内容构成以太网帧：<br><img src="/images/Network/ethernet_frame.png" alt="ethernet_frame"></p>
+<ul>
+<li><strong>数据字段</strong>（data，46~1500 Bytes）：这个字段承载了IP数据报。以太网的最大传输单元（MTU）是1500字节，如果超过了则主机必须将数据报分片。如果少于46字节必须要填充到46字节，接收方的网络层会根据IP数据报首部的长度字段来去除填充部分。</li>
+<li><strong>目的地址</strong>（dest. address, 6 Bytes）：包含目的适配器的MAC地址。当接收适配器收到一个以太网帧，如果是和自己的MAC地址相同或是MAC广播地址，就会取出数据段并交给网络层；否则丢弃该帧。</li>
+<li><strong>源地址</strong>（source address, 6 Bytes）：包含了传输该帧到局域网上的适配器的MAC地址。</li>
+<li><strong>类型字段</strong>（type, 2 Bytes）：类型字段允许以太网复用多种网络层协议。当接收方适配器收到该帧，会根据类型字段来把数据字段进行分解，传递给相应的网络层协议。</li>
+<li><strong>CRC</strong>（4 Bytes）：如同5.2.3节讨论的那样，目的是进行差错检测和纠正。</li>
+<li><strong>前同步码</strong>（preamble, 8 Bytes）：以太网帧以一个8字节的前同步码字段开始，该前同步码的前7个字节都是<code>10101010</code>，最后一个字节是<code>10101011</code>，用于“唤醒”接收适配器，并且将它们的时钟和发送方的时钟同步。</li>
+</ul>
+<p>所有的以太网技术都向网络层提供无连接服务，即它不需要“握手”（事先建立连接）。同时以太网技术都向网络层提供不可靠服务（unreliable service），特别是当接收方适配器对执行CRC校验时，如果通过了则向网络层上交该数据报，否则就丢弃，但无论如何它都不会告诉接收方。在链路层缺乏可靠的传输有助于使得以太网简单和便宜。但也意味着传递到网络层的数据报流能够有间隙。</p>
+<h4 id="以太网技术"><a href="#以太网技术" class="headerlink" title="以太网技术"></a>以太网技术</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/24/Python-Chapter6/" class="archive-article-date">
-  	<time datetime="2018-03-24T03:35:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/24/Python-Chapter6/">Python-Chapter6</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/24/计算机网络-Chapter5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/24/Python-Chapter5/" class="archive-article-date">
-  	<time datetime="2018-03-24T02:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/24/Python-Chapter6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python-Chapter6</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/24/Python-Chapter5/">Python-Chapter5</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/20/单进程爬取网络小说（下）/" class="archive-article-date">
-  	<time datetime="2018-03-20T07:35:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/20/单进程爬取网络小说（下）/">单进程爬取网络小说（下）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/19/单进程爬取网络小说（上）/" class="archive-article-date">
-  	<time datetime="2018-03-19T10:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/19/单进程爬取网络小说（上）/">单进程爬取网络小说（上）</a>
-    </h1>
+  <div id="SOHUCS" sid="计算机网络-Chapter5" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/17/Python-Chapter4/" class="archive-article-date">
-  	<time datetime="2018-03-17T02:23:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/17/Python-Chapter4/">Python-Chapter4</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/16/Python-Chapter3/" class="archive-article-date">
-  	<time datetime="2018-03-15T16:39:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/16/Python-Chapter3/">Python-Chapter3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-09T13:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/">用爬虫制作简单的翻译程序（下）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-09T06:39:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">用爬虫制作简单的翻译程序（上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/Python-HW-CH2/" class="archive-article-date">
-  	<time datetime="2018-03-07T16:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/Python-HW-CH2/">Python-Chapter2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -614,9 +646,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
