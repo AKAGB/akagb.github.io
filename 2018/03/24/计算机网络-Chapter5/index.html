@@ -36,7 +36,8 @@
 <meta property="og:image" content="https://akagb.github.io/images/Network/coaxial.png">
 <meta property="og:image" content="https://akagb.github.io/images/Network/star.png">
 <meta property="og:image" content="https://akagb.github.io/images/Network/ethernet_frame.png">
-<meta property="og:updated_time" content="2018-03-25T14:11:35.394Z">
+<meta property="og:image" content="https://akagb.github.io/images/Network/firm.png">
+<meta property="og:updated_time" content="2018-03-26T11:34:44.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络--Chapter5——链路层">
 <meta name="twitter:description" content="其实世上本没有路，走的人多了，也就成了路。  主要了解链路层相关协议，理解链路层是如何工作的，目录如下：">
@@ -258,6 +259,14 @@
 <li><a href="#以太网技术">以太网技术</a></li>
 </ul>
 </li>
+<li><a href="#5-4-3-链路层交换机">5.4.3 链路层交换机</a><ul>
+<li><a href="#交换机转发和过滤">交换机转发和过滤</a></li>
+<li><a href="#自学习">自学习</a></li>
+<li><a href="#链路层交换机的性质">链路层交换机的性质</a></li>
+<li><a href="#交换机和路由器比较">交换机和路由器比较</a></li>
+</ul>
+</li>
+<li><a href="#5-4-4-虚拟局域网">5.4.4 虚拟局域网</a></li>
 </ul>
 </li>
 </ul>
@@ -474,7 +483,51 @@
 <li><strong>前同步码</strong>（preamble, 8 Bytes）：以太网帧以一个8字节的前同步码字段开始，该前同步码的前7个字节都是<code>10101010</code>，最后一个字节是<code>10101011</code>，用于“唤醒”接收适配器，并且将它们的时钟和发送方的时钟同步。</li>
 </ul>
 <p>所有的以太网技术都向网络层提供无连接服务，即它不需要“握手”（事先建立连接）。同时以太网技术都向网络层提供不可靠服务（unreliable service），特别是当接收方适配器对执行CRC校验时，如果通过了则向网络层上交该数据报，否则就丢弃，但无论如何它都不会告诉接收方。在链路层缺乏可靠的传输有助于使得以太网简单和便宜。但也意味着传递到网络层的数据报流能够有间隙。</p>
-<h4 id="以太网技术"><a href="#以太网技术" class="headerlink" title="以太网技术"></a>以太网技术</h4>
+<h4 id="以太网技术"><a href="#以太网技术" class="headerlink" title="以太网技术"></a>以太网技术</h4><p>以太网技术在这么多年的发展中已经被IEEE 802.3 CSMA/CD(Ethernet) 工作组进行了标准化 [IEEE 802.3 2012] 。形如<code>10BASE-T</code>、<code>10BASE-2</code>、<code>100BASE-T</code>、<code>1000BASE-LX</code>和<code>10GBASE-T</code>这些首字母缩写词，它们都是一些以太网标准，第一部分的数字指该标准的速率：10、100、1000或10G，分别代表10Mbps、100Mbps、1000Mbps和10Gbps以太网。<code>BASE</code>指基带以太网，意味着物理媒体仅承载以太网流量。缩写的最后一部分指物理媒体本身，如<code>T</code>指双绞铜线。</p>
+<p><strong>转发器</strong>（repeater）：一种物理层设备，在输入端接收信号并在输出端再生成该信号（防止信号因为物理媒体过长衰弱）。</p>
+<h3 id="5-4-3-链路层交换机"><a href="#5-4-3-链路层交换机" class="headerlink" title="5.4.3 链路层交换机"></a>5.4.3 链路层交换机</h3><p>交换机的任务是接收入链路层帧并将它们转发到出链路（路由器也是转发，不过交换机是根据MAC地址转发，路由器是根据IP地址）。交换机自身对子网中的主机和路由器是<strong>透明的</strong>（transparent），即主机或路由器向其他主机或路由器发送帧的时候，并不知道这其中的交换机是否参与进来，交换机对它们来说和物理链路没什么区别，不需要知道有关交换机的任何信息。</p>
+<h4 id="交换机转发和过滤"><a href="#交换机转发和过滤" class="headerlink" title="交换机转发和过滤"></a>交换机转发和过滤</h4><ul>
+<li><strong>过滤</strong>（filter）：决定一个帧应该转发到某接口还是丢弃的交换机功能。</li>
+<li><strong>转发</strong>（forwarding）：决定一个帧应该被导向哪个接口。</li>
+<li><strong>交换机的工作过程</strong>：当接收到一个帧时，如果目的MAC地址是<code>FF-FF-FF-FF-FF-FF</code>，则进行广播，否则交换机检查自己的转发表，有以下几种情况：<ol>
+<li>表中没有这个表项，先更新接收这个帧的接口的表项，然后广播该帧。</li>
+<li>表中有这个表项，但接收到的接口与表项中的接口相同（交换机会认为这两个MAC地址是同一网段），交换机会丢弃这个帧（过滤）。</li>
+<li>表中有这个表项，且接收到的接口与表项中的接口不同（交换机会认为这两个MAC地址是不同网段），交换机将该帧转发到出链路的接口。</li>
+</ol>
+</li>
+</ul>
+<h4 id="自学习"><a href="#自学习" class="headerlink" title="自学习"></a>自学习</h4><p>交换机具备<strong>自学习</strong>能力，即它的转发表一开始并不具有某些表项，它会通过学习来添加表项，具体过程如下：</p>
+<ol>
+<li>交换机表初始为空。</li>
+<li>对于每个接口接收到的每个入帧，交换机在表中存储一条表项：(1). 在该帧源地址字段中的MAC地址。(2). 该帧到达的接口。(3). 当前时间。</li>
+<li>如果在一段时间（称为老化期（aging time））后，交换机没有接收到以该地址作为源地址的帧（注意不是目的地址），就在表中删除这个地址。如果一台PC被另一台PC（不同NIC）替代，原来PC的MAC地址将最终从该交换机表中被清除掉。</li>
+</ol>
+<p>由此可见，交换机是<strong>即插即用设备</strong>（plug-and-play device），因为它们不需要网络管理员或用户的干预。</p>
+<h4 id="链路层交换机的性质"><a href="#链路层交换机的性质" class="headerlink" title="链路层交换机的性质"></a>链路层交换机的性质</h4><ul>
+<li><strong>消除碰撞</strong>：在使用交换机（替代了集线器）构建的局域网，没有因为碰撞而浪费的带宽。交换机缓存帧绝不会再网段上同时传输多于一个帧。</li>
+<li><strong>异质的链路</strong>：交换机将链路彼此隔离。</li>
+<li><strong>管理</strong>：除了提供强化的安全性，交换机也易于网络管理。例如一个适配器工作异常并且持续发送以太网帧，交换机能检测到该问题并在内部断开异常适配器。</li>
+</ul>
+<h4 id="交换机和路由器比较"><a href="#交换机和路由器比较" class="headerlink" title="交换机和路由器比较"></a>交换机和路由器比较</h4><p>二者之间的根本不同：交换机是二层网络设备（当然现在有三层交换机）转发基于MAC地址；路由器是三层网络设备，转发基于IP地址。</p>
+<ul>
+<li>交换机：<ul>
+<li>优点：即插即用，具有相对高的分组过滤和转发速率（因为它只有两层，当然比要处理第三层的路由器快）。</li>
+<li>缺点：为了防止广播帧的循环（广播风暴），交换网络的活跃拓扑限制为一棵生成树。而且交换机对网络风暴不提供任何保护措施，如果某主机除了故障并传输出没完没了的以太网广播帧，该交换机将转发所有这些帧，使得整个以太网崩溃。</li>
+</ul>
+</li>
+<li>路由器：<ul>
+<li>优点：分组不会通过路由器循环（因为网络寻址是分层的），所以路由器没有生成树限制，所以它们允许以丰富的拓扑结构构建因特网。路由器对第二层的广播风暴提供了风火墙保护。</li>
+<li>缺点：不是即插即用，需要人对路由器以及连接它的主机进行配置IP地址。处理分组的时间会比较长（相对交换机）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-4-4-虚拟局域网"><a href="#5-4-4-虚拟局域网" class="headerlink" title="5.4.4 虚拟局域网"></a>5.4.4 虚拟局域网</h3><p><strong>虚拟</strong>（virtual）一词，含义是不符合或不一定符合实际的东西，或者说是仿真的一些技术或手段。我们在很多地方都用到这个词，这个词就像<strong>抽象</strong>一样，在计算机领域中广泛应用。例如虚拟内存，虚拟存储器等等，它们都是利用一些技术来将对硬件的操作和逻辑分离，对处于高层的人只需要知道硬件应该执行什么样的逻辑，至于硬件如何实现这个逻辑对高层来说是无所谓的，从而弥补直接对硬件配置和使用的不方便之处。<strong>虚拟局域网</strong>也是如此。<br><img src="/images/Network/firm.png" alt="firm"></p>
+<p>以上面那张图为例，有三个工作组的局域网（子网，具有不同网络号），每个局域网的交换机和一个中心交换机相连，与此同时中心交换机还连接着两台服务器和连接到外网的路由器。我们前面讨论的局域网中有一些缺点，总结下来为以下三点：</p>
+<ul>
+<li><strong>缺乏流量隔离</strong>：尽管等级结构把一个组的流量局域化到一个单一交换机中，但广播流量仍然会跨越整个机构网络。有时出于安全/隐私目的可能希望限制局域网的广播流量，比如可能只希望在组局域网内部广播（不过这个可以简单的把中心交换机替换为路由器，后面会看到也能只通过第二层就解决）。</li>
+<li><strong>交换机的无效使用</strong>：如果该机构不仅有3个组，而又10个组，则要求有10个第一级交换机，如果每个组都比较小，比如少于10台主机，则单台96端口（16线）就可以容纳每个人，</li>
+</ul>
+
       
 
       
@@ -577,6 +630,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/01/Python-Chapter7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python-Chapter7
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/24/Python-Chapter6/" id="article-nav-older" class="article-nav-link-wrap">
@@ -749,6 +811,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
@@ -757,15 +823,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -830,6 +892,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Free programming books</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://sass-guidelin.es/zh/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Sass Guidelines</a>
             </li>
           
         </ul>
