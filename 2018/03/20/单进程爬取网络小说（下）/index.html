@@ -21,7 +21,11 @@
 <meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/diff.png">
 <meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/ch1.png">
 <meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/test.png">
-<meta property="og:updated_time" content="2018-03-22T14:44:13.370Z">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/p.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/test.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/clear1.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/clear2.png">
+<meta property="og:updated_time" content="2018-04-02T13:05:29.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单进程爬取网络小说（下）">
 <meta name="twitter:description" content="解析HTML在开始之前先对上次的代码进行处理： 1234567891011121314151617181920212223import requestsclass StoryCrawler:    def __init__(self, url):        &quot;&quot;&quot;初始化各种变量&quot;&quot;&quot;        self.url = url">
@@ -218,7 +222,28 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    url = <span class="string">'http://www.qingyunian.net/'</span></span><br><span class="line">    sc = StoryCrawler(url)</span><br><span class="line">    sc.get_chapter_links()</span><br><span class="line">    length = len(sc.titles)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">        print(sc.titles[i] + <span class="string">' -&gt; '</span> + sc.links[i])</span><br></pre></td></tr></table></figure>
 <p>测试如图：</p>
 <p><img src="/images/web_crawler/story/test.png" alt="test"></p>
-<p><em>未完待续…</em></p>
+<p>接下来我们要做的就是再进入这些链接，将里面的小说文字爬取出来。读取链接的任务就交给我们的<code>get_HTML()</code>函数了，所以你可以写一个新的方法<code>read_links()</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_links</span><span class="params">(self)</span>:</span></span><br><span class="line">    length = len(self.links)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'store/'</span>):                    <span class="comment"># 检测是否有store目录</span></span><br><span class="line">        os.makedirs(<span class="string">'store'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">        print(<span class="string">'正在爬取第 '</span> + str(i+<span class="number">1</span>) + <span class="string">' 章...'</span>)</span><br><span class="line">        html = self.get_HTML(self.links[i])</span><br><span class="line">        text = self.get_text(html)</span><br><span class="line">        self.write_file(text, self.titles[i])</span><br></pre></td></tr></table></figure>
+<p>我们检查当前文件所在的目录有没有<code>store</code>目录，没有就创建一个用于保存小说文件。<code>get_HTML()</code>用来获取链接所指向的网页内容，<code>get_text()</code>和<code>write_file()</code>是我们下面将要读取小说内容以及将小说内容保存到文件中的方法。</p>
+<h3 id="获取文字"><a href="#获取文字" class="headerlink" title="获取文字"></a>获取文字</h3><p>具体如何获取内部的文字相信有了前面的经验以后也知道该如何去做了，我们依旧先抓包，看看文字部分位于什么样的标签下，以及如何去找到这个标签。任意进入一个章节，右键正文部分点击检察。</p>
+<p><img src="/images/web_crawler/story/p.png" alt="p"></p>
+<p>可以看到小说的主体部分位于<code>&lt;p&gt;</code>标签下，是否我们就该搜索<code>&lt;p&gt;</code>标签呢？不妨尝试一番。</p>
+<p><img src="/images/web_crawler/story/test.png" alt="test"></p>
+<p>这是我测试的结果，显然在最后还有一些其他的信息，那可怎么办？这里就要充分发挥我们的找规律的能力了，因为每个人所用的小说网站可能各不相同，如果你用的和我一样，就会发现：<br><img src="/images/web_crawler/story/clear1.png" alt="clear1"><img src="/images/web_crawler/story/clear2.png" alt="clear2"></p>
+<p>小说的正文内容用于这两个清除浮动的<code>div</code>块中间（不要问什么是清除浮动，前端的一点东西）！而且你查找整个页面的包含<code>clear:both</code>属性的标签，就只有这两个。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>soup.find_all(style=<span class="string">'clear:both'</span>)</span><br><span class="line">[&lt;div style="clear:both"&gt;&lt;/div&gt;, &lt;div style="clear:both"&gt;&lt;/div&gt;]</span><br></pre></td></tr></table></figure>
+<p>因此我们想获取的<code>&lt;p&gt;</code>标签是这两个<code>&lt;div&gt;</code>标签之间的兄弟结点，故可以这样提取：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span><span class="params">(self, html)</span>:</span></span><br><span class="line">    <span class="string">"""获取正文"""</span></span><br><span class="line">    dom = BeautifulSoup(html, <span class="string">'lxml'</span>)</span><br><span class="line">    clr = dom.find(style=<span class="string">'clear:both'</span>)</span><br><span class="line">    text = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> clr.next_siblings:</span><br><span class="line">        <span class="keyword">if</span> tag == clr:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        text += tag.string</span><br><span class="line">    <span class="keyword">return</span> text.replace(<span class="string">'\xa0\xa0\xa0\xa0'</span>, <span class="string">'\n  '</span>)</span><br></pre></td></tr></table></figure>
+<p>实现思路很简单，遍历<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>后面的兄弟节点，在遇到下一个<code>&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</code>之前将所有其间元素的内容添加到字符串中，最终返回结果，返回结果的时候注意，我们把字符串中的<code>&amp;nbsp</code>进行了替换，这是在html中的空格符。你可以将返回的结果测试一下，这里就不再进行示范了。</p>
+<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>写到文件中就更简单了，因为我们已经有了正文的字符串和每一章节的标题，这里是文件I/O的部分，不再进行细说，代码如下（写成静态方法没什么特殊原因，就是想用一下<code>@staticmethod</code>）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_file</span><span class="params">(text, title)</span>:</span></span><br><span class="line">    <span class="string">"""将正文写到文件中"""</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'store/'</span> + title + <span class="string">'.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(text)</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>因为章节很多所以只爬取一部分做测试，毕竟因为单进程单线程下实在是太慢了，日后用可以用一些并发的模块来做改进。废话不多说，我们只需要加一个<code>if</code>条件句在<code>read_links()</code>方法中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_links</span><span class="params">(self)</span>:</span></span><br><span class="line">    length = len(self.links)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'store/'</span>):                    <span class="comment"># 检测是否有store目录</span></span><br><span class="line">        os.makedirs(<span class="string">'store'</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">20</span>:                                      <span class="comment"># 简单测试</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">'正在爬取第 '</span> + str(i+<span class="number">1</span>) + <span class="string">' 章...'</span>)</span><br><span class="line">        html = self.get_HTML(self.links[i])</span><br><span class="line">        text = self.get_text(html)</span><br><span class="line">        self.write_file(text, self.titles[i])</span><br></pre></td></tr></table></figure>
+<p>测试结果如下：</p>
+<video src="/images/web_crawler/story/test.mp4" controls>测试结果</video>
+
+<h2 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h2><p>OK，做到这里差不多了，这只是一个简单的爬虫，起码能大概清楚爬取一些比较简单的静态网页，但对于一些由JS生成的网页以及一些动态网页就需要更多的一些知识和模块了。以后我会慢慢去了解这些。关于这个爬虫的代码放到了我的<a href="https://github.com/AKAGB/Python-study/tree/master/Others/story" target="_blank" rel="noopener">github</a>中，有需要可以看一看。</p>
+<p>当然，还是那句话，<strong>仅做学习用途</strong>。</p>
 
       
 
@@ -503,11 +528,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
              
               <li class="article-tag-list-item">
