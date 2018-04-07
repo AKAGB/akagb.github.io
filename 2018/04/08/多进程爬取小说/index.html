@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>AKAGB —— Blog</title>
+  <title>多进程爬取小说 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/page/2/index.html">
+  <meta name="description" content="并行让效率变得更高。  上次做的单进程爬虫如果真要用来爬我们整篇小说估计耗费的时间会比较久…来做一个粗略的估计，我们看一下爬取21章所需要的时间：">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多进程爬取小说">
+<meta property="og:url" content="https://akagb.github.io/2018/04/08/多进程爬取小说/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="并行让效率变得更高。  上次做的单进程爬虫如果真要用来爬我们整篇小说估计耗费的时间会比较久…来做一个粗略的估计，我们看一下爬取21章所需要的时间：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/time1.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/story/time2.png">
+<meta property="og:updated_time" content="2018-04-07T17:31:40.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="多进程爬取小说">
+<meta name="twitter:description" content="并行让效率变得更高。  上次做的单进程爬虫如果真要用来爬我们整篇小说估计耗费的时间会比较久…来做一个粗略的估计，我们看一下爬取21章所需要的时间：">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/story/time1.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -156,22 +164,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Python-Chapter3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-多进程爬取小说" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/16/Python-Chapter3/">Python-Chapter3</a>
+    <h1 class="article-title" itemprop="name">
+      多进程爬取小说
     </h1>
   
 
         
-        <a href="/2018/03/16/Python-Chapter3/" class="archive-article-date">
-  	<time datetime="2018-03-15T16:39:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-16</time>
+        <a href="/2018/04/08/多进程爬取小说/" class="archive-article-date">
+  	<time datetime="2018-04-07T17:17:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-08</time>
 </a>
         
       </header>
@@ -179,183 +185,42 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>作业的完整代码我放在Github上，可以在我的<a href="https://github.com/AKAGB/Python-study" target="_blank" rel="noopener">github</a>中查看。</p>
+<p>并行让效率变得更高。</p>
 </blockquote>
-<p>3-1：<strong>姓名</strong>：将一些朋友的姓名存储到一个列表中，依次访问该列表中的每个元素，从而将每个朋友名字打印出来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">'Sam'</span>, <span class="string">'Alice'</span>, <span class="string">'Tom'</span>, <span class="string">'Bob'</span>]</span><br><span class="line">print(names[<span class="number">0</span>])</span><br><span class="line">print(names[<span class="number">1</span>])</span><br><span class="line">print(names[<span class="number">2</span>])</span><br><span class="line">print(names[<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<p>运行：<br><img src="/images/hw/ch3/3-1.png" alt="3-1"></p>
-<hr>
-        
-          <a class="article-more-a" href="/2018/03/16/Python-Chapter3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>上次做的单进程爬虫如果真要用来爬我们整篇小说估计耗费的时间会比较久…来做一个粗略的估计，我们看一下爬取21章所需要的时间：</p>
+<p><img src="/images/web_crawler/story/time1.png" alt="time1"></p>
+<a id="more"></a>
+<p>大概需要6秒，这本小说总共有780章，粗略估计下来要用230多秒，也就是4分钟左右。</p>
+<p>接下来我们对代码稍作修改，把爬虫改装成一只多进程爬虫，每次爬取一篇文章就开一个进程。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_links</span><span class="params">(self)</span>:</span></span><br><span class="line">        length = len(self.links)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">'store/'</span>):                    <span class="comment"># 检测是否有store目录</span></span><br><span class="line">            os.makedirs(<span class="string">'store'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">20</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            print(<span class="string">'正在爬取第 '</span> + str(i+<span class="number">1</span>) + <span class="string">' 章...'</span>)</span><br><span class="line">            <span class="comment">#Process(target=self.crawl, args=(i,)).start()</span></span><br><span class="line">            self.crawl(i)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'下载完毕！'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl</span><span class="params">(self, x)</span>:</span></span><br><span class="line">    <span class="string">"""爬取第x章内容"""</span></span><br><span class="line">    html = self.get_HTML(self.links[x])</span><br><span class="line">    text = self.get_text(html)</span><br><span class="line">    self.write_file(text, self.titles[x])</span><br></pre></td></tr></table></figure>
+<p>我们支队<code>read_links()</code>这个函数进行修改，并将爬取文章的部分取出来放到一个函数<code>crawl</code>里，每次循环都创建一个<code>Process</code>对象，即一个新的进程。我们来看看这样的效率，命令行输入<code>time python3 xxxx.py</code>来运行代码：</p>
+<p><img src="/images/web_crawler/story/time2.png" alt="time2"></p>
+<p>仅仅花了一分钟左右！</p>
+<p>PS：其实本来用的是<code>Pool</code>（进程池），因为类的成员函数不能被pickle，弄得我非常心塞，最后就老老实实用回<code>Process</code>了。</p>
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/16/Python-Chapter3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-杂记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/14/杂记（一）/">杂记（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/14/杂记（一）/" class="archive-article-date">
-  	<time datetime="2018-03-13T17:00:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>随便说说自己的生活。</p>
-</blockquote>
-<p>现在是大二第二个学期的第二个星期的周二晚上，其实也可以说是周三凌晨了，未眠。<br>不知道从什么时候开始总是习惯的熬夜，有些事明明知道对自己没有好处，还是忍不住去做。</p>
-        
-          <a class="article-more-a" href="/2018/03/14/杂记（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/14/杂记（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-用爬虫制作简单的翻译程序（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/">用爬虫制作简单的翻译程序（下）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/09/用爬虫制作简单的翻译程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-09T13:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>我们要做得更好。</p>
-</blockquote>
-<h3 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h3><p>上面的代码中我们简单实现了如何爬取有道翻译的数据，我们不想只翻译这么一个结果，怎么样翻译其他的单词呢？当然是修改一下<code>data</code>的内容，我们第一眼看去显然是要修改<code>i</code>参数嘛，因为这个参数显示是<code>你好</code>，修改了它以后是不是就能返回其他结果呢？有了这个想法我们对代码进行修改，把功能放到函数里：</p>
-        
-          <a class="article-more-a" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/#more">more >></a>
-        
-      
-
       
     </div>
     <div class="article-info article-info-index">
@@ -379,16 +244,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/09/用爬虫制作简单的翻译程序（下）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/04/08/多进程爬取小说/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/01/Python-Chapter8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python-Chapter8</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -408,603 +332,24 @@
 
 
 
-
-  
-    <article id="post-用爬虫制作简单的翻译程序（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">用爬虫制作简单的翻译程序（上）</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-09T06:39:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>做一次大自然的搬运工。</p>
-</blockquote>
-<h2 id="写在前头"><a href="#写在前头" class="headerlink" title="写在前头"></a>写在前头</h2><p>爬虫是啥？专业点说是按照一定规则自动爬取万维网信息的程序或脚本。</p>
-<p>按照我个人的理解就是咱平常上个网的时候，会看到自己想要的数据比如图片啊文字啊什么的，看到喜欢图片就右键保存到本地，那如果有一百张喜欢的图片怎么办？一个一个点怕不是石乐志（当然那些图片对你的吸引程度真的让你石乐志当我没说）。</p>
-        
-          <a class="article-more-a" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何利用Nodejs搭建简单的服务器程序（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/">如何利用Nodejs搭建简单的服务器程序（下）</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/" class="archive-article-date">
-  	<time datetime="2018-03-08T13:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给服务器一点礼物。</p>
-</blockquote>
-<h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><p>有的时候用户会提交一些表单数据，我们应该如何去接收呢？前一篇我们已经写好了一个简单的表单页面，当用户提交表单时我们可以使用<code>formidable</code>第三方模块，可以用<code>npm</code>安装。然后我们来修改<code>upload()</code>函数：</p>
-        
-          <a class="article-more-a" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/08/如何利用Nodejs搭建简单的服务器程序（下）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Python-HW-CH2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/08/Python-HW-CH2/">Python-Chapter2</a>
-    </h1>
+  <div id="SOHUCS" sid="多进程爬取小说" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
 
-        
-        <a href="/2018/03/08/Python-HW-CH2/" class="archive-article-date">
-  	<time datetime="2018-03-07T16:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>作业的完整代码我放在Github上，可以在我的<a href="https://github.com/AKAGB/Python-study" target="_blank" rel="noopener">github</a>中查看。</p>
-</blockquote>
-<p>2-1：<strong>简单消息</strong>：将一条消息存储到变量中，再将其打印出来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = input(<span class="string">'请输入消息：'</span>)</span><br><span class="line">print(<span class="string">'你输入的消息是:'</span>, msg)</span><br></pre></td></tr></table></figure>
-<p>运行：</p>
-<p><img src="/images/hw/ch2/2-1.png" alt="2-1"></p>
-        
-          <a class="article-more-a" href="/2018/03/08/Python-HW-CH2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/08/Python-HW-CH2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何利用Nodejs搭建简单的服务器程序（中）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">如何利用Nodejs搭建简单的服务器程序（中）</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>当你不再满足于”Hello, world”。</p>
-</blockquote>
-<h2 id="路由router"><a href="#路由router" class="headerlink" title="路由router"></a>路由router</h2><p>上一篇最后说到了如何利用<code>url.parse()</code>获得路径，接下来就是用所解析出来的pathname来找到相应的响应程序，也就是路由的功能。创建一个router.js，内容如下：</p>
-        
-          <a class="article-more-a" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何利用Nodejs搭建简单的服务器程序（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">如何利用Nodejs搭建简单的服务器程序（上）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/" class="archive-article-date">
-  	<time datetime="2018-03-06T15:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>蛮害怕自己会忘记的，不妨做个简单的记录。</p>
-</blockquote>
-<p>主要是参考<a href="https://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="noopener">Node 入门</a>，适合有一定Javascript基础的人。</p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>做一个简单的服务器程序，实现以下功能：</p>
-<ol>
-<li><code>get</code>方法：当打开<code>/start</code>时，给用户返回一个表单。</li>
-<li><code>post</code>方法：用户点击提交表单时，能够获取提交的数据并且加载到<code>/upload</code>界面。提交的内容包括文字和文件，文件以图片为例。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/06/如何利用Nodejs搭建简单的服务器程序（上）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-二十七杯酒" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/06/二十七杯酒/">二十七杯酒</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/06/二十七杯酒/" class="archive-article-date">
-  	<time datetime="2018-03-06T06:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>《间客》里的一首歌的词，纪念一下施公子。</p>
-</blockquote>
-<p>第一杯酒，阳光明媚，窗外的青藤爬进了我的眼。</p>
-<p>第二杯酒，春风轻漾，叶梢轻拂着我的眉。</p>
-<p>第三杯酒，鸟儿鸣叫，轻啄着我的心。</p>
-<p>第四杯酒，影上窗楣，让我忘了我是谁。</p>
-<p>第五杯酒，少年将飞，穿越层林叠翠……</p>
-        
-          <a class="article-more-a" href="/2018/03/06/二十七杯酒/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/06/二十七杯酒/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/Python/">Python</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Life is short, you need python.　<br><br>　　　　　　　　　　　　– Bruce Eckel</p>
-</blockquote>
-<p>简单写写自己对Python的了解，想到什么写什么，如有错误希望能指出，我会进行修改。</p>
-<h2 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python"></a>什么是Python</h2><p>关于Python是什么不想说的太多，因为百度自可找到很多对它的说明，简单来说它就是一门编程语言，它有着很多特点（个人觉得其实很多语言都有的也不能完全算是特点？），比如解释型语言，比如函数式编程，比如动态语言，比如垃圾回收，比如写起来简洁优雅。</p>
-        
-          <a class="article-more-a" href="/2018/03/05/Python/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/Python/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -1027,8 +372,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
