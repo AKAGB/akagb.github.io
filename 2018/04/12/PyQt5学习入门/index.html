@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>AKAGB —— Blog</title>
+  <title>PyQt5学习入门 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AKAGB —— Blog">
-<meta property="og:url" content="https://akagb.github.io/page/3/index.html">
+  <meta name="description" content="让程序走出Terminal。  学习编程最让人兴奋的事之一就是接触到GUI编程，因为那样可以让你的程序不在只是运行在黑乎乎的终端界面，可以拥有图形界面、窗口、按钮等各种各样的元素。 Python中用于GUI编程的模块有很多，比如经典的tkinter，很多人熟悉的PyQt5以及wxPython，如何选择这里不再废话，看标题就知道我用的是PyQt5了。至于我为什么选择了PyQt5，一个原因是有很多人">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyQt5学习入门">
+<meta property="og:url" content="https://akagb.github.io/2018/04/12/PyQt5学习入门/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
+<meta property="og:description" content="让程序走出Terminal。  学习编程最让人兴奋的事之一就是接触到GUI编程，因为那样可以让你的程序不在只是运行在黑乎乎的终端界面，可以拥有图形界面、窗口、按钮等各种各样的元素。 Python中用于GUI编程的模块有很多，比如经典的tkinter，很多人熟悉的PyQt5以及wxPython，如何选择这里不再废话，看标题就知道我用的是PyQt5了。至于我为什么选择了PyQt5，一个原因是有很多人">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/guistart.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/guiWidget.png">
+<meta property="og:image" content="https://akagb.github.io/images/web_crawler/youdao/guiLayout.png">
+<meta property="og:updated_time" content="2018-04-12T10:09:17.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AKAGB —— Blog">
+<meta name="twitter:title" content="PyQt5学习入门">
+<meta name="twitter:description" content="让程序走出Terminal。  学习编程最让人兴奋的事之一就是接触到GUI编程，因为那样可以让你的程序不在只是运行在黑乎乎的终端界面，可以拥有图形界面、窗口、按钮等各种各样的元素。 Python中用于GUI编程的模块有很多，比如经典的tkinter，很多人熟悉的PyQt5以及wxPython，如何选择这里不再废话，看标题就知道我用的是PyQt5了。至于我为什么选择了PyQt5，一个原因是有很多人">
+<meta name="twitter:image" content="https://akagb.github.io/images/web_crawler/youdao/guistart.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -156,22 +165,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-PyQt5学习入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/Python/">Python</a>
+    <h1 class="article-title" itemprop="name">
+      PyQt5学习入门
     </h1>
   
 
         
-        <a href="/2018/03/05/Python/" class="archive-article-date">
-  	<time datetime="2018-03-05T15:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+        <a href="/2018/04/12/PyQt5学习入门/" class="archive-article-date">
+  	<time datetime="2018-04-12T07:38:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
 </a>
         
       </header>
@@ -179,15 +186,83 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Life is short, you need python.　<br><br>　　　　　　　　　　　　– Bruce Eckel</p>
+<p>让程序走出Terminal。</p>
 </blockquote>
-<p>简单写写自己对Python的了解，想到什么写什么，如有错误希望能指出，我会进行修改。</p>
-<h2 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python"></a>什么是Python</h2><p>关于Python是什么不想说的太多，因为百度自可找到很多对它的说明，简单来说它就是一门编程语言，它有着很多特点（个人觉得其实很多语言都有的也不能完全算是特点？），比如解释型语言，比如函数式编程，比如动态语言，比如垃圾回收，比如写起来简洁优雅。</p>
-        
-          <a class="article-more-a" href="/2018/03/05/Python/#more">more >></a>
-        
+<p>学习编程最让人兴奋的事之一就是接触到GUI编程，因为那样可以让你的程序不在只是运行在黑乎乎的终端界面，可以拥有图形界面、窗口、按钮等各种各样的元素。</p>
+<p>Python中用于GUI编程的模块有很多，比如经典的<code>tkinter</code>，很多人熟悉的<code>PyQt5</code>以及<code>wxPython</code>，如何选择这里不再废话，看标题就知道我用的是<code>PyQt5</code>了。至于我为什么选择了<code>PyQt5</code>，一个原因是有很多人推荐，另外一个是它有一个<code>QSS</code>，类似于前端中的<code>CSS</code>（层叠样式表），可以对界面的样式进行一些简单的定制。</p>
+<p>因为网上的教程也不是很多且多数都一样，所以就挑了一些简单的API来练习一下，练习对象为之前做的<a href="/2018/03/09/用爬虫制作简单的翻译程序（上）/">翻译程序</a>，为其添加一个简单的GUI。</p>
+<a id="more"></a>
+<h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><p>开始前总是要对想写的界面进行一下设计，主要有三个组件，一个输入框（用来输入想翻译的内容），一个显示输出框（用来输出翻译结果），以及一个按钮（用来控制翻译行为）。</p>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><h3 id="生成一个窗口"><a href="#生成一个窗口" class="headerlink" title="生成一个窗口"></a>生成一个窗口</h3><p>第一步需要做到的自然是生成一个窗口出来，编写gui.py文件如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QWidget, QApplication</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    window = Window()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p>运行效果如下：</p>
+<p><img src="/images/web_crawler/youdao/guistart.png" alt="guistart"></p>
+<p>代码说明：</p>
+<p>每一个<code>PyQt5</code>的窗口运行都必须先创建一个<code>QApplication</code>对象，它负责管理整个图形界面，比如主事件循环，应用程序的初始化和结束等等。创建<code>QApplication</code>对象需要传递命令行的参数，故使用<code>sys.argv</code>参数。<code>app.exec_()</code>方法表示开始主事件循环，当窗口被破坏或结束时该方法返回。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br></pre></td></tr></table></figure>
+<p>自定义了一个<code>Window</code>类用来封装为翻译程序创建的主窗口，该类继承<code>QWidget</code>类，<code>QWidget</code>类是PyQt5中最基本的一个类，它表示窗口中的各种组件，甚至是窗口本身也是一个<code>QWidget</code>对象，所以创建的这个<code>Window</code>类要继承<code>QWidget</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">    self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">    self.show()</span><br></pre></td></tr></table></figure>
+<p><code>initUI()</code>方法用来设置主窗口中的各种组件以及相关信息。</p>
+<p><code>setGeometry()</code>方法设置窗口的位置和大小，单位均为像素，前两个参数代表在屏幕中的位置，即窗口左上角的点位于屏幕中(300px, 300px)的位置，后面两个参数表示宽度和高度。</p>
+<p><code>setWindowTitle()</code>方法用于设置窗口标题。</p>
+<p><code>show()</code>方法用于显示窗口。</p>
+<h3 id="添加组件"><a href="#添加组件" class="headerlink" title="添加组件"></a>添加组件</h3><p>接下来我们要添加三个组件，按钮、输入框和显示框，要用到的类有<code>QtWidget.QPushButton</code>、<code>QtWidget.QTextEdit</code>和<code>QtWidget.QTextBrowser</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QWidget, QApplication,</span><br><span class="line">    QPushButton, QTextEdit, QTextBrowser)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 创建组件</span></span><br><span class="line">        self.trans_btn = QPushButton(<span class="string">'翻译'</span>, self)     <span class="comment"># 翻译按钮</span></span><br><span class="line">        self.text_input = QTextEdit(self)             <span class="comment"># 输入框</span></span><br><span class="line">        self.text_output = QTextBrowser(self)        <span class="comment"># 输出框</span></span><br><span class="line">        </span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    window = Window()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<p>运行效果：</p>
+<p><img src="/images/web_crawler/youdao/guiWidget.png" alt="guiWidget"></p>
+<p>创建的方法就是创建一个对象的方法，<code>QPushButton</code>的第一个参数为在按钮中的字符串，第二个参数为它的父组件，这里是<code>self</code>即主窗口，<code>QTextEdit</code>和<code>QTextBrowser</code>只需要传入父组件。</p>
+<p>为什么只显示了一个框呢？因为这里只是添加了这三个组件，并没有设置它们的位置，所以它们默认会在窗口左上角也就是(0, 0)的位置创建。</p>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>我们需要把组件放到合适的地方，即要进行相应的布局，PyQt5提供的布局方法有很多，比如绝对布局，箱布局，网格布局，表单布局等。这里比较简单，采用箱布局。</p>
+<p>首先要思考我们要怎么布局，因为只有三个组件，我们可以分成两行，第一行只有一个居中的按钮，第二行有两个框，即输入框和输出框。</p>
+<p>我们把布局考虑成一种对象，这个对象是组件的集合。这里设计到两个类，<code>QVBoxLayout</code>和<code>QHBoxLayout</code>类，前者是沿着垂直方向向末尾处添加组件或布局（可以把布局也当做一个组件），后者则是沿水平方向（向右）添加组件或布局。不妨看看代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QWidget, QApplication,</span><br><span class="line">    QPushButton, QTextEdit, QTextBrowser,</span><br><span class="line">    QHBoxLayout, QVBoxLayout)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 创建组件</span></span><br><span class="line">        self.trans_btn = QPushButton(<span class="string">'翻译'</span>, self)     <span class="comment"># 翻译按钮</span></span><br><span class="line">        self.text_input = QTextEdit(self)             <span class="comment"># 输入框</span></span><br><span class="line">        self.text_output = QTextBrowser(self)        <span class="comment"># 输出框</span></span><br><span class="line">        </span><br><span class="line">        self.set_main_layout()</span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_main_layout</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""设置主布局"""</span></span><br><span class="line">        hbox = QHBoxLayout()</span><br><span class="line">        hbox2 = QHBoxLayout()</span><br><span class="line">        vbox = QVBoxLayout()</span><br><span class="line"></span><br><span class="line">        hbox.addStretch(<span class="number">1</span>)</span><br><span class="line">        hbox.addWidget(self.trans_btn)</span><br><span class="line">        hbox.addStretch(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        hbox2.addStretch(<span class="number">1</span>)</span><br><span class="line">        hbox2.addWidget(self.text_input)</span><br><span class="line">        hbox2.addStretch(<span class="number">1</span>)</span><br><span class="line">        hbox2.addWidget(self.text_output)</span><br><span class="line">        hbox2.addStretch(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 添加垂直布局</span></span><br><span class="line">        vbox.addStretch(<span class="number">1</span>)</span><br><span class="line">        vbox.addLayout(hbox)</span><br><span class="line">        vbox.addStretch(<span class="number">1</span>)</span><br><span class="line">        vbox.addLayout(hbox2)</span><br><span class="line">        vbox.addStretch(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设置主布局为垂直布局</span></span><br><span class="line">        self.setLayout(vbox)</span><br></pre></td></tr></table></figure>
+<p>运行效果：</p>
+<p><img src="/images/web_crawler/youdao/guiLayout.png" alt="guiLayout"></p>
+<p><code>QHBoxLayout</code>和<code>QVBoxLayout</code>对象的方法一样，<code>addStretch()</code>方法负责添加一些空白区域，参数表示比例，这个比例是和在这个布局中添加的所有空白的比例，比如<code>hbox</code>这个布局对象一共添加了两个空白在<code>QPushButton</code>两侧，且参数均为1，即两个空白的比例为1:1，所以显示的效果为按钮水平居中显示。</p>
+<p><code>addWidget()</code>负责添加组件到布局中，而<code>addLayout()</code>则是负责添加一个子布局到布局中，所以说可以把布局也看成一个组件（或者说是组件的集合）。</p>
+<p><code>self.setLayout()</code>是主窗口用来设置一个主布局的方法。</p>
+<h3 id="定制自己的样式"><a href="#定制自己的样式" class="headerlink" title="定制自己的样式"></a>定制自己的样式</h3><p>有的时候我们可能不满足于PyQt5的默认样式，比如我们不喜欢按钮的效果，想改变一下它的背景色和字体颜色。这里用到了<code>QSS</code>（Qt style sheet），即Qt样式表，它的语法与<code>CSS</code>层叠样式表的语法一样，或者说是<code>CSS</code>的一个子集（CSS2的子集），它实现了某些<code>CSS</code>的属性，虽然不是很完全，但起码对按钮的样式修改还是能做到的，工作目录下新建一个<code>window.qss</code>文件：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">QPushButton</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#e02433</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span> outset black;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QPushButton</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QPushButton</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#bf0917</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QTextEdit</span> &#123;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">min-width</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并在gui.py文件中读取这个文件的内容并加载到样式中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># 创建组件</span></span><br><span class="line">    self.trans_btn = QPushButton(<span class="string">'翻译'</span>, self)     <span class="comment"># 翻译按钮</span></span><br><span class="line">    self.text_input = QTextEdit(self)             <span class="comment"># 输入框</span></span><br><span class="line">    self.text_output = QTextBrowser(self)        <span class="comment"># 输出框</span></span><br><span class="line">    </span><br><span class="line">    self.set_main_layout()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 读取样式表</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'window.qss'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> q:</span><br><span class="line">        self.setStyleSheet(q.read())</span><br><span class="line"></span><br><span class="line">    self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">    self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">    self.show()</span><br></pre></td></tr></table></figure>
+<p>运行效果：</p>
+<video src="/images/web_crawler/youdao/qss.mp4" controls>测试结果</video>
+
+<p>只要对<code>CSS</code>语法稍有了解就能写出简单的效果。</p>
+<h3 id="导入核心代码"><a href="#导入核心代码" class="headerlink" title="导入核心代码"></a>导入核心代码</h3><p>GUI部分基本完成的差不多了，接下来需要导入之前的翻译程序，我们先把翻译程序封装成类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># youdao.py</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Translator</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 参数设置</span></span><br><span class="line">        self.url = <span class="string">'http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule'</span></span><br><span class="line">        self.headers = &#123;</span><br><span class="line">            <span class="string">'Cookie'</span> : <span class="string">'OUTFOX_SEARCH_USER_ID=-1443294221@10.168.8.61; JSESSIONID=aaa6JQvAXx8sCfSpKgjiw; OUTFOX_SEARCH_USER_ID_NCOO=572982542.7036237; ___rl__test__cookies=1520572536948'</span>,</span><br><span class="line">            <span class="string">'Referer'</span> : <span class="string">'http://fanyi.youdao.com/'</span>,</span><br><span class="line">            <span class="string">'User-Agent'</span> : <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'</span>,</span><br><span class="line">            <span class="string">'X-Requested-With'</span> : <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        self.postData = &#123;</span><br><span class="line">            <span class="string">'i'</span> : <span class="string">'你好'</span>,</span><br><span class="line">            <span class="string">'from'</span> : <span class="string">'AUTO'</span>,</span><br><span class="line">            <span class="string">'to'</span> : <span class="string">'AUTO'</span>,</span><br><span class="line">            <span class="string">'smartresult'</span> : <span class="string">'dict'</span>,</span><br><span class="line">            <span class="string">'client'</span> : <span class="string">'fanyideskweb'</span>,</span><br><span class="line">            <span class="string">'salt'</span> : <span class="string">'1520572536951'</span>,</span><br><span class="line">            <span class="string">'sign'</span> : <span class="string">'5b3ca2d1b69c12bcb82aa1b710d2a648'</span>,</span><br><span class="line">            <span class="string">'doctype'</span> : <span class="string">'json'</span>,</span><br><span class="line">            <span class="string">'version'</span> : <span class="string">'2.1'</span>,</span><br><span class="line">            <span class="string">'keyfrom'</span> : <span class="string">'fanyi.web'</span>,</span><br><span class="line">            <span class="string">'action'</span> : <span class="string">'FY_BY_REALTIME'</span>,</span><br><span class="line">            <span class="string">'typoResult'</span> : <span class="string">'false'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        self.S = <span class="string">'fanyideskweb'</span></span><br><span class="line">        self.D = <span class="string">'ebSeFb%=XZ%T[KZ)c(sy!'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">translate</span><span class="params">(self, str_input)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> str_input.strip() == <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">        self.postData[<span class="string">'i'</span>] = str_input</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 处理salt和sign</span></span><br><span class="line">        self.postData[<span class="string">'salt'</span>] = str(int(time.time()*<span class="number">1000</span>) + int(random.random()*<span class="number">10</span>))</span><br><span class="line">        self.postData[<span class="string">'sign'</span>] = hashlib.md5((self.S + str_input + self.postData[<span class="string">'salt'</span>] + self.D)</span><br><span class="line">                            .encode(<span class="string">'utf-8'</span>)).hexdigest()</span><br><span class="line"></span><br><span class="line">        rsp = requests.post(self.url, headers=self.headers, data=self.postData)</span><br><span class="line">        result = rsp.json()</span><br><span class="line">        <span class="keyword">return</span> result[<span class="string">'translateResult'</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="string">'tgt'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    t = Translator()</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        str_input = input(<span class="string">r'Please input the context("q! to exit"): '</span>)</span><br><span class="line">        <span class="keyword">if</span> str_input == <span class="string">'q!'</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        result = t.translate(str_input)</span><br><span class="line">        print(<span class="string">'Result:'</span>, result)</span><br><span class="line">    print(<span class="string">'Exit...'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>然后在gui.py中导入这个类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> youdao <span class="keyword">import</span> Translator</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line">        self.translator = Translator()</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>然后创建一个函数，在按钮被点击的时候回调这个函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line">        self.translator = Translator()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 创建组件</span></span><br><span class="line">        self.trans_btn = QPushButton(<span class="string">'翻译'</span>, self)     <span class="comment"># 翻译按钮</span></span><br><span class="line">        self.text_input = QTextEdit(self)             <span class="comment"># 输入框</span></span><br><span class="line">        self.text_output = QTextBrowser(self)        <span class="comment"># 输出框</span></span><br><span class="line">        </span><br><span class="line">        self.set_main_layout()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 读取样式表</span></span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">'window.qss'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> q:</span><br><span class="line">            self.setStyleSheet(q.read())</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 绑定事件</span></span><br><span class="line">        self.trans_btn.clicked.connect(self.trans_clicked)</span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">800</span>, <span class="number">300</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">'翻译程序'</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trans_clicked</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""点击按钮时触发"""</span></span><br><span class="line">        str_input = self.text_input.toPlainText()</span><br><span class="line">        result = self.translator.translate(str_input)</span><br><span class="line">        self.text_output.setText(result)</span><br></pre></td></tr></table></figure>
+<p>OK！到这里基本就已经完成了我们的目标。运行一下查看效果：</p>
+<video src="/images/web_crawler/youdao/result.mp4" controls>测试结果</video>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>代码在<a href="https://github.com/AKAGB/Python-study/tree/master/Others/youdao" target="_blank" rel="noopener">github</a>上。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>O(∩_∩)O谢谢，虽然暂未开通该功能<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -202,7 +277,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
@@ -211,16 +286,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/Python/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/04/12/PyQt5学习入门/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/08/多进程爬取小说/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">多进程爬取小说</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -240,75 +374,24 @@
 
 
 
-
-  
-    <article id="post-Test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/Test/">First Blog</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开<code>tags</code>，再点击python标签即可。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/Test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+  <div id="SOHUCS" sid="PyQt5学习入门" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytvbVbEG",
+        conf: "3b3c5459c381aa501378884567cab575"
+    });
+</script>
+</script>
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+
+  
+
   
 
 
@@ -331,8 +414,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
