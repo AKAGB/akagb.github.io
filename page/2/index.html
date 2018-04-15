@@ -158,6 +158,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-单进程爬取网络小说（下）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/20/单进程爬取网络小说（下）/">单进程爬取网络小说（下）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/20/单进程爬取网络小说（下）/" class="archive-article-date">
+  	<time datetime="2018-03-20T07:35:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="解析HTML"><a href="#解析HTML" class="headerlink" title="解析HTML"></a>解析HTML</h3><p>在开始之前先对上次的代码进行处理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StoryCrawler</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        <span class="string">"""初始化各种变量"""</span></span><br><span class="line">        self.url = url                                      <span class="comment"># 目的url</span></span><br><span class="line">        self.links = []                                     <span class="comment"># 存放链接列表</span></span><br><span class="line">        self.titles = []                                    <span class="comment"># 存放每一章节的标题</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_HTML</span><span class="params">(url)</span>:</span></span><br><span class="line">        <span class="string">"""爬取网页代码"""</span></span><br><span class="line">        <span class="keyword">try</span>:    </span><br><span class="line">            rsp = requests.get(url)                         <span class="comment"># 爬取首页html</span></span><br><span class="line">            html = str(rsp.content, rsp.apparent_encoding)  <span class="comment"># 获取正确编码的网页</span></span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            html = <span class="keyword">None</span>                                     <span class="comment"># 若爬取失败则返回None</span></span><br><span class="line">        <span class="keyword">return</span> html</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    url = <span class="string">'http://www.qingyunian.net/'</span></span><br><span class="line">    sc = StoryCrawler(url)</span><br><span class="line">    print(sc.get_HTML(url))</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/03/20/单进程爬取网络小说（下）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/20/单进程爬取网络小说（下）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-单进程爬取网络小说（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -884,89 +965,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/08/Python-HW-CH2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何利用Nodejs搭建简单的服务器程序（中）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">如何利用Nodejs搭建简单的服务器程序（中）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>当你不再满足于”Hello, world”。</p>
-</blockquote>
-<h2 id="路由router"><a href="#路由router" class="headerlink" title="路由router"></a>路由router</h2><p>上一篇最后说到了如何利用<code>url.parse()</code>获得路径，接下来就是用所解析出来的pathname来找到相应的响应程序，也就是路由的功能。创建一个router.js，内容如下：</p>
-        
-          <a class="article-more-a" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/07/如何利用Nodejs搭建简单的服务器程序（中）/">展开全文 >></a>
         </p>
       
 

@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="https://akagb.github.io">
   <title>Python-Chapter10 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 1234567891011121314151617181920# Firstprint(&apos;First:&apos;)f">
+  <meta name="description" content="作业的完整代码我放在Github上，可以在我的github中查看。  10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 123456789101112131">
 <meta name="keywords" content="python,homework">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python-Chapter10">
 <meta property="og:url" content="https://akagb.github.io/2018/04/16/Python-Chapter10/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 1234567891011121314151617181920# Firstprint(&apos;First:&apos;)f">
+<meta property="og:description" content="作业的完整代码我放在Github上，可以在我的github中查看。  10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 123456789101112131">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://akagb.github.io/images/hw/ch10/10-1.png">
 <meta property="og:image" content="https://akagb.github.io/images/hw/ch10/10-2.png">
 <meta property="og:image" content="https://akagb.github.io/images/hw/ch10/10-3.png">
 <meta property="og:image" content="https://akagb.github.io/images/hw/ch10/10-6.png">
 <meta property="og:image" content="https://akagb.github.io/images/hw/ch10/10-11.png">
-<meta property="og:updated_time" content="2018-04-15T16:52:58.870Z">
+<meta property="og:updated_time" content="2018-04-15T17:46:54.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-Chapter10">
-<meta name="twitter:description" content="10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 1234567891011121314151617181920# Firstprint(&apos;First:&apos;)f">
+<meta name="twitter:description" content="作业的完整代码我放在Github上，可以在我的github中查看。  10-1：Python学习笔记：写一个文本文件learning_python.txt，每一行以In Python you can打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在with语句块外打印列表。 123456789101112131">
 <meta name="twitter:image" content="https://akagb.github.io/images/hw/ch10/10-1.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
@@ -187,7 +187,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>10-1：<strong>Python学习笔记</strong>：写一个文本文件<code>learning_python.txt</code>，每一行以<code>In Python you can</code>打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在<code>with</code>语句块外打印列表。</p>
+        <blockquote>
+<p>作业的完整代码我放在Github上，可以在我的<a href="https://github.com/AKAGB/Python-study" target="_blank" rel="noopener">github</a>中查看。</p>
+</blockquote>
+<p>10-1：<strong>Python学习笔记</strong>：写一个文本文件<code>learning_python.txt</code>，每一行以<code>In Python you can</code>打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在<code>with</code>语句块外打印列表。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># First</span></span><br><span class="line">print(<span class="string">'First:'</span>)</span><br><span class="line">f = open(<span class="string">'learning_python.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">text = f.read()</span><br><span class="line">print(text)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Second</span></span><br><span class="line">print(<span class="string">'Second:'</span>)</span><br><span class="line">f = open(<span class="string">'learning_python.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"><span class="keyword">for</span> eachline <span class="keyword">in</span> f:</span><br><span class="line">    print(eachline.strip())</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Third</span></span><br><span class="line">print(<span class="string">'Third:'</span>)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'learning_python.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    lst = f.readlines()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lst:</span><br><span class="line">    print(i.strip())</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>运行：<br><img src="/images/hw/ch10/10-1.png" alt="10-1"></p>
@@ -317,6 +320,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/16/Python-Chapter11/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python-Chapter11
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/15/Python-Chapter9/" id="article-nav-older" class="article-nav-link-wrap">
