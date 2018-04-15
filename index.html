@@ -158,6 +158,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-Chapter10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/16/Python-Chapter10/">Python-Chapter10</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/16/Python-Chapter10/" class="archive-article-date">
+  	<time datetime="2018-04-15T16:40:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>10-1：<strong>Python学习笔记</strong>：写一个文本文件<code>learning_python.txt</code>，每一行以<code>In Python you can</code>打头。编写程序读取这个文件，并将所写的内容打印三次。第一次打印时读取整个文件，第二次读取时遍历文件对象，第三次将各行保存到列表中，然后在<code>with</code>语句块外打印列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># First</span></span><br><span class="line">print(<span class="string">'First:'</span>)</span><br><span class="line">f = open(<span class="string">'learning_python.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">text = f.read()</span><br><span class="line">print(text)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Second</span></span><br><span class="line">print(<span class="string">'Second:'</span>)</span><br><span class="line">f = open(<span class="string">'learning_python.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"><span class="keyword">for</span> eachline <span class="keyword">in</span> f:</span><br><span class="line">    print(eachline.strip())</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Third</span></span><br><span class="line">print(<span class="string">'Third:'</span>)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'learning_python.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    lst = f.readlines()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lst:</span><br><span class="line">    print(i.strip())</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/04/16/Python-Chapter10/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/16/Python-Chapter10/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-Chapter9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -911,90 +992,6 @@
 
 
   
-    <article id="post-单进程爬取网络小说（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/19/单进程爬取网络小说（上）/">单进程爬取网络小说（上）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/19/单进程爬取网络小说（上）/" class="archive-article-date">
-  	<time datetime="2018-03-19T10:01:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>学会使用bs4。</p>
-</blockquote>
-<p>废话都在前面的博客说完了，这次不说了。嗯，就说一句，<strong>仅做学习使用，看小说请支持正版</strong>。</p>
-<h2 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h2><p>将网页上的小说爬取下来，并保存到本地的文件夹。</p>
-        
-          <a class="article-more-a" href="/2018/03/19/单进程爬取网络小说（上）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/19/单进程爬取网络小说（上）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1117,11 +1114,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">homework</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color4">homework</a>
               </li>
              
               <li class="article-tag-list-item">
