@@ -8,23 +8,24 @@
   <link rel="dns-prefetch" href="https://akagb.github.io">
   <title>OpenGL-Study | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。 OpenGL是一个专门用于图形开发的库，它不是一个专门的什么语言，而是一种规范，定义了许多接口，不同的语言都有实现，如C、C++、Python等，而某些游戏引擎中也都有对它的接口有实现。 简单来说，如果你想制作一个窗口程序，或者对图像数据进行编辑，">
+  <meta name="description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
 <meta name="keywords" content="OpenGL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenGL-Study">
 <meta property="og:url" content="https://akagb.github.io/2018/05/01/OpenGL-Study/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。 OpenGL是一个专门用于图形开发的库，它不是一个专门的什么语言，而是一种规范，定义了许多接口，不同的语言都有实现，如C、C++、Python等，而某些游戏引擎中也都有对它的接口有实现。 简单来说，如果你想制作一个窗口程序，或者对图像数据进行编辑，">
+<meta property="og:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://akagb.github.io/2018/05/01/OpenGL-Study/pipeline.png">
-<meta property="og:image" content="https://akagb.github.io/2018/05/01/OpenGL-Study/vertex_array_objects_ebo.png">
-<meta property="og:image" content="https://akagb.github.io/2018/05/01/OpenGL-Study/ndc.png">
-<meta property="og:image" content="https://akagb.github.io/2018/05/01/OpenGL-Study/hellotriangle2.png">
-<meta property="og:updated_time" content="2018-05-02T15:50:44.210Z">
+<meta property="og:image" content="https://akagb.github.io/images/CG/pipeline.png">
+<meta property="og:image" content="https://akagb.github.io/images/CG/vertex_array_objects_ebo.png">
+<meta property="og:image" content="https://akagb.github.io/images/CG/ndc.png">
+<meta property="og:image" content="https://akagb.github.io/images/CG/hellotriangle2.png">
+<meta property="og:image" content="https://akagb.github.io/images/CG/result.png">
+<meta property="og:updated_time" content="2018-05-02T16:09:28.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL-Study">
-<meta name="twitter:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。 OpenGL是一个专门用于图形开发的库，它不是一个专门的什么语言，而是一种规范，定义了许多接口，不同的语言都有实现，如C、C++、Python等，而某些游戏引擎中也都有对它的接口有实现。 简单来说，如果你想制作一个窗口程序，或者对图像数据进行编辑，">
-<meta name="twitter:image" content="https://akagb.github.io/2018/05/01/OpenGL-Study/pipeline.png">
+<meta name="twitter:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
+<meta name="twitter:image" content="https://akagb.github.io/images/CG/pipeline.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -190,6 +191,7 @@
 <p>OpenGL学习笔记</p>
 </blockquote>
 <h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。</p>
+<a id="more"></a>
 <p>OpenGL是一个专门用于图形开发的库，它不是一个专门的什么语言，而是一种规范，定义了许多接口，不同的语言都有实现，如C、C++、Python等，而某些游戏引擎中也都有对它的接口有实现。</p>
 <p>简单来说，如果你想制作一个窗口程序，或者对图像数据进行编辑，实现各种视觉效果，或者游戏开发，OpenGL都是一个非常好的工具。</p>
 <p>现在我们只是想掌握一些基本的原理，看看怎么用代码实现。</p>
@@ -253,7 +255,7 @@
 <p>总结一下目前的代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">framebuffer_size_callback</span><span class="params">(GLFWwindow*, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    glfwInit();</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建窗口</span></span><br><span class="line">    GLFWwindow *window = glfwCreateWindow(WD_WIDTH, WD_HEIGHT, <span class="string">"LearnOpenGL"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (window == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to create GLFW window"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        glfwTerminate();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 设置当前上下文为主线程上下文</span></span><br><span class="line">    glfwMakeContextCurrent(window);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to initialize GLAD"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置viewport大小，随窗口变化而执行回调改变大小</span></span><br><span class="line">    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 渲染循环</span></span><br><span class="line">    <span class="keyword">while</span> (!glfwWindowShouldClose(window)) &#123;</span><br><span class="line">        glfwSwapBuffers(window);</span><br><span class="line">        glfwPollEvents();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    glfwTerminate();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">framebuffer_size_callback</span><span class="params">(GLFWwindow*, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	glViewport(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p>我们最主要的任务还是要对画面进行渲染，那么问题来了，如何渲染呢？也就是如何去构造一个图像，这涉及到一个概念，<strong>图像渲染管线</strong>。这个概念这里就不详细说明了，可以参考<a href="https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/" target="_blank" rel="noopener">图形渲染管线</a>。这里主要说明渲染流程的代码，流程如下图。</p>
-<p><img src="pipeline.png" alt="pipeline"></p>
+<p><img src="/images/CG/pipeline.png" alt="pipeline"></p>
 <p>拿出之前的框架进行完善：</p>
 <ul>
 <li>设置初始状态</li>
@@ -300,13 +302,13 @@
 <li>激活属性</li>
 </ol>
 <p>补一张VBO、VAO和EBO的关系图：</p>
-<p><img src="vertex_array_objects_ebo.png" alt="vertex_array_objects_ebo"></p>
+<p><img src="/images/CG/vertex_array_objects_ebo.png" alt="vertex_array_objects_ebo"></p>
 <p>首先是定义顶点最基本的数据和索引数据：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> vertices[] = &#123;</span><br><span class="line">    <span class="number">0.5f</span>, <span class="number">0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">0.5f</span>, <span class="number">-0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">-0.5f</span>,  <span class="number">-0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">-0.5f</span>, <span class="number">0.5f</span>, <span class="number">0.0f</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> indices[] = &#123;</span><br><span class="line">    <span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>,</span><br><span class="line">    <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><code>vertices</code>定义了各个顶点的坐标，这里定义了一个矩形，分别表示4个顶点，OpenGL用[-1, 1]之间的数来表示位置，2维下的坐标表示如下图：</p>
-<p><img src="ndc.png" alt="ndc"></p>
+<p><img src="/images/CG/ndc.png" alt="ndc"></p>
 <p><code>indices</code>存放索引数组，比如0就是指<code>vertices</code>中的第0个点。由于这里准备采用的图元是三角形，一个举行可以用两个三角形表示：</p>
-<p><img src="hellotriangle2.png" alt="hellotriangle2"></p>
+<p><img src="/images/CG/hellotriangle2.png" alt="hellotriangle2"></p>
 <p>第一行的<code>0, 1, 3</code>表示右边那个三角形的点坐标，第二行则表示左边三角形。</p>
 <p>但注意这里的两个数组均为1维数组，OpenGL怎么知道该如何去读取这个数据，所以我们要设置顶点属性，用以告诉着色器如何去划分。于是乎，接下来就是关于三种对象的使用。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> VBO, VAO, EBO;</span><br><span class="line">glGenBuffers(<span class="number">1</span>, &amp;VBO);</span><br><span class="line">glGenBuffers(<span class="number">1</span>, &amp;EBO);</span><br><span class="line">glGenVertexArrays(<span class="number">1</span>, &amp;VAO);</span><br></pre></td></tr></table></figure>
@@ -334,7 +336,10 @@
 <p>接下来在主循环中渲染：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 渲染循环</span></span><br><span class="line"><span class="keyword">while</span> (!glfwWindowShouldClose(window)) &#123;</span><br><span class="line">    <span class="comment">// 输入</span></span><br><span class="line">    processInput(window);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 渲染指令</span></span><br><span class="line">    glClearColor(<span class="number">0.2f</span>, <span class="number">0.3f</span>, <span class="number">0.3f</span>, <span class="number">1.0f</span>);</span><br><span class="line">    glClear(GL_COLOR_BUFFER_BIT);</span><br><span class="line">    <span class="comment">// 渲染三角形</span></span><br><span class="line">    glUseProgram(shaderProgram);</span><br><span class="line">    glBindVertexArray(VAO);</span><br><span class="line">    glDrawElements(GL_TRIANGLES, <span class="number">6</span>, GL_UNSIGNED_INT, <span class="number">0</span>);</span><br><span class="line">    glBindVertexArray(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查并调用事件，交换缓冲</span></span><br><span class="line">    glfwSwapBuffers(window);</span><br><span class="line">    glfwPollEvents();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>先使用<code>glUseProgram(shaderProgram)</code>运行着色器程序，然后重新绑定VAO，用来获得定点属性，然后使用<code>glDrawElements()</code>函数来绘画，第一个参数是图元，我们设置为三角形，第二个参数是打算绘制的顶点个数，第三个参数是索引的类型，第四个参数是EBO中的偏移量（或者可以传递一个索引数组，这是在不适用索引缓冲对象的时候）。<code>glDrawElements()</code>函数从当前绑定到<code>GL_ELEMENT_ARRAY_BUFFER</code>目标的EBO中获取索引。故每次索引渲染都需要绑定相应的EBO。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>见图：</p>
+<p><img src="/images/CG/result.png" alt="result"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然挺基本的，但是基本上是走了一个简单的呈现图像的流程。整个部分的代码点击<a href="https://github.com/AKAGB/CG-OpenGL/blob/master/work/FirstDemo/demo.cpp" target="_blank" rel="noopener">这里</a>可以查看。</p>
+
       
 
       
