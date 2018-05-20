@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>First Blog | AKAGB —— Blog</title>
+  <title>leetcode788解法 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+  <meta name="description" content="详细题目见788. Rotated Digits  Problem输入一个整数N，输出从1到N所有的good number，good number的定义为经过每位数字翻转后的的数再组合起来依旧是一个正常的数，但值要和原来不同。">
+<meta name="keywords" content="python,homework,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Blog">
-<meta property="og:url" content="https://akagb.github.io/2018/03/05/Test/index.html">
+<meta property="og:title" content="leetcode788解法">
+<meta property="og:url" content="https://akagb.github.io/2018/05/20/leetcode788解法/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+<meta property="og:description" content="详细题目见788. Rotated Digits  Problem输入一个整数N，输出从1到N所有的good number，good number的定义为经过每位数字翻转后的的数再组合起来依旧是一个正常的数，但值要和原来不同。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T14:04:08.725Z">
+<meta property="og:updated_time" content="2018-05-20T08:41:34.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Blog">
-<meta name="twitter:description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+<meta name="twitter:title" content="leetcode788解法">
+<meta name="twitter:description" content="详细题目见788. Rotated Digits  Problem输入一个整数N，输出从1到N所有的good number，good number的定义为经过每位数字翻转后的的数再组合起来依旧是一个正常的数，但值要和原来不同。">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -160,27 +161,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetcode788解法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      First Blog
+      leetcode788解法
     </h1>
   
 
         
-        <a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+        <a href="/2018/05/20/leetcode788解法/" class="archive-article-date">
+  	<time datetime="2018-05-20T08:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开<code>tags</code>，再点击python标签即可。</p>
+        <blockquote>
+<p>详细题目见<a href="https://leetcode.com/problems/rotated-digits/description/" target="_blank" rel="noopener">788. Rotated Digits</a></p>
+</blockquote>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>输入一个整数N，输出从1到N所有的good number，good number的定义为经过每位数字翻转后的的数再组合起来依旧是一个正常的数，但值要和原来不同。</p>
+<a id="more"></a>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>将数字转换为它对应的数字，如果不能转换的位就设置为<code>x</code>，然后只要转换完后检查是否含有<code>x</code>或检查是否和原来一样就能知道这个数是不是符合要求的数。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotatedDigits</span><span class="params">(self, N)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        alp = &#123;</span><br><span class="line">            <span class="string">'0'</span>: <span class="string">'0'</span>,</span><br><span class="line">            <span class="string">'1'</span>: <span class="string">'1'</span>,</span><br><span class="line">            <span class="string">'2'</span>: <span class="string">'5'</span>,</span><br><span class="line">            <span class="string">'3'</span>: <span class="string">'x'</span>,</span><br><span class="line">            <span class="string">'4'</span>: <span class="string">'x'</span>,</span><br><span class="line">            <span class="string">'5'</span>: <span class="string">'2'</span>,</span><br><span class="line">            <span class="string">'6'</span>: <span class="string">'9'</span>, </span><br><span class="line">            <span class="string">'7'</span>: <span class="string">'x'</span>, </span><br><span class="line">            <span class="string">'8'</span>: <span class="string">'8'</span>,</span><br><span class="line">            <span class="string">'9'</span>: <span class="string">'6'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, N+<span class="number">1</span>):</span><br><span class="line">            s = str(i)</span><br><span class="line">            t = <span class="string">''</span>.join(list(map(<span class="keyword">lambda</span> x: alp[x], s)))</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'x'</span> <span class="keyword">not</span> <span class="keyword">in</span> t <span class="keyword">and</span> s != t:</span><br><span class="line">                result += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
       
 
@@ -210,6 +218,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -260,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/05/Test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/05/20/leetcode788解法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,15 +301,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/05/Python/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/20/leetcode796解法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python
+          leetcode796解法
         
       </div>
     </a>
   
+  
+    <a href="/2018/05/20/leetcode784解法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode784解法</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -310,7 +342,7 @@
   
 
   
-  <div id="SOHUCS" sid="Test" ></div> 
+  <div id="SOHUCS" sid="leetcode788解法" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

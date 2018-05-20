@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>First Blog | AKAGB —— Blog</title>
+  <title>leetcode784解法 | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+  <meta name="description" content="详细题目见784. Letter Case Permutation  Problem输入一个字符串，输出一个列表，包含这个字符串中所有字母的大小写组合。">
+<meta name="keywords" content="python,homework,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Blog">
-<meta property="og:url" content="https://akagb.github.io/2018/03/05/Test/index.html">
+<meta property="og:title" content="leetcode784解法">
+<meta property="og:url" content="https://akagb.github.io/2018/05/20/leetcode784解法/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+<meta property="og:description" content="详细题目见784. Letter Case Permutation  Problem输入一个字符串，输出一个列表，包含这个字符串中所有字母的大小写组合。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T14:04:08.725Z">
+<meta property="og:updated_time" content="2018-05-20T07:59:42.185Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Blog">
-<meta name="twitter:description" content="该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开tags，再点击python标签即可。">
+<meta name="twitter:title" content="leetcode784解法">
+<meta name="twitter:description" content="详细题目见784. Letter Case Permutation  Problem输入一个字符串，输出一个列表，包含这个字符串中所有字母的大小写组合。">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -160,27 +161,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetcode784解法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      First Blog
+      leetcode784解法
     </h1>
   
 
         
-        <a href="/2018/03/05/Test/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+        <a href="/2018/05/20/leetcode784解法/" class="archive-article-date">
+  	<time datetime="2018-05-20T05:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>该博客基于Github Page + Hexo搭建的，因为都是静态网页，为了防止浏览器缓存打开网页后刷新一下。关于Python的博客都在python标签里。点击左侧的所有文章并打开<code>tags</code>，再点击python标签即可。</p>
+        <blockquote>
+<p>详细题目见<a href="https://leetcode.com/problems/letter-case-permutation/description/" target="_blank" rel="noopener">784. Letter Case Permutation</a></p>
+</blockquote>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>输入一个字符串，输出一个列表，包含这个字符串中所有字母的大小写组合。</p>
+<a id="more"></a>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: S = &quot;a1b2&quot;</span><br><span class="line">Output: [&quot;a1b2&quot;, &quot;a1B2&quot;, &quot;A1b2&quot;, &quot;A1B2&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: S = &quot;3z4&quot;</span><br><span class="line">Output: [&quot;3z4&quot;, &quot;3Z4&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>思路是暴力求解，列表中先存放全部小写的字符串，然后遍历每个字母，每次添加列表中已有字符串的将该字母变为大写的形式。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">letterCasePermutation</span><span class="params">(self, S)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :rtype: List[str]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        S = S.lower()</span><br><span class="line">        result = [S]</span><br><span class="line">        l = len(S)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">if</span> S[i].isalpha():</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> result[:]:</span><br><span class="line">                    result.append(j[:i] + j[i].upper() + j[i+<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
       
 
@@ -210,6 +219,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -260,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/03/05/Test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/05/20/leetcode784解法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,15 +302,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/05/Python/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/20/leetcode788解法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python
+          leetcode788解法
         
       </div>
     </a>
   
+  
+    <a href="/2018/05/01/OpenGL-Study/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenGL-Study</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -310,7 +343,7 @@
   
 
   
-  <div id="SOHUCS" sid="Test" ></div> 
+  <div id="SOHUCS" sid="leetcode784解法" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
