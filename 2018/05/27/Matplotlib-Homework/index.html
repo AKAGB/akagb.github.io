@@ -6,26 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://akagb.github.io">
-  <title>OpenGL-Study | AKAGB —— Blog</title>
+  <title>Matplotlib-Homework | AKAGB —— Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
-<meta name="keywords" content="OpenGL">
+  <meta name="description" content="matplotlib模块的练习。见github  Exercise1">
+<meta name="keywords" content="python,homework">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenGL-Study">
-<meta property="og:url" content="https://akagb.github.io/2018/05/01/OpenGL-Study/index.html">
+<meta property="og:title" content="Matplotlib-Homework">
+<meta property="og:url" content="https://akagb.github.io/2018/05/27/Matplotlib-Homework/index.html">
 <meta property="og:site_name" content="AKAGB —— Blog">
-<meta property="og:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
+<meta property="og:description" content="matplotlib模块的练习。见github  Exercise1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://akagb.github.io/images/CG/pipeline.png">
-<meta property="og:image" content="https://akagb.github.io/images/CG/vertex_array_objects_ebo.png">
-<meta property="og:image" content="https://akagb.github.io/images/CG/ndc.png">
-<meta property="og:image" content="https://akagb.github.io/images/CG/hellotriangle2.png">
-<meta property="og:image" content="https://akagb.github.io/images/CG/result.png">
-<meta property="og:updated_time" content="2018-05-02T16:09:28.705Z">
+<meta property="og:image" content="https://akagb.github.io/images/hw/matplotlib/ex1.png">
+<meta property="og:image" content="https://akagb.github.io/images/hw/matplotlib/ex2.png">
+<meta property="og:image" content="https://akagb.github.io/images/hw/matplotlib/ex3.png">
+<meta property="og:updated_time" content="2018-05-26T19:13:46.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenGL-Study">
-<meta name="twitter:description" content="OpenGL学习笔记  碎碎念这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。">
-<meta name="twitter:image" content="https://akagb.github.io/images/CG/pipeline.png">
+<meta name="twitter:title" content="Matplotlib-Homework">
+<meta name="twitter:description" content="matplotlib模块的练习。见github  Exercise1">
+<meta name="twitter:image" content="https://akagb.github.io/images/hw/matplotlib/ex1.png">
   
     <link rel="alternative" href="/atom.xml" title="AKAGB —— Blog" type="application/atom+xml">
   
@@ -167,20 +165,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-OpenGL-Study" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Matplotlib-Homework" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      OpenGL-Study
+      Matplotlib-Homework
     </h1>
   
 
         
-        <a href="/2018/05/01/OpenGL-Study/" class="archive-article-date">
-  	<time datetime="2018-05-01T07:48:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-01</time>
+        <a href="/2018/05/27/Matplotlib-Homework/" class="archive-article-date">
+  	<time datetime="2018-05-26T19:06:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
 </a>
         
       </header>
@@ -188,157 +186,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>OpenGL学习笔记</p>
+<p><code>matplotlib</code>模块的练习。见<a href="https://github.com/AKAGB/Python-study/tree/master/Homework/Matplotlib" target="_blank" rel="noopener">github</a></p>
 </blockquote>
-<h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>这学期的CG课还是蛮有趣的，主要讲了一些关于计算机呈现图像的基本知识，然后第二次作业就让我们亲自用OpenGL来实践。</p>
-<a id="more"></a>
-<p>OpenGL是一个专门用于图形开发的库，它不是一个专门的什么语言，而是一种规范，定义了许多接口，不同的语言都有实现，如C、C++、Python等，而某些游戏引擎中也都有对它的接口有实现。</p>
-<p>简单来说，如果你想制作一个窗口程序，或者对图像数据进行编辑，实现各种视觉效果，或者游戏开发，OpenGL都是一个非常好的工具。</p>
-<p>现在我们只是想掌握一些基本的原理，看看怎么用代码实现。</p>
-<p>不过最近要学的东西很多，Python、OS、计网、前端，还有一大堆作业DDL，有多少心思放在图形学上就很难讲了。但我也会尽量把学到的总结梳理一遍，若是日后有对这方面的需要也不至于茫然无措。</p>
-<h2 id="环境配置以及相关依赖"><a href="#环境配置以及相关依赖" class="headerlink" title="环境配置以及相关依赖"></a>环境配置以及相关依赖</h2><blockquote>
-<p>详细配置见<a href="https://learnopengl-cn.github.io/01%20Getting%20started/02%20Creating%20a%20window/" target="_blank" rel="noopener">创建窗口</a></p>
-</blockquote>
-<ul>
-<li>IDE: VS 2017</li>
-<li>OpenGL: OpenGL32.lib (VS自带)</li>
-<li>GLFW: glfw3(32-bit) 针对OpenGL的C语言库</li>
-<li>GLAD</li>
-</ul>
-<h2 id="关于GLAD"><a href="#关于GLAD" class="headerlink" title="关于GLAD"></a>关于<code>GLAD</code></h2><p>需要准备一下OpenGL的函数，为什么这么说呢，因为OpenGL只是一个规范，而因为显卡不同，具体实现是针对显卡来实现的，所以不同厂商都有不一样的实现方式，我们所用的<code>glfw</code>只是其中的一种实现，我们需要查看它的文档才知道它的那些函数的实现是什么（比如函数名是什么）。</p>
-<p>但如果实际中这么做是一件很费力的事，倘若我换了一套实现接口，那岂不是要全部改一遍。好在有人实现了一个转换的库——<code>glad</code>，它的工作就是将你使用的库的OpenGL函数换一个函数名，也就是放在一个函数指针里，在Windows下的实现原理如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义函数原型</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*GL_GENBUFFERS)</span> <span class="params">(GLsizei, GLuint*)</span></span>;</span><br><span class="line"><span class="comment">// 找到正确的函数并赋值给函数指针</span></span><br><span class="line">GL_GENBUFFERS glGenBuffers  = (GL_GENBUFFERS)wglGetProcAddress(<span class="string">"glGenBuffers"</span>);</span><br><span class="line"><span class="comment">// 现在函数可以被正常调用了</span></span><br><span class="line">GLuint buffer;</span><br><span class="line">glGenBuffers(<span class="number">1</span>, &amp;buffer);</span><br></pre></td></tr></table></figure>
-<p>繁复的工作<code>glad</code>会替我们完成，我们只需要到它的在线生成器那里输入我们OpenGL的版本，获取生成的头文件和<code>glad.c</code>文件，并把其放入项目中即可。具体如何操作可以见之前的环境配置链接。</p>
-<h2 id="OpenGL学习"><a href="#OpenGL学习" class="headerlink" title="OpenGL学习"></a>OpenGL学习</h2><h3 id="从OpenGL角度出发"><a href="#从OpenGL角度出发" class="headerlink" title="从OpenGL角度出发"></a>从OpenGL角度出发</h3><p>OpenGL将一个个的窗口看作是一个状态机，在使用的前需要设置好相关的<strong>状态</strong>，以及要设置一些状态切换的事件和动作，然后转变为新的状态（当然也包括原先的那个状态）。</p>
-<p>这有点类似于<strong>面向对象编程</strong>，需要定义一个对象的属性和行为，最重要的是这个行为是由事件驱动的，例如鼠标点击，键盘输入，窗口大小变化等等，说白了就是设置相关事件的回调函数，这又和Javascript的某些机制相似了，其实仔细想来，计算机这个领域中有很多基本概念和模型都会运用在不同的场合。</p>
-<h3 id="一个基本的框架"><a href="#一个基本的框架" class="headerlink" title="一个基本的框架"></a>一个基本的框架</h3><p>写代码前应该习惯在脑海中形成一个基本的框架，不然很容易到了中途就忘记了自己最初想实现的是什么。我开始学习OpenGL的时候也是，只知道跟着别人的代码敲，敲完了也不是很懂，直到后来慢慢梳理也才有了一个基本的框架形成。其实我觉得一个教程本身应该教的不是代码如何写，而是代码如何<strong>构造</strong>。</p>
-<p>接触过一些GUI编程，它们有些基本的东西还是一样的，比如初始状态需要设置一个基本状态，也就是状态机的初始状态，接着要设置一些事件的回调函数，用以和用户交互。然后会有一个主循环，每一次循环都会渲染一个画面，也就是一帧，检查事件轮询中的事件并触发相应的回调函数，最后将结果呈现出来。</p>
-<p>现在开始养成将要做的事做成列表，然后再以后的开发中慢慢扩充，当然也可以任何喜欢的方式，比如思维导图。</p>
-<p>目前基本的框架如下：</p>
-<ul>
-<li>设置初始状态</li>
-<li>设置事件触发的动作</li>
-<li>主循环<ul>
-<li>渲染</li>
-<li>事件轮询</li>
-<li>呈现</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>有了一个基本的框架我们就开始实现。OpenGL的函数和常量一般都长的吓人，但还是有一些规律在里面的，甚至都是一些常见的英文，通常来说它们的名字直接反映了他们的功能。</p>
-<p>记得先<code>#include</code>相关的文件，以及确保项目已经知道依赖的库和头文件的路径。我的<code>#include</code>的头文件在<code>stdafx.h</code>中，注意顺序，<strong>GLAD头文件要在GLFW之前</strong>。</p>
-<p>做好准备工作后我们就来开始设置初始状态。在main函数中添加如下内容：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">glfwInit();</span><br><span class="line">glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>);</span><br><span class="line">glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="number">3</span>);</span><br><span class="line">glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br></pre></td></tr></table></figure>
-<p><code>glfw</code>库的函数通常都以<code>glfw</code>开头，而常量则是以<code>GLFW_*</code>开头，这里<code>glfwInit()</code>用于初始化，<code>glfwWindowHint()</code>用来设置OpenGL的版本信息，因为OpenGL有很多版本了，而且不同版本有些细微的区别，因此应该注明自己的项目所用的OpenGL版本。</p>
-<p>设置好版本信息，下一步就是创建一个窗口。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GLFWwindow *window = glfwCreateWindow(<span class="number">800</span>, <span class="number">600</span>, <span class="string">"Learning OpenGL"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line"><span class="keyword">if</span> (window == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to create GLFW window"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    glfwTerminate();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line">glfwMakeContextCurrent(window);</span><br></pre></td></tr></table></figure>
-<p>窗口对象的变量类型是<code>GLFWwindow *</code>，可以用<code>glfwCreateWindow()</code>来创建，前两个参数是宽度和高度，第三个参数是窗口title，后面两个暂时忽略。<code>glfwMakeContextCurrent()</code>函数将这个窗口的上下文设置为当前线程的主上下文，即后面的一大堆操作都是针对这个窗口的各种状态进行编辑。</p>
-<p>接下来需要进行OpenGL函数的准备，当配置好<code>GLAD</code>后，设置的过程就很简单了，之后的OpenGL一些函数就用<code>gl</code>开头了，如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) &#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to initialize GLAD"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>接下来我们来设置一下<strong>视口</strong>（viewport），所谓视图就是希望给用户看到的区域，它和窗口不一样，窗口只是一个承载视图的容器，当然一般来说视图的大小都和窗口一样，设置视图的函数（注意这里就是以<code>gl</code>开头的函数）如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glViewport(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">600</span>);</span><br></pre></td></tr></table></figure>
-<p><code>glViewport()</code>前两个参数是视口<strong>左下角</strong>在窗口中的位置，哪个窗口呢？自然是当前线程的主上下文的窗口。后两个参数是视口的宽度和高度。</p>
-<p>当然如果只是简单的在main函数设置，这就固定下来了，在窗口大小变化的时候视口就无法变化了。考虑到如果想让其跟上窗口变化，可以注册窗口变化的回调函数，在回掉函数中调用<code>glViewport()</code>函数。声明并定义如下函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">framebuffer_size_callback</span><span class="params">(GLFWwindow*, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	glViewport(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在main函数中注册：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glfwSetFramebuffersSizeCallback(window, framebuffer_size_callback);</span><br></pre></td></tr></table></figure>
-<p>ok！目前暂时只设置一个事件回调，毕竟只是一个简单开始，一个简单的框架。</p>
-<h3 id="主循环部分"><a href="#主循环部分" class="headerlink" title="主循环部分"></a>主循环部分</h3><p>接下来就是主循环中的部分了。我们先忽略其最关键也是最麻烦的一步——渲染，把它放在后面说，先写一个简单的主循环：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!glfwWindowShouldClose(window)) &#123;</span><br><span class="line">    glfwSwapBuffers(window);</span><br><span class="line">    glfwPollEvents();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>glfwWindowShouldClose()</code>函数用来检查GLFW是否被要求退出，比如点击右上角的关闭按钮，是的话返回True退出主循环。</li>
-<li><code>glfwSwapBuffers()</code>函数会交换颜色缓冲，由于单缓冲绘图可能存在图像闪烁的问题，故采用双缓冲，前缓冲保存最终输出的图像，后缓冲用来执行渲染指令，当渲染指令执行完毕后，<strong>交换</strong>前后缓冲图像就立即呈现出来了，之前的不真实感就消除了。</li>
-<li><code>glfwPollEvents()</code>函数用于监测事件，然后触发相应事件的回调函数。</li>
-</ul>
-<p>最后不要忘了退出：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">glfwTerminate();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<p>总结一下目前的代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">framebuffer_size_callback</span><span class="params">(GLFWwindow*, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    glfwInit();</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建窗口</span></span><br><span class="line">    GLFWwindow *window = glfwCreateWindow(WD_WIDTH, WD_HEIGHT, <span class="string">"LearnOpenGL"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">if</span> (window == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to create GLFW window"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        glfwTerminate();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 设置当前上下文为主线程上下文</span></span><br><span class="line">    glfwMakeContextCurrent(window);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to initialize GLAD"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置viewport大小，随窗口变化而执行回调改变大小</span></span><br><span class="line">    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 渲染循环</span></span><br><span class="line">    <span class="keyword">while</span> (!glfwWindowShouldClose(window)) &#123;</span><br><span class="line">        glfwSwapBuffers(window);</span><br><span class="line">        glfwPollEvents();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    glfwTerminate();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">framebuffer_size_callback</span><span class="params">(GLFWwindow*, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	glViewport(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><p>我们最主要的任务还是要对画面进行渲染，那么问题来了，如何渲染呢？也就是如何去构造一个图像，这涉及到一个概念，<strong>图像渲染管线</strong>。这个概念这里就不详细说明了，可以参考<a href="https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/" target="_blank" rel="noopener">图形渲染管线</a>。这里主要说明渲染流程的代码，流程如下图。</p>
-<p><img src="/images/CG/pipeline.png" alt="pipeline"></p>
-<p>拿出之前的框架进行完善：</p>
-<ul>
-<li>设置初始状态</li>
-<li>设置事件触发的动作</li>
-<li>初始渲染画面（用以设置VBO、VAO和EBO）<ul>
-<li>绑定顶点数组对象（绑定VAO）</li>
-<li>复制顶点数据到缓冲中（设置VBO数据）</li>
-<li>复制索引数组到索引缓冲中（设置EBO数据）</li>
-<li>设定顶点属性指针并激活属性（配置VAO）</li>
-</ul>
-</li>
-<li>主循环<ul>
-<li>渲染<ul>
-<li>调用着色器程序</li>
-<li>绑定VAO</li>
-<li>渲染绘画（调用相关Draw函数）</li>
-<li>解绑VAO</li>
-</ul>
-</li>
-<li>事件轮询</li>
-<li>呈现</li>
-</ul>
-</li>
-</ul>
-<p>如上，渲染其实可以再继续填充内容的，有一些内容我直接就添加上了。比如VAO，VBO和EBO等，关于这三个词可以在之前那个链接里找到，这里不再赘述（主要是因为我现在也只了解了个大概，说不好感觉会产生什么误会）。</p>
-<h4 id="着色器程序"><a href="#着色器程序" class="headerlink" title="着色器程序"></a>着色器程序</h4><p>如果有看刚刚的链接，就知道图形渲染管线主要是由几个着色器构成的，其中着色器中最重要的两个是<strong>顶点着色器</strong>和<strong>片段着色器</strong>，这个需要程序员自己去定义，定义的语言是<code>GLSL</code>（OpenGL Shading Language）。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *vertexShaderSource = <span class="string">"#version 330 core\n"</span></span><br><span class="line">	<span class="string">"layout(location = 0) in vec3 aPos;\n"</span></span><br><span class="line">	<span class="string">"void main()\n"</span></span><br><span class="line">	<span class="string">"&#123;\n"</span></span><br><span class="line">	<span class="string">"	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0f);\n"</span></span><br><span class="line">	<span class="string">"&#125;\0"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *fragmentShaderSource = <span class="string">"#version 330 core\n"</span></span><br><span class="line"><span class="string">"out vec4 FragColor;\n"</span></span><br><span class="line"><span class="string">"void main()\n"</span></span><br><span class="line"><span class="string">"&#123;\nFragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n&#125;\n"</span>;</span><br></pre></td></tr></table></figure>
-<p>那两个字符串是<code>GLSL</code>源码，暂时先写成这样，具体语法可以先不考虑，但大致应该能看懂。顶点着色器的源码意思为输入顶点数据，它的<code>location</code>属性（即位置属性，注意一个点可以有很多种属性，<code>location=0</code>意味位置属性可以用<code>0</code>索引，如何设置索引后面会讲）数据类型为<code>vec3</code>（即包含3个浮点数的向量），每个点变量名为aPos，然后他用<code>gl_Postion</code>来输出它经过顶点着色器处理后的位置参数，这个数据为<code>vec4</code>。</p>
-<p>片段着色器原理差不多，也是进行相应的变换。</p>
-<p>接下来就需要编译一下生成着色器，编译的过程是一样的：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义着色器程序</span></span><br><span class="line"><span class="comment">// 定义顶点着色器</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> vertexShader;</span><br><span class="line">vertexShader = glCreateShader(GL_VERTEX_SHADER);</span><br><span class="line">glShaderSource(vertexShader, <span class="number">1</span>, &amp;vertexShaderSource, <span class="literal">NULL</span>);</span><br><span class="line">glCompileShader(vertexShader);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编译片段着色器</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> fragmentShader;</span><br><span class="line">fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);</span><br><span class="line">glShaderSource(fragmentShader, <span class="number">1</span>, &amp;fragmentShaderSource, <span class="literal">NULL</span>);</span><br><span class="line">glCompileShader(fragmentShader);</span><br></pre></td></tr></table></figure>
-<p>用一个<code>unsigned int</code>来保存着色器id，然后用<code>glCreateShader()</code>函数来生成着色器，返回值为着色器id，传参<code>GL_VERTEX_SHADER</code>表示生成顶点着色器，<code>GL_FRAGMENT_SHADER</code>表示片段着色器。然后调用<code>glShaderSource()</code>来传入id、传递源码字符串的数量（这里只有1个，所以为1），着色器的源码，第四个参数先设置为NULL。然后调用<code>glCompileShader()</code>传入id进行编译。</p>
-<p>得到编译好的着色器后下一步是将所有的着色器链接起来，形成真正的着色器程序。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建着色器程序，链接所有的着色器</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> shaderProgram;</span><br><span class="line">shaderProgram = glCreateProgram();</span><br><span class="line">glAttachShader(shaderProgram, vertexShader);</span><br><span class="line">glAttachShader(shaderProgram, fragmentShader);</span><br><span class="line">glLinkProgram(shaderProgram);</span><br><span class="line"><span class="comment">// 删除已经不需要的着色器</span></span><br><span class="line">glDeleteShader(vertexShader);</span><br><span class="line">glDeleteShader(fragmentShader);</span><br></pre></td></tr></table></figure>
-<p>从名字来看也能看出其功能，这里不再赘述。等到需要用着色器的时候（渲染的时候）调用<code>glUseProgram(shaderProgram)</code>即可。</p>
-<h4 id="定义顶点数据"><a href="#定义顶点数据" class="headerlink" title="定义顶点数据"></a>定义顶点数据</h4><p>接下来我们需要定义顶点数据，这个过程为：</p>
-<ol>
-<li>定义一个<code>float</code>数组存放所有的数据，以及另一个<code>float</code>数组存放所有的索引。</li>
-<li>定义VBO、VAO、EBO</li>
-<li>绑定VAO（<code>glBindVertexArray(VAO)</code>）以记录顶点属性</li>
-<li>绑定VBO为缓冲区，并复制<code>float</code>数组数据进入缓冲区</li>
-<li>绑定EBO为缓冲区，复制索引数组进入缓冲区</li>
-<li>设置顶点属性，用以告诉用什么索引对应属性</li>
-<li>激活属性</li>
-</ol>
-<p>补一张VBO、VAO和EBO的关系图：</p>
-<p><img src="/images/CG/vertex_array_objects_ebo.png" alt="vertex_array_objects_ebo"></p>
-<p>首先是定义顶点最基本的数据和索引数据：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> vertices[] = &#123;</span><br><span class="line">    <span class="number">0.5f</span>, <span class="number">0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">0.5f</span>, <span class="number">-0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">-0.5f</span>,  <span class="number">-0.5f</span>, <span class="number">0.0f</span>,</span><br><span class="line">    <span class="number">-0.5f</span>, <span class="number">0.5f</span>, <span class="number">0.0f</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> indices[] = &#123;</span><br><span class="line">    <span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>,</span><br><span class="line">    <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>vertices</code>定义了各个顶点的坐标，这里定义了一个矩形，分别表示4个顶点，OpenGL用[-1, 1]之间的数来表示位置，2维下的坐标表示如下图：</p>
-<p><img src="/images/CG/ndc.png" alt="ndc"></p>
-<p><code>indices</code>存放索引数组，比如0就是指<code>vertices</code>中的第0个点。由于这里准备采用的图元是三角形，一个举行可以用两个三角形表示：</p>
-<p><img src="/images/CG/hellotriangle2.png" alt="hellotriangle2"></p>
-<p>第一行的<code>0, 1, 3</code>表示右边那个三角形的点坐标，第二行则表示左边三角形。</p>
-<p>但注意这里的两个数组均为1维数组，OpenGL怎么知道该如何去读取这个数据，所以我们要设置顶点属性，用以告诉着色器如何去划分。于是乎，接下来就是关于三种对象的使用。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> VBO, VAO, EBO;</span><br><span class="line">glGenBuffers(<span class="number">1</span>, &amp;VBO);</span><br><span class="line">glGenBuffers(<span class="number">1</span>, &amp;EBO);</span><br><span class="line">glGenVertexArrays(<span class="number">1</span>, &amp;VAO);</span><br></pre></td></tr></table></figure>
-<p>首先是定义，定义没什麽特别的要说的。</p>
-<p>接着按照我们那里的步骤走，可对应到函数名：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 复制顶点数组到缓冲中供OpenGL使用</span></span><br><span class="line">glBindVertexArray(VAO);</span><br><span class="line">glBindBuffer(GL_ARRAY_BUFFER, VBO);</span><br><span class="line">glBufferData(GL_ARRAY_BUFFER, <span class="keyword">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);</span><br><span class="line">glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);</span><br><span class="line">glBufferData(GL_ELEMENT_ARRAY_BUFFER, <span class="keyword">sizeof</span>(indices), indices, GL_STATIC_DRAW);</span><br></pre></td></tr></table></figure>
-<p>绑定VAO就是直接<code>glBindVerTtexArray(VAO)</code>即可，特别说明一下剩下两个，绑定VBO和EBO到<code>GL_ARRAY_BUFFER</code>进行操作，<code>glBufferData()</code>用于复制数据到缓冲区，第一个是缓冲区类型，第二个是传入数据的大小，第三个是数据首地址，最后一个用于告诉显卡如何管理给定数据，有以下选择：</p>
-<ul>
-<li>GL_STATIC_DRAW ：数据不会或几乎不会改变。</li>
-<li>GL_DYNAMIC_DRAW：数据会被改变很多。</li>
-<li>GL_STREAM_DRAW ：数据每次绘制时都会改变。</li>
-</ul>
-<p>数据放入缓冲区后，再来设置顶点属性，也就是缓冲区的每一部分数据的具体含义，例如刚刚传入的<code>vertices</code>数组，我想将其3个3个分为一组，表示的是每个点的位置信息，设置好后就需要激活：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">glVertexAttribPointer(<span class="number">0</span>, <span class="number">3</span>, GL_FLOAT, GL_FALSE, <span class="number">3</span> * <span class="keyword">sizeof</span>(<span class="keyword">float</span>), (<span class="keyword">void</span>*)<span class="number">0</span>);</span><br><span class="line">glEnableVertexAttribArray(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-<p><code>glVertexAttribPointer()</code>方法告诉着色器如何解析数据，参数含义如下：</p>
-<ol>
-<li>指定要配置的顶点属性。可以把顶点属性的位置值设为<code>0</code>（在顶点着色器中用<code>layout(location = 0)</code>定义了position顶点属性的位置值），然后在这里就传入0。</li>
-<li>第二个参数指定顶点属性的大小。这里是<code>vec3</code>，用到3个值，所以传入3。</li>
-<li>第三个参数指定数据类型，因为是浮点数所以用<code>GL_FLOAT</code>。</li>
-<li>第四个参数定义是否希望数据被标准化，如果为<code>GL_TRUE</code>，所有数据都会从[-1, 1]映射到[0, 1]中。我们设置为<code>GL_FALSE</code>中。</li>
-<li>第五个参数为步长。</li>
-<li>最后一个参数类型是<code>void*</code>，必须要进行这一步转换，它表示位置数据在缓冲区中的开始位置的偏移量。</li>
-</ol>
-<p><code>glEnableVertexAttribArray()</code>用于激活顶点属性，<code>0</code>表示该顶点属性。</p>
-<p>接下来在主循环中渲染：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 渲染循环</span></span><br><span class="line"><span class="keyword">while</span> (!glfwWindowShouldClose(window)) &#123;</span><br><span class="line">    <span class="comment">// 输入</span></span><br><span class="line">    processInput(window);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 渲染指令</span></span><br><span class="line">    glClearColor(<span class="number">0.2f</span>, <span class="number">0.3f</span>, <span class="number">0.3f</span>, <span class="number">1.0f</span>);</span><br><span class="line">    glClear(GL_COLOR_BUFFER_BIT);</span><br><span class="line">    <span class="comment">// 渲染三角形</span></span><br><span class="line">    glUseProgram(shaderProgram);</span><br><span class="line">    glBindVertexArray(VAO);</span><br><span class="line">    glDrawElements(GL_TRIANGLES, <span class="number">6</span>, GL_UNSIGNED_INT, <span class="number">0</span>);</span><br><span class="line">    glBindVertexArray(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查并调用事件，交换缓冲</span></span><br><span class="line">    glfwSwapBuffers(window);</span><br><span class="line">    glfwPollEvents();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>先使用<code>glUseProgram(shaderProgram)</code>运行着色器程序，然后重新绑定VAO，用来获得定点属性，然后使用<code>glDrawElements()</code>函数来绘画，第一个参数是图元，我们设置为三角形，第二个参数是打算绘制的顶点个数，第三个参数是索引的类型，第四个参数是EBO中的偏移量（或者可以传递一个索引数组，这是在不适用索引缓冲对象的时候）。<code>glDrawElements()</code>函数从当前绑定到<code>GL_ELEMENT_ARRAY_BUFFER</code>目标的EBO中获取索引。故每次索引渲染都需要绑定相应的EBO。</p>
-<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>见图：</p>
-<p><img src="/images/CG/result.png" alt="result"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然挺基本的，但是基本上是走了一个简单的呈现图像的流程。整个部分的代码点击<a href="https://github.com/AKAGB/CG-OpenGL/blob/master/work/FirstDemo/demo.cpp" target="_blank" rel="noopener">这里</a>可以查看。</p>
+<h2 id="Exercise1"><a href="#Exercise1" class="headerlink" title="Exercise1"></a>Exercise1</h2><a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从[0, 2]中等距取50个数作为x的取值</span></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">2</span>, <span class="number">50</span>)</span><br><span class="line">y = list(map(<span class="keyword">lambda</span> x : pow(math.sin(x<span class="number">-2</span>), <span class="number">2</span>)*pow(math.e, -(x**<span class="number">2</span>)), x))</span><br><span class="line"></span><br><span class="line">plt.plot(x, y, label=<span class="string">'$\sin^2(x - 2)e^&#123;-x^2&#125;$'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">'x'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'f(x)'</span>)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">'$\sin^2(x - 2)e^&#123;-x^2&#125;$'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="/images/hw/matplotlib/ex1.png" alt="ex1"></p>
+<h2 id="Exercise2"><a href="#Exercise2" class="headerlink" title="Exercise2"></a>Exercise2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> numpy.random</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> linalg <span class="keyword">as</span> LA</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">X = np.random.rand(<span class="number">20</span>, <span class="number">10</span>)</span><br><span class="line">b = np.random.rand(<span class="number">10</span>)</span><br><span class="line">z = np.random.randn(<span class="number">20</span>)</span><br><span class="line">y = np.dot(X, b) - z</span><br><span class="line"></span><br><span class="line">b_ = LA.lstsq(X, y, rcond=<span class="keyword">None</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成图像</span></span><br><span class="line">index = list(range(<span class="number">10</span>))</span><br><span class="line">plt.scatter(index, b, label=<span class="string">'True coefficients'</span>, color=<span class="string">'r'</span>, marker=<span class="string">'x'</span>)</span><br><span class="line">plt.scatter(index, b_, label=<span class="string">'Estimated coefficients'</span>, color=<span class="string">'blue'</span>, marker=<span class="string">'o'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">'index'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'value'</span>)</span><br><span class="line">plt.title(<span class="string">'Parameter plot'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="/images/hw/matplotlib/ex2.png" alt="ex2"></p>
+<h2 id="Exercise3"><a href="#Exercise3" class="headerlink" title="Exercise3"></a>Exercise3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> numpy.random</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> gaussian_kde</span><br><span class="line"></span><br><span class="line">sigma = <span class="number">0.5</span></span><br><span class="line">mu = <span class="number">2</span></span><br><span class="line">z = np.random.randn(<span class="number">10000</span>)</span><br><span class="line">z = sorted(z)</span><br><span class="line">kernel = gaussian_kde(z)</span><br><span class="line"></span><br><span class="line">plt.hist(z, bins=<span class="number">25</span>, density=<span class="keyword">True</span>, facecolor=<span class="string">'blue'</span>, edgecolor=<span class="string">'black'</span>)</span><br><span class="line">plt.plot(z, kernel.pdf(z))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="/images/hw/matplotlib/ex3.png" alt="ex3"></p>
 
       
 
@@ -373,7 +232,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">OpenGL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">homework</a>
         		</li>
       		
 		</ul>
@@ -429,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/05/01/OpenGL-Study/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://akagb.github.io/2018/05/27/Matplotlib-Homework/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -443,18 +306,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/20/leetcode784解法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          leetcode784解法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/28/leetcode41解法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">leetcode41解法</div>
+    <a href="/2018/05/21/numpy-homework/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">numpy-homework</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -484,7 +338,7 @@
   
 
   
-  <div id="SOHUCS" sid="OpenGL-Study" ></div> 
+  <div id="SOHUCS" sid="Matplotlib-Homework" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
